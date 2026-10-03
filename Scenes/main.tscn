@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://drlkwkkmqxltw"]
+
+[ext_resource type="Texture2D" uid="uid://cb117cfpp711r" path="res://Assets/bg.png" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://c1sb1m51vcy46" path="res://Assets/todo list.png" id="2_bo1nx"]
+
+[node name="Main" type="Node2D" unique_id=1606289912]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1863998892]
+anchor_mode = 0
+
+[node name="BG layer" type="CanvasLayer" parent="." unique_id=754157293]
+
+[node name="BG" type="TextureRect" parent="BG layer" unique_id=611900687]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jjgbg")
+
+[node name="UI layer" type="CanvasLayer" parent="BG layer" unique_id=186027742]
+
+[node name="TextureRect" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263]
+anchors_preset = -1
+anchor_left = 0.619
+anchor_top = 0.172
+anchor_right = 0.9620001
+anchor_bottom = 0.418
+offset_left = -713.088
+offset_top = -111.456
+offset_right = -608.2241
+offset_bottom = 9.135986
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bo1nx")
