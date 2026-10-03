@@ -1,2 +1,2 @@
-# bed-maker
+# ScrollMaxxer
  cookie game jam game
