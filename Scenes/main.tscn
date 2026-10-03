@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://drlkwkkmqxltw"]
 
 [ext_resource type="Texture2D" uid="uid://cb117cfpp711r" path="res://Assets/bg.png" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://1mra7sxu7xoo" path="res://Assets/day counter.png" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://c1sb1m51vcy46" path="res://Assets/todo list.png" id="2_bo1nx"]
 
 [node name="Main" type="Node2D" unique_id=1606289912]
@@ -20,12 +21,23 @@ texture = ExtResource("1_jjgbg")
 
 [node name="UI layer" type="CanvasLayer" parent="BG layer" unique_id=186027742]
 
-[node name="TextureRect" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263]
+[node name="TimeCounter" type="TextureRect" parent="BG layer/UI layer" unique_id=1091252154]
 anchors_preset = -1
 anchor_left = 0.98
-anchor_top = 0.14
+anchor_top = 0.04
 anchor_right = 0.98
-anchor_bottom = 0.14
+anchor_bottom = 0.04
+offset_left = -500.0
+offset_bottom = 63.0
+grow_horizontal = 0
+texture = ExtResource("2_8gbba")
+
+[node name="ToDoList" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263]
+anchors_preset = -1
+anchor_left = 0.98
+anchor_top = 0.17
+anchor_right = 0.98
+anchor_bottom = 0.17
 offset_left = -500.0
 offset_bottom = 280.0
 grow_horizontal = 0
