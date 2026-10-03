@@ -6,6 +6,10 @@ config/name="scrollmaxxer"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Enums="*uid://b6raoqxcr8a0u"
+
 [display]
 
 window/stretch/mode="canvas_items"
