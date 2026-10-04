@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dmis4cubkd2gt" path="res://assets/UI/buttons/pause button pressed.png" id="4_6bp64"]
 [ext_resource type="Texture2D" uid="uid://b3p4uvsewasng" path="res://assets/UI/buttons/pause button hover.png" id="5_344ge"]
 [ext_resource type="Texture2D" uid="uid://bdvm0fgepwchw" path="res://assets/UI/energy bar.png" id="7_344ge"]
-[ext_resource type="Script" uid="uid://bw55cdb4lj6vm" path="res://scripts/tasks/task_spawner.gd" id="8_hptm8"]
+[ext_resource type="Script" uid="uid://c8h8apjpiq1fh" path="res://scripts/memes/meme_manager.gd" id="8_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://kgvldap8jw00" path="res://Scenes/meme.tscn" id="8_hptm8"]
 [ext_resource type="Texture2D" uid="uid://b634dd6vetnnr" path="res://assets/UI/score display.png" id="8_ynf5e"]
+[ext_resource type="Script" uid="uid://bw55cdb4lj6vm" path="res://scripts/tasks/task_spawner.gd" id="9_jkdf5"]
 
 [sub_resource type="SystemFont" id="SystemFont_c53bp"]
 
@@ -119,7 +121,7 @@ offset_left = -500.0
 offset_bottom = 280.0
 grow_horizontal = 0
 texture = ExtResource("3_kry3j")
-script = ExtResource("8_hptm8")
+script = ExtResource("9_jkdf5")
 container = NodePath("ScrollContainer/VBoxContainer")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BG layer/UI layer/ToDoList" unique_id=1336885851]
