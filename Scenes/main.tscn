@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://kgvldap8jw00" path="res://Scenes/meme.tscn" id="8_hptm8"]
 [ext_resource type="Texture2D" uid="uid://b634dd6vetnnr" path="res://assets/UI/score display.png" id="8_ynf5e"]
 [ext_resource type="Script" uid="uid://bw55cdb4lj6vm" path="res://scripts/tasks/task_spawner.gd" id="9_jkdf5"]
+[ext_resource type="Script" uid="uid://dkuffagidpvdc" path="res://scripts/contents/content_manager.gd" id="10_6iyac"]
+[ext_resource type="PackedScene" uid="uid://bc1fpwucmlmhr" path="res://Scenes/content.tscn" id="11_6iyac"]
 [ext_resource type="Resource" uid="uid://bktowvqqbshal" path="res://resources/memes/normie/dislike/tai_lung.tres" id="12_k12tt"]
+[ext_resource type="Resource" uid="uid://b8pnb3p3bgk35" path="res://resources/contents/cat_vet.tres" id="15_h1bgf"]
 
 [sub_resource type="SystemFont" id="SystemFont_c53bp"]
 
@@ -161,7 +164,24 @@ layout_mode = 2
 layout_mode = 2
 meme_stats = ExtResource("12_k12tt")
 
-[node name="ContentContainer" type="Node2D" parent="BG layer/UI layer" unique_id=89415184]
+[node name="ContentManager" type="ScrollContainer" parent="BG layer/UI layer" unique_id=1965992437]
+custom_minimum_size = Vector2(320, 1200)
+custom_maximum_size = Vector2(320, 1200)
+offset_left = 120.0
+offset_top = 80.0
+offset_right = 440.0
+offset_bottom = 640.0
+script = ExtResource("10_6iyac")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG layer/UI layer/ContentManager" unique_id=1939759487]
+layout_mode = 2
+
+[node name="Content" parent="BG layer/UI layer/ContentManager/VBoxContainer" unique_id=474919709 instance=ExtResource("11_6iyac")]
+layout_mode = 2
+content_stats = ExtResource("15_h1bgf")
+
+[node name="Content2" parent="BG layer/UI layer/ContentManager/VBoxContainer" unique_id=24824554 instance=ExtResource("11_6iyac")]
+layout_mode = 2
 
 [node name="EnergyBar" type="TextureRect" parent="BG layer/UI layer" unique_id=1191559593]
 anchors_preset = -1

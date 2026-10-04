@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bc1fpwucmlmhr"]
+
+[ext_resource type="Script" uid="uid://b03rga3wdym70" path="res://scripts/contents/content.gd" id="1_fy1iq"]
+[ext_resource type="Resource" uid="uid://qac03c6nd7sc" path="res://resources/contents/jjk_slander.tres" id="2_wcxcf"]
+[ext_resource type="Texture2D" uid="uid://deijkxq0btwek" path="res://assets/tai_lung_computer.jpg" id="3_7skcx"]
+
+[node name="Content" type="Control" unique_id=474919709 node_paths=PackedStringArray("sprite")]
+custom_minimum_size = Vector2(320, 560)
+custom_maximum_size = Vector2(320, 560)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -832.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fy1iq")
+sprite = NodePath("TextureRect")
+content_stats = ExtResource("2_wcxcf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=616836054]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.16666667, 0.16666667)
+texture = ExtResource("3_7skcx")
