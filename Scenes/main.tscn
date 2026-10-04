@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://kgvldap8jw00" path="res://Scenes/meme.tscn" id="8_hptm8"]
 [ext_resource type="Texture2D" uid="uid://b634dd6vetnnr" path="res://assets/UI/score display.png" id="8_ynf5e"]
 [ext_resource type="Script" uid="uid://bw55cdb4lj6vm" path="res://scripts/tasks/task_spawner.gd" id="9_jkdf5"]
+[ext_resource type="Resource" uid="uid://bktowvqqbshal" path="res://resources/memes/normie/dislike/tai_lung.tres" id="12_k12tt"]
 
 [sub_resource type="SystemFont" id="SystemFont_c53bp"]
 
@@ -138,7 +139,7 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="MemeContainer" type="VBoxContainer" parent="BG layer/UI layer" unique_id=589829460]
+[node name="MemeManager" type="VBoxContainer" parent="BG layer/UI layer" unique_id=589829460]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -150,9 +151,15 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 133
+script = ExtResource("8_d1ilt")
 
-[node name="MemeManager" type="Node2D" parent="BG layer/UI layer/MemeContainer" unique_id=939019987]
-position = Vector2(-556, -304)
+[node name="Meme" parent="BG layer/UI layer/MemeManager" unique_id=1212883254 instance=ExtResource("8_hptm8")]
+layout_mode = 2
+
+[node name="Meme2" parent="BG layer/UI layer/MemeManager" unique_id=538493188 instance=ExtResource("8_hptm8")]
+layout_mode = 2
+meme_stats = ExtResource("12_k12tt")
 
 [node name="ContentContainer" type="Node2D" parent="BG layer/UI layer" unique_id=89415184]
 

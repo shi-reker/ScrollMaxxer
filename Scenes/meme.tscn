@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://kgvldap8jw00"]
+
+[ext_resource type="Script" uid="uid://cxwbp7aal7fi" path="res://scripts/memes/meme.gd" id="1_65bqg"]
+[ext_resource type="Resource" uid="uid://bdpo7ionnm4xe" path="res://resources/memes/normie/like/10of10.tres" id="2_jf8d7"]
+[ext_resource type="Texture2D" uid="uid://cedjq3opc11d6" path="res://assets/10of10.jpg" id="3_jf8d7"]
+
+[node name="Meme" type="TextureButton" unique_id=1212883254 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_65bqg")
+sprite = NodePath("TextureRect")
+meme_stats = ExtResource("2_jf8d7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=808300281]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.31189084, 0.31189084)
+texture = ExtResource("3_jf8d7")

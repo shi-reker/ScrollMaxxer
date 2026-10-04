@@ -9,7 +9,7 @@ enum Genre {
 }
 
 enum Meme {
-	TEN_OF_TEN,
+	TEN_OF_TEN, TAI_LUNG,
 	ANIME_LIKE1,ANIME_DISLIKE1
 }
 
