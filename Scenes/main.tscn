@@ -119,7 +119,7 @@ offset_bottom = 280.0
 grow_horizontal = 0
 texture = ExtResource("3_kry3j")
 
-[node name="ReactContainer" type="VBoxContainer" parent="BG layer/UI layer" unique_id=589829460]
+[node name="MemeContainer" type="VBoxContainer" parent="BG layer/UI layer" unique_id=589829460]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -132,7 +132,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ReactionsManager" type="Node2D" parent="BG layer/UI layer/ReactContainer" unique_id=939019987]
+[node name="MemeManager" type="Node2D" parent="BG layer/UI layer/MemeContainer" unique_id=939019987]
 position = Vector2(-556, -304)
 
 [node name="ContentContainer" type="Node2D" parent="BG layer/UI layer" unique_id=89415184]
