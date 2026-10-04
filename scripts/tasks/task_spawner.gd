@@ -7,8 +7,8 @@ var count:float = 0
 
 func _process(delta: float) -> void:
 	count +=delta
-	print_debug(count)
 	if count >= 5:
+		print_debug(count)
 		var newTask = task.instantiate()
 		container.add_child(newTask)
 		count = 0

@@ -206,3 +206,5 @@ offset_right = 31.0
 offset_bottom = -8.0
 text = "Energy"
 uppercase = true
+
+[connection signal="meme_selected" from="BG layer/UI layer/MemeManager" to="." method="_on_meme_manager_meme_selected"]
