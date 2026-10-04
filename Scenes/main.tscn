@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://drlkwkkmqxltw"]
 
 [ext_resource type="Texture2D" uid="uid://cb117cfpp711r" path="res://assets/bg.png" id="1_8gbba"]
+[ext_resource type="Script" uid="uid://o0yc37veosdo" path="res://scripts/main/main.gd" id="1_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://b42bvx5casoii" path="res://assets/UI/time display.png" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://dguitcytixnqs" path="res://assets/UI/buttons/pause button idle.png" id="3_21xkr"]
 [ext_resource type="Texture2D" uid="uid://c1sb1m51vcy46" path="res://assets/UI/todo list.png" id="3_kry3j"]
@@ -17,18 +18,23 @@
 [ext_resource type="Resource" uid="uid://b8pnb3p3bgk35" path="res://resources/contents/cat_vet.tres" id="15_h1bgf"]
 
 [sub_resource type="SystemFont" id="SystemFont_c53bp"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_53qbn"]
 font = SubResource("SystemFont_c53bp")
 font_size = 28
 
 [sub_resource type="SystemFont" id="SystemFont_pkeh2"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_y8knx"]
 font = SubResource("SystemFont_pkeh2")
 font_size = 26
 
-[node name="Main" type="Node2D" unique_id=1606289912]
+[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager")]
+script = ExtResource("1_fdnlq")
+cur_content = NodePath("BG layer/UI layer/ContentManager/ContentList/Content")
+content_manager = NodePath("BG layer/UI layer/ContentManager")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1863998892]
 anchor_mode = 0
@@ -164,23 +170,26 @@ layout_mode = 2
 layout_mode = 2
 meme_stats = ExtResource("12_k12tt")
 
-[node name="ContentManager" type="ScrollContainer" parent="BG layer/UI layer" unique_id=1965992437]
-custom_minimum_size = Vector2(320, 1200)
-custom_maximum_size = Vector2(320, 1200)
+[node name="ContentManager" type="ScrollContainer" parent="BG layer/UI layer" unique_id=1965992437 node_paths=PackedStringArray("content1", "content2")]
+custom_minimum_size = Vector2(320, 560)
+custom_maximum_size = Vector2(320, 560)
 offset_left = 120.0
 offset_top = 80.0
 offset_right = 440.0
 offset_bottom = 640.0
 script = ExtResource("10_6iyac")
+content1 = NodePath("ContentList/Content")
+content2 = NodePath("ContentList/Content2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BG layer/UI layer/ContentManager" unique_id=1939759487]
+[node name="ContentList" type="VBoxContainer" parent="BG layer/UI layer/ContentManager" unique_id=1136474206]
 layout_mode = 2
+theme_override_constants/separation = 0
 
-[node name="Content" parent="BG layer/UI layer/ContentManager/VBoxContainer" unique_id=474919709 instance=ExtResource("11_6iyac")]
+[node name="Content" parent="BG layer/UI layer/ContentManager/ContentList" unique_id=474919709 instance=ExtResource("11_6iyac")]
 layout_mode = 2
 content_stats = ExtResource("15_h1bgf")
 
-[node name="Content2" parent="BG layer/UI layer/ContentManager/VBoxContainer" unique_id=24824554 instance=ExtResource("11_6iyac")]
+[node name="Content2" parent="BG layer/UI layer/ContentManager/ContentList" unique_id=24824554 instance=ExtResource("11_6iyac")]
 layout_mode = 2
 
 [node name="EnergyBar" type="TextureRect" parent="BG layer/UI layer" unique_id=1191559593]
