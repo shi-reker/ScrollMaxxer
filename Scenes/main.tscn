@@ -1,8 +1,25 @@
 [gd_scene format=3 uid="uid://drlkwkkmqxltw"]
 
-[ext_resource type="Texture2D" uid="uid://cb117cfpp711r" path="res://Assets/bg.png" id="1_jjgbg"]
-[ext_resource type="Texture2D" uid="uid://1mra7sxu7xoo" path="res://Assets/day counter.png" id="2_8gbba"]
-[ext_resource type="Texture2D" uid="uid://c1sb1m51vcy46" path="res://Assets/todo list.png" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://cb117cfpp711r" path="res://assets/bg.png" id="1_8gbba"]
+[ext_resource type="Texture2D" uid="uid://b42bvx5casoii" path="res://assets/UI/time display.png" id="2_8gbba"]
+[ext_resource type="Texture2D" uid="uid://dguitcytixnqs" path="res://assets/UI/buttons/pause button idle.png" id="3_21xkr"]
+[ext_resource type="Texture2D" uid="uid://c1sb1m51vcy46" path="res://assets/UI/todo list.png" id="3_kry3j"]
+[ext_resource type="Texture2D" uid="uid://dmis4cubkd2gt" path="res://assets/UI/buttons/pause button pressed.png" id="4_6bp64"]
+[ext_resource type="Texture2D" uid="uid://b3p4uvsewasng" path="res://assets/UI/buttons/pause button hover.png" id="5_344ge"]
+[ext_resource type="Texture2D" uid="uid://bdvm0fgepwchw" path="res://assets/UI/energy bar.png" id="7_344ge"]
+[ext_resource type="Texture2D" uid="uid://b634dd6vetnnr" path="res://assets/UI/score display.png" id="8_ynf5e"]
+
+[sub_resource type="SystemFont" id="SystemFont_c53bp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_53qbn"]
+font = SubResource("SystemFont_c53bp")
+font_size = 28
+
+[sub_resource type="SystemFont" id="SystemFont_pkeh2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8knx"]
+font = SubResource("SystemFont_pkeh2")
+font_size = 26
 
 [node name="Main" type="Node2D" unique_id=1606289912]
 
@@ -17,31 +34,90 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_jjgbg")
+texture = ExtResource("1_8gbba")
 
 [node name="UI layer" type="CanvasLayer" parent="BG layer" unique_id=186027742]
 
+[node name="ScoreCounter" type="TextureRect" parent="BG layer/UI layer" unique_id=581782186]
+anchors_preset = -1
+anchor_left = 0.324
+anchor_top = 0.016
+anchor_right = 0.324
+anchor_bottom = 0.016
+offset_left = -226.5
+offset_right = 226.5
+offset_bottom = 44.0
+grow_horizontal = 2
+texture = ExtResource("8_ynf5e")
+
+[node name="ScoreText" type="Label" parent="BG layer/UI layer/ScoreCounter" unique_id=113618652]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = -19.5
+offset_right = 51.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: "
+label_settings = SubResource("LabelSettings_53qbn")
+uppercase = true
+
 [node name="TimeCounter" type="TextureRect" parent="BG layer/UI layer" unique_id=1091252154]
 anchors_preset = -1
-anchor_left = 0.98
-anchor_top = 0.04
-anchor_right = 0.98
-anchor_bottom = 0.04
-offset_left = -500.0
-offset_bottom = 63.0
+anchor_left = 0.87
+anchor_top = 0.016
+anchor_right = 0.87
+anchor_bottom = 0.016
+offset_left = -364.0
+offset_bottom = 60.0
 grow_horizontal = 0
 texture = ExtResource("2_8gbba")
 
+[node name="Date&TimeText" type="Label" parent="BG layer/UI layer/TimeCounter" unique_id=793510566]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -18.0
+offset_right = 79.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "d1 - 00:00:01"
+label_settings = SubResource("LabelSettings_y8knx")
+uppercase = true
+
+[node name="PauseButton" type="TextureButton" parent="BG layer/UI layer" unique_id=1887488849]
+anchors_preset = -1
+anchor_left = 0.976
+anchor_top = 0.016
+anchor_right = 0.976
+anchor_bottom = 0.016
+offset_left = -78.0
+offset_bottom = 44.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_21xkr")
+texture_pressed = ExtResource("4_6bp64")
+texture_hover = ExtResource("5_344ge")
+
 [node name="ToDoList" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263]
 anchors_preset = -1
-anchor_left = 0.98
-anchor_top = 0.17
-anchor_right = 0.98
-anchor_bottom = 0.17
+anchor_left = 0.976
+anchor_top = 0.13
+anchor_right = 0.976
+anchor_bottom = 0.13
 offset_left = -500.0
 offset_bottom = 280.0
 grow_horizontal = 0
-texture = ExtResource("2_bo1nx")
+texture = ExtResource("3_kry3j")
 
 [node name="ReactContainer" type="VBoxContainer" parent="BG layer/UI layer" unique_id=589829460]
 anchors_preset = 8
@@ -60,3 +136,27 @@ grow_vertical = 2
 position = Vector2(-556, -304)
 
 [node name="ContentContainer" type="Node2D" parent="BG layer/UI layer" unique_id=89415184]
+
+[node name="EnergyBar" type="TextureRect" parent="BG layer/UI layer" unique_id=1191559593]
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.55
+anchor_right = 0.02
+anchor_bottom = 0.55
+offset_top = -253.0
+offset_right = 88.0
+offset_bottom = 253.0
+grow_vertical = 2
+texture = ExtResource("7_344ge")
+
+[node name="EnergyLabel" type="Label" parent="BG layer/UI layer/EnergyBar" unique_id=810380507]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_top = -31.0
+offset_right = 31.0
+offset_bottom = -8.0
+text = "Energy"
+uppercase = true

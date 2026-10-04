@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1sb1m51vcy46"
-path="res://.godot/imported/todo list.png-a5eba82ede16275cae3ba272980c454a.ctex"
+uid="uid://b634dd6vetnnr"
+path="res://.godot/imported/score display.png-2f0d89651ab63cf8872b35b4763a35ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/todo list.png"
-dest_files=["res://.godot/imported/todo list.png-a5eba82ede16275cae3ba272980c454a.ctex"]
+source_file="res://assets/UI/score display.png"
+dest_files=["res://.godot/imported/score display.png-2f0d89651ab63cf8872b35b4763a35ff.ctex"]
 
 [params]
 

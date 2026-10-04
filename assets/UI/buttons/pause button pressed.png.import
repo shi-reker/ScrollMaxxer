@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1mra7sxu7xoo"
-path="res://.godot/imported/day counter.png-1388326e70e3176a012c3433fdb8d709.ctex"
+uid="uid://dmis4cubkd2gt"
+path="res://.godot/imported/pause button pressed.png-89892344211006c35c194715f6da3c1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/day counter.png"
-dest_files=["res://.godot/imported/day counter.png-1388326e70e3176a012c3433fdb8d709.ctex"]
+source_file="res://assets/UI/buttons/pause button pressed.png"
+dest_files=["res://.godot/imported/pause button pressed.png-89892344211006c35c194715f6da3c1d.ctex"]
 
 [params]
 
