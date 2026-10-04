@@ -9,6 +9,7 @@ enum Genre {
 }
 
 enum Meme {
+	TEN_OF_TEN,
 	ANIME_LIKE1,ANIME_DISLIKE1
 }
 
