@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task_base" format=3 uid="uid://3tnswy7wf3fl"]
+
+[ext_resource type="Script" uid="uid://beqmt15xrtaio" path="res://resources/tasks/task_base_res.gd" id="1_x12rk"]
+
+[resource]
+script = ExtResource("1_x12rk")
+taskTitle = "Shower"
+taskLen = 10.0
+taskDue = 120.0
+metadata/_custom_type_script = "uid://beqmt15xrtaio"

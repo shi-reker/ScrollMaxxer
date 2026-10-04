@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmis4cubkd2gt" path="res://assets/UI/buttons/pause button pressed.png" id="4_6bp64"]
 [ext_resource type="Texture2D" uid="uid://b3p4uvsewasng" path="res://assets/UI/buttons/pause button hover.png" id="5_344ge"]
 [ext_resource type="Texture2D" uid="uid://bdvm0fgepwchw" path="res://assets/UI/energy bar.png" id="7_344ge"]
+[ext_resource type="Script" uid="uid://bw55cdb4lj6vm" path="res://scripts/tasks/task_spawner.gd" id="8_hptm8"]
 [ext_resource type="Texture2D" uid="uid://b634dd6vetnnr" path="res://assets/UI/score display.png" id="8_ynf5e"]
 
 [sub_resource type="SystemFont" id="SystemFont_c53bp"]
@@ -108,7 +109,7 @@ texture_normal = ExtResource("3_21xkr")
 texture_pressed = ExtResource("4_6bp64")
 texture_hover = ExtResource("5_344ge")
 
-[node name="ToDoList" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263]
+[node name="ToDoList" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263 node_paths=PackedStringArray("container")]
 anchors_preset = -1
 anchor_left = 0.976
 anchor_top = 0.13
@@ -118,6 +119,22 @@ offset_left = -500.0
 offset_bottom = 280.0
 grow_horizontal = 0
 texture = ExtResource("3_kry3j")
+script = ExtResource("8_hptm8")
+container = NodePath("ScrollContainer/VBoxContainer")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BG layer/UI layer/ToDoList" unique_id=1336885851]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035
+anchor_top = 0.21
+anchor_right = 0.97
+anchor_bottom = 0.97
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG layer/UI layer/ToDoList/ScrollContainer" unique_id=1745222188]
+layout_mode = 2
+theme_override_constants/separation = 5
 
 [node name="MemeContainer" type="VBoxContainer" parent="BG layer/UI layer" unique_id=589829460]
 anchors_preset = 8

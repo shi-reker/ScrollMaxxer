@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task_base" format=3 uid="uid://doxbvbiyu3ngk"]
+
+[ext_resource type="Script" uid="uid://beqmt15xrtaio" path="res://resources/tasks/task_base_res.gd" id="1_ekblr"]
+
+[resource]
+script = ExtResource("1_ekblr")
+taskTitle = "Attend Funeral"
+taskLen = 120.0
+taskDue = 720.0
+metadata/_custom_type_script = "uid://beqmt15xrtaio"
