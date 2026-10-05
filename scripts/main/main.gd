@@ -1,5 +1,9 @@
 extends Node2D
 
+var min:int = 0
+var hr:int = 23
+var day:int = 1
+var clockCounter:float = 0
 var score: int = 0
 var emotion: Enums.Emo = Enums.Emo.LIKE
 
@@ -7,6 +11,14 @@ var score_add: int = 100
 
 @export var cur_content: Content
 @export var content_manager: ContentManager
+@export var clock:Label
+
+func _process(delta: float) -> void:
+	if clockCounter >= 0.5:
+		update_clock()
+		clockCounter = 0
+		print_debug(min)
+	clockCounter += delta
 
 func _on_meme_manager_meme_selected(meme: Meme) -> void:
 	if meme.meme_stats.emo == emotion and meme.meme_stats.genre == cur_content.content_stats.genre:
@@ -20,6 +32,22 @@ func _on_meme_manager_meme_selected(meme: Meme) -> void:
 func update_score():
 	score += score_add
 	print("score is ", score)
+
+func update_clock():
+	min+=1
+	if min == 60:
+		hr+=1
+		min = 0
+	if hr == 24:
+		day +=1
+		hr = 0
+	var strMin:String = str(min)
+	var strHR:String = str(hr)
+	if min < 10:
+		strMin = "0" +str(min)
+	if hr < 10:
+		strHR = "0" +str(hr)
+	clock.text = "D" +str(day)+ " - " +strHR+ ":" +strMin
 
 func correct_meme_animations():
 	pass

@@ -17,13 +17,6 @@
 [ext_resource type="Resource" uid="uid://bktowvqqbshal" path="res://resources/memes/normie/dislike/tai_lung.tres" id="12_k12tt"]
 [ext_resource type="Resource" uid="uid://b8pnb3p3bgk35" path="res://resources/contents/cat_vet.tres" id="15_h1bgf"]
 
-[sub_resource type="SystemFont" id="SystemFont_c53bp"]
-subpixel_positioning = 0
-
-[sub_resource type="LabelSettings" id="LabelSettings_53qbn"]
-font = SubResource("SystemFont_c53bp")
-font_size = 28
-
 [sub_resource type="SystemFont" id="SystemFont_pkeh2"]
 subpixel_positioning = 0
 
@@ -31,10 +24,18 @@ subpixel_positioning = 0
 font = SubResource("SystemFont_pkeh2")
 font_size = 26
 
-[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager")]
+[sub_resource type="SystemFont" id="SystemFont_c53bp"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_53qbn"]
+font = SubResource("SystemFont_c53bp")
+font_size = 24
+
+[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager", "clock")]
 script = ExtResource("1_fdnlq")
 cur_content = NodePath("BG layer/UI layer/ContentManager/ContentList/Content")
 content_manager = NodePath("BG layer/UI layer/ContentManager")
+clock = NodePath("BG layer/UI layer/TimeCounter/Date&TimeText")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1863998892]
 anchor_mode = 0
@@ -51,7 +52,7 @@ texture = ExtResource("1_8gbba")
 
 [node name="UI layer" type="CanvasLayer" parent="BG layer" unique_id=186027742]
 
-[node name="ScoreCounter" type="TextureRect" parent="BG layer/UI layer" unique_id=581782186]
+[node name="TimeCounter" type="TextureRect" parent="BG layer/UI layer" unique_id=581782186]
 anchors_preset = -1
 anchor_left = 0.324
 anchor_top = 0.016
@@ -62,34 +63,6 @@ offset_right = 226.5
 offset_bottom = 44.0
 grow_horizontal = 2
 texture = ExtResource("8_ynf5e")
-
-[node name="ScoreText" type="Label" parent="BG layer/UI layer/ScoreCounter" unique_id=113618652]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -51.5
-offset_top = -19.5
-offset_right = 51.5
-offset_bottom = 19.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Score: "
-label_settings = SubResource("LabelSettings_53qbn")
-uppercase = true
-
-[node name="TimeCounter" type="TextureRect" parent="BG layer/UI layer" unique_id=1091252154]
-anchors_preset = -1
-anchor_left = 0.87
-anchor_top = 0.016
-anchor_right = 0.87
-anchor_bottom = 0.016
-offset_left = -364.0
-offset_bottom = 60.0
-grow_horizontal = 0
-texture = ExtResource("2_8gbba")
 
 [node name="Date&TimeText" type="Label" parent="BG layer/UI layer/TimeCounter" unique_id=793510566]
 layout_mode = 1
@@ -104,8 +77,36 @@ offset_right = 79.5
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "d1 - 00:00:01"
+text = "d1 - 00:01"
 label_settings = SubResource("LabelSettings_y8knx")
+uppercase = true
+
+[node name="ScoreCounter" type="TextureRect" parent="BG layer/UI layer" unique_id=1091252154]
+anchors_preset = -1
+anchor_left = 0.87
+anchor_top = 0.016
+anchor_right = 0.87
+anchor_bottom = 0.016
+offset_left = -364.0
+offset_bottom = 60.0
+grow_horizontal = 0
+texture = ExtResource("2_8gbba")
+
+[node name="ScoreText" type="Label" parent="BG layer/UI layer/ScoreCounter" unique_id=113618652]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -17.0
+offset_right = 44.5
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: "
+label_settings = SubResource("LabelSettings_53qbn")
 uppercase = true
 
 [node name="PauseButton" type="TextureButton" parent="BG layer/UI layer" unique_id=1887488849]
@@ -121,7 +122,7 @@ texture_normal = ExtResource("3_21xkr")
 texture_pressed = ExtResource("4_6bp64")
 texture_hover = ExtResource("5_344ge")
 
-[node name="ToDoList" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263 node_paths=PackedStringArray("container")]
+[node name="ToDoList" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263 node_paths=PackedStringArray("container", "game")]
 anchors_preset = -1
 anchor_left = 0.976
 anchor_top = 0.13
@@ -133,6 +134,7 @@ grow_horizontal = 0
 texture = ExtResource("3_kry3j")
 script = ExtResource("9_jkdf5")
 container = NodePath("ScrollContainer/VBoxContainer")
+game = NodePath("../../..")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BG layer/UI layer/ToDoList" unique_id=1336885851]
 layout_mode = 1
