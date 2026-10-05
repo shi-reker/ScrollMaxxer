@@ -124,7 +124,7 @@ texture_normal = ExtResource("3_21xkr")
 texture_pressed = ExtResource("4_6bp64")
 texture_hover = ExtResource("5_344ge")
 
-[node name="ToDoList" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263 node_paths=PackedStringArray("container", "game")]
+[node name="ToDoList" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263 node_paths=PackedStringArray("container", "scoller", "game")]
 anchors_preset = -1
 anchor_left = 0.976
 anchor_top = 0.13
@@ -136,15 +136,18 @@ grow_horizontal = 0
 texture = ExtResource("3_kry3j")
 script = ExtResource("9_jkdf5")
 container = NodePath("ScrollContainer/VBoxContainer")
+scoller = NodePath("ScrollContainer")
 game = NodePath("../../..")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BG layer/UI layer/ToDoList" unique_id=1336885851]
+clip_contents = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.035
+anchor_left = 0.028
 anchor_top = 0.21
 anchor_right = 0.97
 anchor_bottom = 0.97
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 

@@ -34,65 +34,67 @@ offset_right = 468.0
 offset_bottom = 30.0
 texture = ExtResource("1_et2hn")
 script = ExtResource("2_x5snx")
-taskTitle = NodePath("HBoxContainer/titles/TaskTitle")
-taskDue = NodePath("HBoxContainer/titles/TaskSubtitle")
-taskPBar = NodePath("HBoxContainer/HBoxContainer/ProgressBar")
-taskPNum = NodePath("HBoxContainer/HBoxContainer/ProgressBar/Label")
-taskPDur = NodePath("HBoxContainer/HBoxContainer/HBoxContainer/ProgressDur")
-taskPCost = NodePath("HBoxContainer/HBoxContainer/HBoxContainer/ProgressButton/Label")
+taskTitle = NodePath("titles/TaskTitle")
+taskDue = NodePath("titles/TaskSubtitle")
+taskPBar = NodePath("HBoxContainer2/ProgressBar")
+taskPNum = NodePath("HBoxContainer2/ProgressBar/Label")
+taskPDur = NodePath("HBoxContainer2/HBoxContainer/ProgressDur")
+taskPCost = NodePath("HBoxContainer2/HBoxContainer/ProgressButton/Label")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1436943226]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = -15.0
-offset_right = 225.0
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
-
-[node name="titles" type="VBoxContainer" parent="HBoxContainer" unique_id=990017564]
-custom_minimum_size = Vector2(252, 30)
-layout_mode = 2
+[node name="titles" type="VBoxContainer" parent="." unique_id=990017564]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 1.5
+offset_right = 239.0
+offset_bottom = 38.5
 offset_transform_enabled = true
 theme_override_constants/separation = -2
 alignment = 1
 
-[node name="TaskTitle" type="Label" parent="HBoxContainer/titles" unique_id=284753327]
-custom_minimum_size = Vector2(252, 18)
+[node name="TaskTitle" type="Label" parent="titles" unique_id=284753327]
 layout_mode = 2
 text = "Task"
 label_settings = SubResource("LabelSettings_pkeh2")
 vertical_alignment = 3
-autowrap_mode = 3
+clip_text = true
 uppercase = true
 
-[node name="TaskSubtitle" type="Label" parent="HBoxContainer/titles" unique_id=2119757336]
-custom_minimum_size = Vector2(222, 12)
+[node name="TaskSubtitle" type="Label" parent="titles" unique_id=2119757336]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(12, 0)
+offset_transform_visual_only = false
 text = "1D left"
 label_settings = SubResource("LabelSettings_53qbn")
 vertical_alignment = 1
-autowrap_mode = 3
 uppercase = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=52916707]
-layout_mode = 2
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=52916707]
+custom_minimum_size = Vector2(220, 0)
+custom_maximum_size = Vector2(220, -1)
+propagate_maximum_size = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 5.5
+offset_top = -10.0
+offset_right = 225.5
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 31
+theme_override_constants/separation = 4
 
-[node name="ProgressBar" type="TextureProgressBar" parent="HBoxContainer/HBoxContainer" unique_id=833837614]
+[node name="ProgressBar" type="TextureProgressBar" parent="HBoxContainer2" unique_id=833837614]
 layout_mode = 2
 texture_under = ExtResource("2_qcn5x")
 texture_progress = ExtResource("3_x5snx")
 
-[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer/ProgressBar" unique_id=107224164]
+[node name="Label" type="Label" parent="HBoxContainer2/ProgressBar" unique_id=107224164]
 custom_minimum_size = Vector2(55, 12)
 layout_mode = 1
 anchors_preset = 8
@@ -112,27 +114,30 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/HBoxContainer" unique_id=605554587]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2" unique_id=605554587]
 layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
 
-[node name="ProgressDur" type="Label" parent="HBoxContainer/HBoxContainer/HBoxContainer" unique_id=1937243346]
+[node name="ProgressDur" type="Label" parent="HBoxContainer2/HBoxContainer" unique_id=1937243346]
 layout_mode = 2
-text = "1-2hr"
+size_flags_horizontal = 0
+text = "1-2minutes"
 label_settings = SubResource("LabelSettings_y8knx")
 uppercase = true
 
-[node name="TimerIcon" type="TextureRect" parent="HBoxContainer/HBoxContainer/HBoxContainer" unique_id=2045178293]
+[node name="TimerIcon" type="TextureRect" parent="HBoxContainer2/HBoxContainer" unique_id=2045178293]
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("4_0eaug")
 
-[node name="ProgressButton" type="TextureButton" parent="HBoxContainer/HBoxContainer/HBoxContainer" unique_id=486987844]
+[node name="ProgressButton" type="TextureButton" parent="HBoxContainer2/HBoxContainer" unique_id=486987844]
 layout_mode = 2
 texture_normal = ExtResource("2_qmqpt")
 texture_pressed = ExtResource("3_tnxfn")
 texture_hover = ExtResource("4_qcn5x")
 
-[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer/HBoxContainer/ProgressButton" unique_id=1816889474]
+[node name="Label" type="Label" parent="HBoxContainer2/HBoxContainer/ProgressButton" unique_id=1816889474]
 custom_minimum_size = Vector2(55, 12)
 layout_mode = 1
 anchors_preset = 8
@@ -152,4 +157,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[connection signal="pressed" from="HBoxContainer/HBoxContainer/HBoxContainer/ProgressButton" to="." method="_on_progres_pressed"]
+[connection signal="pressed" from="HBoxContainer2/HBoxContainer/ProgressButton" to="." method="_on_progres_pressed"]
