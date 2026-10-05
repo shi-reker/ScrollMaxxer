@@ -69,18 +69,21 @@ func _on_progres_pressed() -> void:
 		timeConsumed = 120
 		energyConsumed = 15
 	else:
-		if energy < 25:
-			return
-		if taskType == taskDetails.Tags.ROUTINE or taskType == taskDetails.Tags.REST:
+		if taskType == taskDetails.Tags.REST:
 			var randDur = randf_range(70, 90)
 			timeConsumed = int((randDur/100)*taskDetails.Len)
 			taskPBar.value += 100
-		else:
-			taskPBar.value += randi_range(15, 30)
-			timeConsumed = 4
-		if taskType == taskDetails.Tags.REST:
 			energyConsumed = -75
 		else:
+			if energy < 25:
+				return
+			if taskType == taskDetails.Tags.ROUTINE:
+				var randDur = randf_range(70, 90)
+				timeConsumed = int((randDur/100)*taskDetails.Len)
+				taskPBar.value += 100
+			else:
+				taskPBar.value += randi_range(15, 30)
+				timeConsumed = 4
 			energyConsumed = 25
 	
 	on_do_task.emit(timeConsumed, energyConsumed)
