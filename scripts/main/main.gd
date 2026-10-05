@@ -5,12 +5,13 @@ var hr:int = 23
 var day:int = 1
 var clockCounter:float = 0
 var score: int = 0
-var emotion: Enums.Emo = Enums.Emo.LIKE
+@onready var emotion: Enums.Emo = Enums.Emo.values().pick_random()
 
 var score_add: int = 100
 
 @export var cur_content: Content
 @export var content_manager: ContentManager
+@export var meme_manager: MemeManager
 @export var clock:Label
 
 func _process(delta: float) -> void:
@@ -56,4 +57,6 @@ func wrong_meme_animations():
 	pass
 
 func _on_content_manager_scrolled(new_content: Content) -> void:
-	pass # Replace with function body.
+	var content_genre: Enums.Genre = new_content.content_stats.genre
+	print_debug("new content genre is ", content_genre)
+	meme_manager.reload_memes(content_genre, emotion)

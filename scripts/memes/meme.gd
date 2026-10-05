@@ -14,7 +14,9 @@ class_name Meme
 func _ready() -> void:
 	_apply_stats()
 
-func _apply_stats() -> void:
+func _apply_stats(new_stats: MemeStats = null) -> void:
+	if new_stats != null:
+		meme_stats = new_stats 
 	if meme_stats == null:
 		return
 	var tex := meme_stats.texture
