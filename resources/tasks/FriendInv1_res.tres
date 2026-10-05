@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_0brpt")
-taskTitle = "Friend Invite 1"
-taskLen = 360.0
-taskDue = 480.0
+Title = "Attend Friend's Invitation"
+Len = 240.0
+Due = 300.0
+cat = 2
+tag = 3
 metadata/_custom_type_script = "uid://beqmt15xrtaio"

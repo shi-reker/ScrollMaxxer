@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_7v5u1")
-taskTitle = "Go to Class"
-taskLen = 150.0
-taskDue = 60.0
+Title = "Attend Class"
+Len = 150.0
+Due = 180.0
+cat = 1
+tag = 1
 metadata/_custom_type_script = "uid://beqmt15xrtaio"

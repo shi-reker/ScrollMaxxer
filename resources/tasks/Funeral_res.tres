@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_ekblr")
-taskTitle = "Attend Funeral"
-taskLen = 120.0
-taskDue = 720.0
+Title = "Attend Funeral"
+Len = 120.0
+Due = 240.0
+cat = 1
+tag = 3
 metadata/_custom_type_script = "uid://beqmt15xrtaio"

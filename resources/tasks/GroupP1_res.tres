@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_8sg7r")
-taskTitle = "Group Project 1"
-taskLen = 600.0
-taskDue = 5760.0
+Title = "Do Assignment"
+Len = 360
+Due = 4320
+cat = 2
+tag = 2
 metadata/_custom_type_script = "uid://beqmt15xrtaio"

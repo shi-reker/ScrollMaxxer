@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_iyage")
-taskTitle = "Clean the Room"
-taskLen = 20.0
-taskDue = 90.0
+Title = "Clean the Room"
+Len = 20.0
+Due = 90.0
 metadata/_custom_type_script = "uid://beqmt15xrtaio"

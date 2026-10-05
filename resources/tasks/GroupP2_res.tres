@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Task_base" format=3 uid="uid://bkp2w054gps7u"]
+
+[ext_resource type="Script" uid="uid://beqmt15xrtaio" path="res://resources/tasks/task_base_res.gd" id="1_ahm25"]
+
+[resource]
+script = ExtResource("1_ahm25")
+Title = "Do Assignment"
+Len = 480.0
+Due = 4320.0
+cat = 2
+tag = 2
+metadata/_custom_type_script = "uid://beqmt15xrtaio"

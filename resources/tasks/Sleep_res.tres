@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_mdxiu")
-taskTitle = "Sleep"
-taskLen = 420.0
-taskDue = 480.0
+Title = "Sleep"
+Len = 360.0
+Due = 420.0
+cat = 2
+tag = 1
 metadata/_custom_type_script = "uid://beqmt15xrtaio"
