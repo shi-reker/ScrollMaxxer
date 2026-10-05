@@ -1,7 +1,7 @@
 extends TextureRect
 
 @export var container:VBoxContainer
-@export var game:Node2D
+@export var game:Main
 
 var task = preload("res://Scenes/tasks.tscn")
 var clock:float
@@ -12,8 +12,12 @@ func _process(delta: float) -> void:
 	if count >= 5:
 		print_debug(count)
 		var newTask = task.instantiate()
+		newTask.on_do_task.connect(setTime)
 		container.add_child(newTask)
 		count = 0
 
 func getTime():
-	pass
+	return game.hr
+
+func setTime(minute):
+	game.min += minute

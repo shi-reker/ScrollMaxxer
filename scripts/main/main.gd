@@ -1,10 +1,12 @@
 extends Node2D
+class_name Main
 
 var min:int = 0
 var hr:int = 23
 var day:int = 1
 var clockCounter:float = 0
 var score: int = 0
+var energy:int = 100
 var emotion: Enums.Emo = Enums.Emo.LIKE
 
 var score_add: int = 100
@@ -12,6 +14,10 @@ var score_add: int = 100
 @export var cur_content: Content
 @export var content_manager: ContentManager
 @export var clock:Label
+@export var energyBar:TextureProgressBar
+
+func _ready() -> void:
+	energyBar.value = energy
 
 func _process(delta: float) -> void:
 	if clockCounter >= 0.5:
@@ -35,12 +41,12 @@ func update_score():
 
 func update_clock():
 	min+=1
-	if min == 60:
+	while min >= 60:
 		hr+=1
-		min = 0
-	if hr == 24:
+		min -= 60
+	while hr >= 24:
 		day +=1
-		hr = 0
+		hr -= 24
 	var strMin:String = str(min)
 	var strHR:String = str(hr)
 	if min < 10:

@@ -12,6 +12,8 @@ var taskCategory:Task_base.Category
 var taskType:Task_base.Tags
 var isInstant:bool = false
 
+signal on_do_task(time:int)
+
 func _ready() -> void:
 	taskDetails = load("res://resources/tasks/Sleep_res.tres")
 	taskTitle.text = str(taskDetails.Title)
@@ -39,21 +41,27 @@ func _ready() -> void:
 	taskPNum.text = "0"
 
 func _on_progres_pressed() -> void:
+	var timeConsumed:int
+	
 	if isInstant:
 		taskPBar.value += 100
+		timeConsumed = int(taskDetails.Len)
 	elif taskCategory == taskDetails.Category.MEDIUM:
 		if taskType == taskDetails.Tags.ROUTINE:
 			taskPBar.value += 100
 		else:
 			taskPBar.value += randi_range(30, 60)
+		timeConsumed = 120
 	else:
 		if taskType == taskDetails.Tags.ROUTINE:
-			var randDur = randf_range(60, 90)
-			var timeConsumed = (randDur/100)*taskDetails.Len
-			print_debug(timeConsumed)
+			var randDur = randf_range(70, 90)
+			timeConsumed = int((randDur/100)*taskDetails.Len)
 			taskPBar.value += 100
 		else:
 			taskPBar.value += randi_range(15, 30)
+			timeConsumed = 4
+	
+	on_do_task.emit(timeConsumed)
 	
 	if taskPBar.value >= 100:
 		queue_free()
