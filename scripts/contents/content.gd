@@ -9,14 +9,23 @@ class_name Content
 	set(value):
 		content_stats = value
 		if sprite and value:
-			sprite.texture = value.texture
-			_resize_sprite_to_fit()
+			_apply_stats()
 		
 func _ready() -> void:
 	# Safely apply the texture now that everything is initialized
 	if content_stats and sprite:
-		sprite.texture = content_stats.texture
-		_resize_sprite_to_fit()
+		_apply_stats()
+
+func _apply_stats(new_stats: ContentStats = null) -> void:
+	if new_stats != null:
+		content_stats = new_stats 
+	if content_stats == null:
+		return
+	var tex := content_stats.texture
+
+	if sprite and sprite.texture != tex:
+		sprite.texture = tex
+	_resize_sprite_to_fit()
 
 func _resize_sprite_to_fit() -> void:
 	if not sprite:
