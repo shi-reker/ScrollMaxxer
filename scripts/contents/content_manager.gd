@@ -9,10 +9,17 @@ class_name ContentManager
 @onready var top_content: Content = content1
 @onready var btm_content: Content = content2
 
+var leftover_content: Array = Enums.Content.values()
+var content_history: Dictionary[Enums.Content, bool] = {}
+
 signal scrolled(new_content: Content)
 
 
 var is_scrolling: bool = false
+
+func _ready() -> void:
+	add_new_content(content1)
+	add_new_content(content2)
 
 func next_content() -> void:
 	if is_scrolling:
@@ -32,4 +39,18 @@ func next_content() -> void:
 	top_content = incoming_content
 	btm_content = outgoing_content
 	is_scrolling = false
+	
+	add_new_content(btm_content)
+	
 	scrolled.emit(btm_content)
+
+func add_new_content(content_node: Content):
+	var new_content: ContentStats = random_content()
+	content_node.content_stats = new_content
+
+func random_content() -> ContentStats:
+	var new_content: Enums.Content = leftover_content.pick_random()
+	leftover_content.erase(new_content)
+	content_history[new_content] = true
+	var content_stats: ContentStats = Enums.content_resource[new_content]
+	return content_stats
