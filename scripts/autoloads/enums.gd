@@ -86,3 +86,17 @@ var meme_resource: Dictionary[Enums.Meme, MemeStats] = {
 	Meme.DUMMY_MEME_19: preload("res://resources/memes/dummy_meme_19.tres"),
 	Meme.DUMMY_MEME_20: preload("res://resources/memes/dummy_meme_20.tres")
 }
+
+var meme_of_g_and_e: Dictionary = {} # {Emo: {Genre: [MemeStats]}}
+func load_meme_genre_emo():
+	for m in Meme.values():
+		var s: MemeStats = meme_resource[m]
+		var e = s.emo
+		var g = s.genre
+		meme_of_g_and_e.get_or_add(e, {}).get_or_add(g, []).append(m)
+	#print_debug("memes of emotion", Emo.find_key(0), " and ", Genre.find_key(0), ": ", meme_of_g_and_e[0][0])
+
+
+
+func _ready() -> void:
+	load_meme_genre_emo()
