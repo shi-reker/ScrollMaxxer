@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MemeStats" format=3 uid="uid://mi5n5i3jy26q"]
+
+[ext_resource type="Script" uid="uid://c4ihs3gryf5a1" path="res://scripts/memes/meme_stats.gd" id="1_script"]
+
+[sub_resource type="Gradient" id="Gradient_315"]
+colors = PackedColorArray(0.3471, 0.2944, 0.92, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture_315"]
+gradient = SubResource("Gradient_315")
+width = 320
+height = 560
+
+[resource]
+script = ExtResource("1_script")
+code = 19
+texture = SubResource("GradientTexture_315")

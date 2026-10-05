@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ContentStats" format=3 uid="uid://wh78aceq34nv"]
+
+[ext_resource type="Script" uid="uid://ndmawvh5mick" path="res://scripts/contents/content_stats.gd" id="1_script"]
+
+[sub_resource type="Gradient" id="Gradient_102"]
+colors = PackedColorArray(0.92, 0.442543, 0.2944, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture_102"]
+gradient = SubResource("Gradient_102")
+width = 160
+height = 160
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[resource]
+script = ExtResource("1_script")
+code = 7
+genre = 2
+texture = SubResource("GradientTexture_102")
