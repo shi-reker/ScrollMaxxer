@@ -209,6 +209,7 @@ grow_vertical = 2
 fill_mode = 3
 texture_under = ExtResource("16_k12tt")
 texture_progress = ExtResource("17_h1bgf")
+texture_progress_offset = Vector2(7, 8)
 
 [node name="EnergyLabel" type="Label" parent="BG layer/UI layer/EnergyBar" unique_id=810380507]
 layout_mode = 1

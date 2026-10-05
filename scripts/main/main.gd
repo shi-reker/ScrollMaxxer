@@ -21,9 +21,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if clockCounter >= 0.5:
-		update_clock()
+		min+=1
+		update_clock_and_energy()
 		clockCounter = 0
-		print_debug(min)
 	clockCounter += delta
 
 func _on_meme_manager_meme_selected(meme: Meme) -> void:
@@ -39,8 +39,7 @@ func update_score():
 	score += score_add
 	print("score is ", score)
 
-func update_clock():
-	min+=1
+func update_clock_and_energy():
 	while min >= 60:
 		hr+=1
 		min -= 60
@@ -53,6 +52,10 @@ func update_clock():
 		strMin = "0" +str(min)
 	if hr < 10:
 		strHR = "0" +str(hr)
+	
+	if energy > 100:
+		energy = 100
+	energyBar.value = energy
 	clock.text = "D" +str(day)+ " - " +strHR+ ":" +strMin
 
 func correct_meme_animations():
