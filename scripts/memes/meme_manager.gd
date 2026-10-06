@@ -26,6 +26,7 @@ func reload_memes(content_genre: Enums.Genre, emotion: Enums.Emo):
 	
 	print(Enums.Emo.find_key(emotion), Enums.Genre.find_key(content_genre))
 	var correct_meme: Enums.Meme = Enums.meme_of_g_and_e[content_genre][emotion].pick_random()
+	var correct_meme: Enums.Meme = Enums.meme_of_g_and_e[0][0].pick_random()
 	print("correct meme is")
 	
 	leftover_memes.erase(correct_meme)
@@ -61,7 +62,7 @@ func add_random_effect():
 		return
 	is_effect_exist = true
 	existing_effect = Enums.Effect.values().pick_random()
-	existing_effect = Enums.Effect.MORE_ENERGY
+	existing_effect = Enums.Effect.ZERO_ENERGY
 	effected_meme = meme_nodes.pick_random()
 	effected_meme.prepaire_effect(texture_of_effect[existing_effect])
 	

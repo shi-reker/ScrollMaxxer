@@ -7,6 +7,8 @@ class_name Task
 @export var taskPNum:Label
 @export var taskPDur:Label
 @export var taskPCost:Label
+@export var freeTex:TextureRect
+
 var taskDetails:Task_base
 var taskCategory:Task_base.Category
 var taskType:Task_base.Tags
@@ -15,6 +17,14 @@ var time:int
 var startTime:int
 var currDay:int
 var startDay:int
+
+@onready var is_zero_energy: bool = false:
+	set(value):
+		is_zero_energy = value
+		if value == true:
+			freeTex.show()
+		else :
+			freeTex.hide()
 
 signal req_resources()
 signal on_do_task(tc:int, ec:int)

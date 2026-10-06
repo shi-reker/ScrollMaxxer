@@ -48,7 +48,7 @@ func _on_meme_manager_meme_selected(meme: Meme) -> void:
 		
 	if meme_manager.is_effect_exist:
 		var effect: Enums.Effect = meme_manager.existing_effect
-		effect_manager.add_effect(effect)
+		effect_manager.add_effect(effect, self)
 		
 	content_manager.next_content()
 
