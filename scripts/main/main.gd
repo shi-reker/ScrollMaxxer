@@ -25,6 +25,10 @@ var combo: int = 0
 @export var energyBar:EnergyBar
 @export var combo_counter: ComboCounter
 @export var effect_manager: EffectManager
+@export var pause:TextureButton
+
+func _ready() -> void:
+	energy = energy
 
 func _process(delta: float) -> void:
 	if clockCounter >= 0.5:
@@ -86,3 +90,11 @@ func _on_content_manager_scrolled(new_content: Content) -> void:
 	var content_genre: Enums.Genre = new_content.content_stats.genre
 	print_debug("new content genre is ", content_genre)
 	meme_manager.reload_memes(content_genre, emotion)
+
+func _on_pause_button_pressed() -> void:
+	var pauseLayer = CanvasLayer.new()
+	var pauseScene = load("res://Scenes/pause_menu.tscn")
+	var pauseMenu = pauseScene.instantiate()
+	pauseLayer.add_child(pauseMenu)
+	get_tree().root.add_child(pauseLayer)
+	get_tree().paused = true

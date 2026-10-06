@@ -10,10 +10,11 @@ class_name Task
 var taskDetails:Task_base
 var taskCategory:Task_base.Category
 var taskType:Task_base.Tags
-var isInstant:bool = false
 var energy:int
 var time:int
 var startTime:int
+var currDay:int
+var startDay:int
 
 signal req_resources()
 signal on_do_task(tc:int, ec:int)
@@ -24,9 +25,10 @@ func printDue(due):
 	else:
 		taskDue.text = "%.1f HR" % (due/60)
 
-func GetResources(t:int, e:int):
+func GetResources(t:int, e:int, d:int):
 	time = t
 	energy = e
+	currDay = d
 
 func Setup(task:String):
 	taskDetails = load(task)
@@ -36,13 +38,15 @@ func Setup(task:String):
 	if taskDetails.Len <= 60:
 		taskPDur.text = str(int(taskDetails.Len))+ "minutes"
 		taskPCost.text = "5e"
-		isInstant = true
+		texture = load("res://assets/UI/task bg short.png")
 	elif taskDetails.Len <= 240:
 		taskPDur.text = "2hr"
 		taskPCost.text = "15e"
+		texture = load("res://assets/UI/task bg medium.png")
 	else:
 		taskPDur.text = "4hr"
 		taskPCost.text = "25e"
+		texture = load("res://assets/UI/tasks bg long.png")
 	
 	taskCategory = taskDetails.cat
 	taskType = taskDetails.tag
@@ -52,9 +56,10 @@ func Setup(task:String):
 	taskPNum.text = "0"
 	req_resources.emit()
 	startTime = time
-	print_debug(startTime)
-	print_debug(taskDetails.Due)
-	print_debug((startTime+taskDetails.Due)/60)
+	startDay = currDay
+	#print_debug(startTime)
+	#print_debug(taskDetails.Due)
+	#print_debug((startTime+taskDetails.Due)/60)
 
 func ResolveTaskShort():
 	if energy < 5:
@@ -95,7 +100,7 @@ func _on_progres_pressed() -> void:
 	var energyConsumed:int
 	
 	if taskType == taskDetails.Tags.REST:
-		
+		#print_debug("rest")
 		match taskCategory:
 			taskDetails.Category.MEDIUM:
 				timeConsumed = 120
@@ -108,18 +113,24 @@ func _on_progres_pressed() -> void:
 				energyConsumed = -75
 				taskPBar.value += 100
 	else:
+		#print_debug("not rest")
 		var consumption
 		match taskCategory:
 			taskDetails.Category.SHORT:
 				consumption = ResolveTaskShort()
+				#print_debug("short")
 			
 			taskDetails.Category.MEDIUM:
 				consumption = ResolveTaskMed()
+				#print_debug("med")
 			
 			taskDetails.Category.LONG:
 				consumption = ResolveTaskLong()
+				#print_debug("long")
 		
+		print_debug(energy)
 		if !consumption:
+			#print_debug("fuck")
 			return
 		energyConsumed = consumption[0]
 		timeConsumed = consumption[1]
@@ -130,9 +141,11 @@ func _on_progres_pressed() -> void:
 		queue_free()
 
 func DueTimerTick(hr:int):
+	#if taskDetails.Due > 1440:
 	
 	if startTime + taskDetails.Due <= hr:
-		print_debug(taskDetails.Title+": "+str(startTime)+", "+ str(taskDetails.Due) +", "+ str(hr))
+		#print_debug(taskDetails.Title+": "+str(startTime)+", "+ str(taskDetails.Due) +", "+ str(hr))
 		queue_free()
 	else:
+		
 		printDue(((taskDetails.Due + startTime) - hr))

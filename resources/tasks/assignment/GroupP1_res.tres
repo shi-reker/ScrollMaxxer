@@ -8,5 +8,5 @@ Title = "Do Assignment"
 Len = 60.0
 Due = 480.0
 tag = 2
-availability = 5
+availability = 2
 metadata/_custom_type_script = "uid://beqmt15xrtaio"
