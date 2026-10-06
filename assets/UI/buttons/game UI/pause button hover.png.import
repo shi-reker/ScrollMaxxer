@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bguqar30gvcl"
-path="res://.godot/imported/progress button idle.png-892b9696613cf9eec9a2dc81b30498cd.ctex"
+uid="uid://cjb4qg6p1b7k1"
+path="res://.godot/imported/pause button hover.png-fee0bede9f78fb1f49128c69d63462b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/buttons/progress button idle.png"
-dest_files=["res://.godot/imported/progress button idle.png-892b9696613cf9eec9a2dc81b30498cd.ctex"]
+source_file="res://assets/UI/buttons/game UI/pause button hover.png"
+dest_files=["res://.godot/imported/pause button hover.png-fee0bede9f78fb1f49128c69d63462b6.ctex"]
 
 [params]
 

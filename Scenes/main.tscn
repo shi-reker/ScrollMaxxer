@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://cb117cfpp711r" path="res://assets/bg.png" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://o0yc37veosdo" path="res://scripts/main/main.gd" id="1_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://b42bvx5casoii" path="res://assets/UI/time display.png" id="2_8gbba"]
-[ext_resource type="Texture2D" uid="uid://dguitcytixnqs" path="res://assets/UI/buttons/pause button idle.png" id="3_21xkr"]
 [ext_resource type="Texture2D" uid="uid://c1sb1m51vcy46" path="res://assets/UI/todo list.png" id="3_kry3j"]
-[ext_resource type="Texture2D" uid="uid://dmis4cubkd2gt" path="res://assets/UI/buttons/pause button pressed.png" id="4_6bp64"]
-[ext_resource type="Texture2D" uid="uid://b3p4uvsewasng" path="res://assets/UI/buttons/pause button hover.png" id="5_344ge"]
+[ext_resource type="Texture2D" uid="uid://d1vq3ruqs74m4" path="res://assets/UI/buttons/game UI/pause button idle.png" id="5_h1bgf"]
+[ext_resource type="Texture2D" uid="uid://di3uabyqljvgt" path="res://assets/UI/buttons/game UI/pause button pressed.png" id="6_b3802"]
+[ext_resource type="Texture2D" uid="uid://cjb4qg6p1b7k1" path="res://assets/UI/buttons/game UI/pause button hover.png" id="7_fevyy"]
 [ext_resource type="Script" uid="uid://c8h8apjpiq1fh" path="res://scripts/memes/meme_manager.gd" id="8_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://kgvldap8jw00" path="res://Scenes/meme.tscn" id="8_hptm8"]
 [ext_resource type="Texture2D" uid="uid://b634dd6vetnnr" path="res://assets/UI/score display.png" id="8_ynf5e"]
@@ -121,9 +121,9 @@ anchor_bottom = 0.016
 offset_left = -78.0
 offset_bottom = 44.0
 grow_horizontal = 0
-texture_normal = ExtResource("3_21xkr")
-texture_pressed = ExtResource("4_6bp64")
-texture_hover = ExtResource("5_344ge")
+texture_normal = ExtResource("5_h1bgf")
+texture_pressed = ExtResource("6_b3802")
+texture_hover = ExtResource("7_fevyy")
 
 [node name="ToDoList" type="TextureRect" parent="BG layer/UI layer" unique_id=678806263 node_paths=PackedStringArray("container", "scoller", "game")]
 anchors_preset = -1

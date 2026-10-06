@@ -2,7 +2,7 @@ extends Node2D
 class_name Main
 
 var min:int = 0
-var hr:int = 23
+var hr:int = 6
 var day:int = 1
 var clockCounter:float = 0
 var score: int = 0

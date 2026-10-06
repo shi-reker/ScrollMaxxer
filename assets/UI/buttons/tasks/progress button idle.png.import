@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvh7vx217cqvk"
-path="res://.godot/imported/progress button pressed.png-547b1560d35ef2b07fe575f34b313ed5.ctex"
+uid="uid://sh3c0simb568"
+path="res://.godot/imported/progress button idle.png-16f0f290ad950f272c396b3828fd2e0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/buttons/progress button pressed.png"
-dest_files=["res://.godot/imported/progress button pressed.png-547b1560d35ef2b07fe575f34b313ed5.ctex"]
+source_file="res://assets/UI/buttons/tasks/progress button idle.png"
+dest_files=["res://.godot/imported/progress button idle.png-16f0f290ad950f272c396b3828fd2e0c.ctex"]
 
 [params]
 
