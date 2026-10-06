@@ -14,6 +14,7 @@ var isInstant:bool = false
 var energy:int
 var time:int
 var startTime:int
+var startDay:int
 
 signal req_resources()
 signal on_do_task(tc:int, ec:int)
@@ -24,9 +25,10 @@ func printDue(due):
 	else:
 		taskDue.text = "%.1f HR" % (due/60)
 
-func GetResources(t:int, e:int):
+func GetResources(t:int, e:int, d:int):
 	time = t
 	energy = e
+	startDay = d
 
 func Setup(task:String):
 	taskDetails = load(task)
@@ -52,9 +54,9 @@ func Setup(task:String):
 	taskPNum.text = "0"
 	req_resources.emit()
 	startTime = time
-	print_debug(startTime)
-	print_debug(taskDetails.Due)
-	print_debug((startTime+taskDetails.Due)/60)
+	#print_debug(startTime)
+	#print_debug(taskDetails.Due)
+	#print_debug((startTime+taskDetails.Due)/60)
 
 func ResolveTaskShort():
 	if energy < 5:
@@ -130,9 +132,11 @@ func _on_progres_pressed() -> void:
 		queue_free()
 
 func DueTimerTick(hr:int):
+	#if taskDetails.Due > 1440:
 	
 	if startTime + taskDetails.Due <= hr:
 		print_debug(taskDetails.Title+": "+str(startTime)+", "+ str(taskDetails.Due) +", "+ str(hr))
 		queue_free()
 	else:
+		
 		printDue(((taskDetails.Due + startTime) - hr))

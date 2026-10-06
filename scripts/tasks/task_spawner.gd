@@ -31,14 +31,14 @@ var tasksByTags:Dictionary[Task_base.Tags, Array] = {
 
 var tasksByTime:Dictionary[Task_base.GenTime, Array] = {
 	Task_base.GenTime.ANY: [
-		"res://resources/tasks/assignment/GroupP1_res.tres", "res://resources/tasks/chore/Cleanup_res.tres",
+		"res://resources/tasks/chore/Cleanup_res.tres",
 		"res://resources/tasks/chore/Dishes_res.tres"
 	],
 	Task_base.GenTime.MORNING: [
-		
+		"res://resources/tasks/assignment/GroupP2_res.tres"
 	],
 	Task_base.GenTime.NOON: [
-		"res://resources/tasks/rest/Nap_res.tres"
+		"res://resources/tasks/rest/Nap_res.tres", "res://resources/tasks/assignment/GroupP1_res.tres"
 	],
 	Task_base.GenTime.EVENING: [
 		
@@ -47,11 +47,11 @@ var tasksByTime:Dictionary[Task_base.GenTime, Array] = {
 		
 	],
 	Task_base.GenTime.M_NO: [
-		"res://resources/tasks/random event/Funeral_res.tres", "res://resources/tasks/assignment/GroupP4_res.tres",
-		"res://resources/tasks/assignment/GroupP3_res.tres", "res://resources/tasks/routine/Gotoclass_res.tres"
+		"res://resources/tasks/random event/Funeral_res.tres", "res://resources/tasks/assignment/GroupP3_res.tres",
+		"res://resources/tasks/routine/Gotoclass_res.tres"
 	],
 	Task_base.GenTime.NO_E: [
-		"res://resources/tasks/random event/FriendInv1_res.tres", "res://resources/tasks/assignment/GroupP2_res.tres"
+		"res://resources/tasks/random event/FriendInv1_res.tres"
 	],
 	Task_base.GenTime.E_NI: [
 		"res://resources/tasks/rest/Sleep_res.tres"
