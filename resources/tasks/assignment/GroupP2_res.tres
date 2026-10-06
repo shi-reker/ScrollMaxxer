@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_ahm25")
 Title = "Do Assignment"
-Len = 480.0
-Due = 4320.0
-cat = 2
+Len = 120.0
+Due = 1440.0
+cat = 1
 tag = 2
-availability = 6
+availability = 5
 metadata/_custom_type_script = "uid://beqmt15xrtaio"
