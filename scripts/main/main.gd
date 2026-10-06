@@ -2,7 +2,7 @@ extends Node2D
 class_name Main
 
 var min:int = 0
-var hr:int = 23
+var hr:int = 6
 var day:int = 1
 var clockCounter:float = 0
 var score: int = 0
@@ -12,9 +12,10 @@ var energy:int = 100:
 		energy = value
 		energyBar.update_energy_counter(value)
 
+var score_add: int = 100
 @onready var emotion: Enums.Emo = Enums.Emo.values().pick_random()
 
-var score_add: int = 100
+signal hourhand(t:int)
 
 @export var cur_content: Content
 @export var content_manager: ContentManager
@@ -46,6 +47,7 @@ func update_clock_and_energy():
 	while min >= 60:
 		hr+=1
 		min -= 60
+		hourhand.emit(hr)
 	while hr >= 24:
 		day +=1
 		hr -= 24

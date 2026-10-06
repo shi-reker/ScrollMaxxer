@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b3jyfwtun883k"]
+
+[ext_resource type="Texture2D" uid="uid://b15p0ls158fwn" path="res://assets/main menu bg.png" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://hkqiqixrst0e" path="res://assets/UI/buttons/main menu/start button idle.png" id="2_16hvj"]
+[ext_resource type="Script" uid="uid://b1deoimnyhwv5" path="res://scripts/menus/main_menu.gd" id="2_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://c25a02axgdpbs" path="res://assets/UI/buttons/main menu/start button pressed.png" id="3_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://drdq33v508su8" path="res://assets/UI/buttons/main menu/start button hover.png" id="4_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://d3ehkekj4h85v" path="res://assets/UI/buttons/main menu/options button idle.png" id="5_5egv6"]
+[ext_resource type="Texture2D" uid="uid://dia14owqooalr" path="res://assets/UI/buttons/main menu/options button pressed.png" id="6_vtepg"]
+[ext_resource type="Texture2D" uid="uid://bpq54wbc3n8r3" path="res://assets/UI/buttons/main menu/options button hover.png" id="7_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://dhkk2hysc0ygb" path="res://assets/UI/buttons/main menu/quit button idle.png" id="8_m3bi6"]
+[ext_resource type="Texture2D" uid="uid://nqwxpjcl4jkm" path="res://assets/UI/buttons/main menu/quit button pressed.png" id="9_wyh8j"]
+[ext_resource type="Texture2D" uid="uid://nf7ppjpjl03x" path="res://assets/UI/buttons/main menu/quit button hover.png" id="10_ujyyl"]
+
+[node name="MainMenu" type="TextureRect" unique_id=1161290684 node_paths=PackedStringArray("playButton", "optButton", "quitButton")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_28flt")
+script = ExtResource("2_vr1f0")
+playButton = NodePath("VBoxContainer/Start")
+optButton = NodePath("VBoxContainer/Options")
+quitButton = NodePath("VBoxContainer/Quit")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1297307673]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="Start" type="TextureButton" parent="VBoxContainer" unique_id=1946824858]
+layout_mode = 2
+texture_normal = ExtResource("2_16hvj")
+texture_pressed = ExtResource("3_vr1f0")
+texture_hover = ExtResource("4_t1dhk")
+
+[node name="Options" type="TextureButton" parent="VBoxContainer" unique_id=2014574198]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_5egv6")
+texture_pressed = ExtResource("6_vtepg")
+texture_hover = ExtResource("7_8dnnj")
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer" unique_id=198914473]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_m3bi6")
+texture_pressed = ExtResource("9_wyh8j")
+texture_hover = ExtResource("10_ujyyl")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

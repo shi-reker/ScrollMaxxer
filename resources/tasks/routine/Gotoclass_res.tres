@@ -9,4 +9,5 @@ Len = 150.0
 Due = 180.0
 cat = 1
 tag = 1
+availability = 5
 metadata/_custom_type_script = "uid://beqmt15xrtaio"

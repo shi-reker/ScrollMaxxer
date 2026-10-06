@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3p4uvsewasng"
-path="res://.godot/imported/pause button hover.png-9d33534d187fec0697213c8ed0d72f9a.ctex"
+uid="uid://dhkk2hysc0ygb"
+path="res://.godot/imported/quit button idle.png-439f7ff2fe5962a50baf061e282c4fc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/buttons/pause button hover.png"
-dest_files=["res://.godot/imported/pause button hover.png-9d33534d187fec0697213c8ed0d72f9a.ctex"]
+source_file="res://assets/UI/buttons/main menu/quit button idle.png"
+dest_files=["res://.godot/imported/quit button idle.png-439f7ff2fe5962a50baf061e282c4fc1.ctex"]
 
 [params]
 
