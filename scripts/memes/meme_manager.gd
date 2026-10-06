@@ -9,6 +9,11 @@ var leftover_memes: Array = Enums.Meme.values()
 var memes_on_hand: Array[Enums.Meme] = []
 var meme_nodes: Array[Meme] = []
 
+var rng = RandomNumberGenerator.new()
+var effected_meme: Meme = null
+var is_effect_exist: bool = false
+var existing_effect: Enums.Effect
+
 func _ready() -> void:
 	for meme in get_children():
 		if meme is Meme:
@@ -34,6 +39,8 @@ func reload_memes(content_genre: Enums.Genre, emotion: Enums.Emo):
 		else:
 			new_meme_stats = random_meme()
 		meme.meme_stats = new_meme_stats
+	
+	add_random_effect()
 
 func random_meme() -> MemeStats:
 	var new_meme = leftover_memes.pick_random()
@@ -46,7 +53,27 @@ func generate_correct_meme(content_genre: Enums.Genre, emotion: Enums.Emo) -> En
 	var candidates: Array[Enums.Meme] = Enums.meme_of_g_and_e[content_genre][emotion]
 	return candidates.pick_random()
 	
-
+func add_random_effect():
+	if effected_meme != null:
+		effected_meme.remove_effect()
+	if 0 == (randi() % 2):
+		is_effect_exist = false
+		return
+	is_effect_exist = true
+	existing_effect = Enums.Effect.values().pick_random()
+	existing_effect = Enums.Effect.MORE_ENERGY
+	effected_meme = meme_nodes.pick_random()
+	effected_meme.prepaire_effect(texture_of_effect[existing_effect])
+	
+	
+	
 func _on_meme_pressed(pressed_meme: Meme) -> void:
 	print_debug(pressed_meme.meme_stats.code)
 	meme_selected.emit(pressed_meme)
+
+var texture_of_effect: Dictionary[Enums.Effect, Texture2D] = {
+	Enums.Effect.MORE_ENERGY: load("res://assets/temp_effect_sprite.tres"),
+	Enums.Effect.ZERO_ENERGY : load("res://assets/temp_effect_sprite.tres"),
+	Enums.Effect.TIME_STOP: load("res://assets/temp_effect_sprite.tres"),
+	Enums.Effect.FINNISH_TASK: load("res://assets/temp_effect_sprite.tres"),
+}

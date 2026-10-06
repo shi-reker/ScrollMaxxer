@@ -24,6 +24,7 @@ var combo: int = 0
 @export var clock:Label
 @export var energyBar:EnergyBar
 @export var combo_counter: ComboCounter
+@export var effect_manager: EffectManager
 
 func _process(delta: float) -> void:
 	if clockCounter >= 0.5:
@@ -39,6 +40,11 @@ func _on_meme_manager_meme_selected(meme: Meme) -> void:
 		correct_meme_animations()
 	else:
 		wrong_meme_animations()
+		
+	if meme_manager.is_effect_exist:
+		var effect: Enums.Effect = meme_manager.existing_effect
+		effect_manager.add_effect(effect)
+		
 	content_manager.next_content()
 
 func update_score():

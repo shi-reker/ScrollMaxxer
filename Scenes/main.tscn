@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cio0vle2etfd2" path="res://assets/UI/energy bar empty.png" id="16_k12tt"]
 [ext_resource type="Texture2D" uid="uid://bnk3bijegpm7t" path="res://assets/UI/energy bar fill.png" id="17_h1bgf"]
 [ext_resource type="Script" uid="uid://c1o0exdrug8nc" path="res://scripts/energy_bar.gd" id="18_hibaj"]
+[ext_resource type="Script" uid="uid://bca1gqk2wtdgm" path="res://scripts/effect_manager.gd" id="19_fevyy"]
 
 [sub_resource type="SystemFont" id="SystemFont_pkeh2"]
 subpixel_positioning = 0
@@ -33,13 +34,14 @@ subpixel_positioning = 0
 font = SubResource("SystemFont_c53bp")
 font_size = 24
 
-[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar")]
+[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "combo_counter", "effect_manager")]
 script = ExtResource("1_fdnlq")
 cur_content = NodePath("BG layer/UI layer/ContentManager/ContentList/Content")
 content_manager = NodePath("BG layer/UI layer/ContentManager")
 meme_manager = NodePath("BG layer/UI layer/MemeManager")
 clock = NodePath("BG layer/UI layer/TimeCounter/Date&TimeText")
 energyBar = NodePath("BG layer/UI layer/EnergyBar")
+effect_manager = NodePath("EffectManager")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1863998892]
 anchor_mode = 0
@@ -228,6 +230,9 @@ offset_right = 31.0
 offset_bottom = -8.0
 text = "Energy"
 uppercase = true
+
+[node name="EffectManager" type="Node" parent="." unique_id=744317371]
+script = ExtResource("19_fevyy")
 
 [connection signal="meme_selected" from="BG layer/UI layer/MemeManager" to="." method="_on_meme_manager_meme_selected"]
 [connection signal="scrolled" from="BG layer/UI layer/ContentManager" to="." method="_on_content_manager_scrolled"]
