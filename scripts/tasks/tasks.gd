@@ -26,7 +26,7 @@ func Setup(task:String):
 		taskDue.text = str(taskDetails.Due/60)+ "HR"
 	
 	if taskDetails.Len < 60:
-		taskPDur.text = str(taskDetails.Len)+ "minutes"
+		taskPDur.text = str(int(taskDetails.Len))+ "minutes"
 		taskPCost.text = "5e"
 		isInstant = true
 	elif taskDetails.Len < 240:
@@ -49,26 +49,34 @@ func GetResources(t:int, e:int):
 
 func _on_progres_pressed() -> void:
 	req_resources.emit()
-	if energy < 5:
-		return
 	
 	var timeConsumed:int
 	var energyConsumed:int
 	
 	if isInstant:
+		if energy < 5:
+			return
 		taskPBar.value += 100
 		timeConsumed = int(taskDetails.Len)
 		energyConsumed = 5
 	elif taskCategory == taskDetails.Category.MEDIUM:
-		if energy < 15:
-			return
-		if taskType == taskDetails.Tags.ROUTINE:
+		
+		if taskType == taskDetails.Tags.REST:
 			taskPBar.value += 100
+			energyConsumed = -25
 		else:
-			taskPBar.value += randi_range(30, 60)
+			if energy < 15:
+				return
+			if taskType == taskDetails.Tags.ROUTINE or taskType == taskDetails.Tags.RANDOM_EVENT:
+				taskPBar.value += 100
+			else:
+				taskPBar.value += randi_range(30, 60)
+			
+			energyConsumed = 15
+		
 		timeConsumed = 120
-		energyConsumed = 15
 	else:
+		
 		if taskType == taskDetails.Tags.REST:
 			var randDur = randf_range(70, 90)
 			timeConsumed = int((randDur/100)*taskDetails.Len)
@@ -77,13 +85,14 @@ func _on_progres_pressed() -> void:
 		else:
 			if energy < 25:
 				return
-			if taskType == taskDetails.Tags.ROUTINE:
+			if taskType == taskDetails.Tags.ROUTINE or taskType == taskDetails.Tags.RANDOM_EVENT:
 				var randDur = randf_range(70, 90)
 				timeConsumed = int((randDur/100)*taskDetails.Len)
 				taskPBar.value += 100
 			else:
 				taskPBar.value += randi_range(15, 30)
-				timeConsumed = 4
+				timeConsumed = 240
+			
 			energyConsumed = 25
 	
 	on_do_task.emit(timeConsumed, energyConsumed)

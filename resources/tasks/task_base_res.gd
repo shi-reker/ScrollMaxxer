@@ -6,6 +6,7 @@ class_name Task_base
 @export var Due:float
 @export var cat:Category
 @export var tag:Tags
+@export var availability:GenTime
 
 enum Category {
 	SHORT,
@@ -19,4 +20,16 @@ enum Tags {
 	ASSIGNMENT,
 	RANDOM_EVENT,
 	REST
+}
+
+enum GenTime {
+	ANY,
+	MORNING,
+	NOON,
+	EVENING,
+	NIGHT,
+	M_NO,
+	NO_E,
+	E_NI,
+	M_E
 }

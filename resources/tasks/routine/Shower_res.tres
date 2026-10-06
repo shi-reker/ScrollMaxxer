@@ -8,4 +8,5 @@ Title = "Shower"
 Len = 10.0
 Due = 60.0
 tag = 1
+availability = 8
 metadata/_custom_type_script = "uid://beqmt15xrtaio"
