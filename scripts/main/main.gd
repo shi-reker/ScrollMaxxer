@@ -26,6 +26,7 @@ var combo: int = 0
 @export var combo_counter: ComboCounter
 @export var effect_manager: EffectManager
 @export var pause:TextureButton
+@export var to_do_list: ToDoList
 
 func _ready() -> void:
 	energy = energy
