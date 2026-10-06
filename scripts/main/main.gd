@@ -16,12 +16,14 @@ var score_add: int = 100
 @onready var emotion: Enums.Emo = Enums.Emo.values().pick_random()
 
 signal hourhand(t:int)
+var combo: int = 0
 
 @export var cur_content: Content
 @export var content_manager: ContentManager
 @export var meme_manager: MemeManager
 @export var clock:Label
 @export var energyBar:EnergyBar
+@export var combo_counter: ComboCounter
 
 func _ready() -> void:
 	energy = energy
@@ -43,8 +45,16 @@ func _on_meme_manager_meme_selected(meme: Meme) -> void:
 	content_manager.next_content()
 
 func update_score():
-	score += score_add
+	score += score_add * combo
 	print("score is ", score)
+
+func update_combo(increase: bool):
+	if increase:
+		combo+=1
+		combo_counter.increase_animation(combo)
+	else:
+		combo/=2
+		combo_counter.decrease_animation(combo)
 
 func update_clock_and_energy():
 	while min >= 60:
