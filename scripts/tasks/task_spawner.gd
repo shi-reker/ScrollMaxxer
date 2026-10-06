@@ -73,7 +73,6 @@ func _process(delta: float) -> void:
 
 func FillRequest():
 	give_resources.emit((game.hr*60)+game.min, game.energy, game.day)
-	print_debug(game.energy)
 
 func SetTime(minute, energy):
 	game.min += minute
@@ -98,7 +97,6 @@ func GenerateTask():
 	
 	while a == 0:
 		var timeFrame:Array = tasksByTime[selection.pick_random()]
-		#print_debug("roll")
 		if !timeFrame.is_empty():
 			taskType = timeFrame.pick_random()
 			a = 1

@@ -33,13 +33,14 @@ subpixel_positioning = 0
 font = SubResource("SystemFont_c53bp")
 font_size = 24
 
-[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar")]
+[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "pause")]
 script = ExtResource("1_fdnlq")
 cur_content = NodePath("BG layer/UI layer/ContentManager/ContentList/Content")
 content_manager = NodePath("BG layer/UI layer/ContentManager")
 meme_manager = NodePath("BG layer/UI layer/MemeManager")
 clock = NodePath("BG layer/UI layer/TimeCounter/Date&TimeText")
 energyBar = NodePath("BG layer/UI layer/EnergyBar")
+pause = NodePath("BG layer/UI layer/PauseButton")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1863998892]
 anchor_mode = 0
@@ -229,5 +230,6 @@ offset_bottom = -8.0
 text = "Energy"
 uppercase = true
 
+[connection signal="pressed" from="BG layer/UI layer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="meme_selected" from="BG layer/UI layer/MemeManager" to="." method="_on_meme_manager_meme_selected"]
 [connection signal="scrolled" from="BG layer/UI layer/ContentManager" to="." method="_on_content_manager_scrolled"]
