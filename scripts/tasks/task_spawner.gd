@@ -72,7 +72,8 @@ func _process(delta: float) -> void:
 		count = 0
 
 func FillRequest():
-	give_resources.emit((game.hr*60)+game.min, game.energy)
+	give_resources.emit((game.hr*60)+game.min, game.energy, game.day)
+	print_debug(game.energy)
 
 func SetTime(minute, energy):
 	game.min += minute

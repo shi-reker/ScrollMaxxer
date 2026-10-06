@@ -23,6 +23,9 @@ signal hourhand(t:int)
 @export var clock:Label
 @export var energyBar:EnergyBar
 
+func _ready() -> void:
+	energy = energy
+
 func _process(delta: float) -> void:
 	if clockCounter >= 0.5:
 		min+=1
