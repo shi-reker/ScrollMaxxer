@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="scrollmaxxer"
-run/main_scene="uid://drlkwkkmqxltw"
+run/main_scene="uid://b3jyfwtun883k"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
