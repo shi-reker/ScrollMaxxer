@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://b8pnb3p3bgk35" path="res://resources/contents/cat_vet.tres" id="15_h1bgf"]
 [ext_resource type="Texture2D" uid="uid://cio0vle2etfd2" path="res://assets/UI/energy bar empty.png" id="16_k12tt"]
 [ext_resource type="Texture2D" uid="uid://bnk3bijegpm7t" path="res://assets/UI/energy bar fill.png" id="17_h1bgf"]
+[ext_resource type="Script" uid="uid://c1o0exdrug8nc" path="res://scripts/energy_bar.gd" id="18_hibaj"]
 
 [sub_resource type="SystemFont" id="SystemFont_pkeh2"]
 subpixel_positioning = 0
@@ -214,6 +215,7 @@ fill_mode = 3
 texture_under = ExtResource("16_k12tt")
 texture_progress = ExtResource("17_h1bgf")
 texture_progress_offset = Vector2(7, 8)
+script = ExtResource("18_hibaj")
 
 [node name="EnergyLabel" type="Label" parent="BG layer/UI layer/EnergyBar" unique_id=810380507]
 layout_mode = 1
