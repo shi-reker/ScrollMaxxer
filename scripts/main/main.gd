@@ -6,7 +6,12 @@ var hr:int = 6
 var day:int = 1
 var clockCounter:float = 0
 var score: int = 0
-var energy:int = 100
+var energy:int = 100:
+	set(value):
+		value = clamp(value, 0, 100)
+		energy = value
+		energyBar.update_energy_counter(value)
+
 var score_add: int = 100
 @onready var emotion: Enums.Emo = Enums.Emo.values().pick_random()
 
@@ -16,10 +21,7 @@ signal hourhand(t:int)
 @export var content_manager: ContentManager
 @export var meme_manager: MemeManager
 @export var clock:Label
-@export var energyBar:TextureProgressBar
-
-func _ready() -> void:
-	energyBar.value = energy
+@export var energyBar:EnergyBar
 
 func _process(delta: float) -> void:
 	if clockCounter >= 0.5:
@@ -56,9 +58,6 @@ func update_clock_and_energy():
 	if hr < 10:
 		strHR = "0" +str(hr)
 	
-	if energy > 100:
-		energy = 100
-	energyBar.value = energy
 	clock.text = "D" +str(day)+ " - " +strHR+ ":" +strMin
 
 func correct_meme_animations():
