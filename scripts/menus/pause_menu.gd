@@ -9,14 +9,14 @@ extends TextureRect
 
 func _ready() -> void:
 	var d = MenuChanges.dateNtime[0]
-	var hr = MenuChanges.dateNtime[1]
-	var min = MenuChanges.dateNtime[2]
+	var h = MenuChanges.dateNtime[1]
+	var m = MenuChanges.dateNtime[2]
 	var strMin
 	var strHR
-	if min < 10:
-		strMin = "0" +str(min)
-	if hr < 10:
-		strHR = "0" +str(hr)
+	if m < 10:
+		strMin = "0" +str(m)
+	if h < 10:
+		strHR = "0" +str(h)
 	
 	dateNtime.text = "D" +str(d)+ " - " +strHR+ ":" +strMin
 	score.text = "score: " +str(MenuChanges.playerScore)
