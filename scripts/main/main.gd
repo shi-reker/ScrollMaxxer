@@ -27,6 +27,7 @@ var combo: int = 0
 @export var effect_manager: EffectManager
 @export var pause:TextureButton
 @export var scoreBoard:Label
+@export var to_do_list: ToDoList
 
 func _ready() -> void:
 	energy = energy
@@ -49,7 +50,7 @@ func _on_meme_manager_meme_selected(meme: Meme) -> void:
 		
 	if meme_manager.is_effect_exist:
 		var effect: Enums.Effect = meme_manager.existing_effect
-		effect_manager.add_effect(effect)
+		effect_manager.add_effect(effect, self)
 		
 	content_manager.next_content()
 

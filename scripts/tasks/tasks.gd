@@ -7,6 +7,8 @@ class_name Task
 @export var taskPNum:Label
 @export var taskPDur:Label
 @export var taskPCost:Label
+@export var freeTex:TextureRect
+
 var taskDetails:Task_base
 var taskCategory:Task_base.Category
 var taskType:Task_base.Tags
@@ -16,8 +18,17 @@ var startTime:int
 var currDay:int
 var startDay:int
 
+@onready var is_zero_energy: bool = false:
+	set(value):
+		is_zero_energy = value
+		if value == true:
+			freeTex.show()
+		else :
+			freeTex.hide()
+
 signal req_resources()
 signal on_do_task(tc:int, ec:int)
+signal task_completed(task: Task)
 
 func printDue(due):
 	if due < 60:
@@ -94,6 +105,9 @@ func ResolveTaskLong():
 	return [25, tc]
 
 func _on_progres_pressed() -> void:
+	if is_zero_energy:
+		complete_task()
+	
 	req_resources.emit()
 	
 	var timeConsumed:int
@@ -138,7 +152,15 @@ func _on_progres_pressed() -> void:
 	on_do_task.emit(timeConsumed, energyConsumed)
 	
 	if taskPBar.value >= 100:
-		queue_free()
+		complete_task()
+
+func complete_task():
+	task_completed.emit(self)
+	complete_animation()
+	queue_free()
+
+func complete_animation():
+	pass
 
 func DueTimerTick(hr:int):
 	#if taskDetails.Due > 1440:

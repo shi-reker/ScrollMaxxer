@@ -1,14 +1,18 @@
 extends TextureRect
+class_name ToDoList
 
 @export var container:VBoxContainer
 @export var scoller:ScrollContainer
 @export var game:Main
+
+var tasks: Array[Task]
 
 var task = preload("res://Scenes/tasks.tscn")
 var count:float = 0
 
 signal give_resources(t:int, e:int)
 signal tickdown_hr(h:int)
+signal detected_task_completed(task: Task)
 
 var tasksByTags:Dictionary[Task_base.Tags, Array] = {
 	Task_base.Tags.CHORE: [
@@ -102,13 +106,19 @@ func GenerateTask():
 			a = 1
 	
 	#print_debug(taskType)
-	var newTask = task.instantiate()
+	var newTask: Task = task.instantiate() as Task
 	newTask.on_do_task.connect(SetTime)
 	newTask.req_resources.connect(FillRequest)
+	newTask.task_completed.connect(_on_task_completed)
 	give_resources.connect(newTask.GetResources)
 	tickdown_hr.connect(newTask.DueTimerTick)
 	newTask.Setup(taskType)
 	container.add_child(newTask)
+	tasks.append(newTask)
+	
+func _on_task_completed(task: Task):
+	tasks.erase(task)
+	detected_task_completed.emit()
 
 func HourTick(h:int):
 	tickdown_hr.emit(h)
