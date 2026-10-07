@@ -62,7 +62,7 @@ func add_random_effect():
 		return
 	is_effect_exist = true
 	existing_effect = Enums.Effect.values().pick_random()
-	existing_effect = Enums.Effect.TIME_STOP
+	existing_effect = Enums.Effect.INSTANT_FINNISH
 	effected_meme = meme_nodes.pick_random()
 	effected_meme.prepaire_effect(texture_of_effect[existing_effect])
 	
@@ -76,5 +76,5 @@ var texture_of_effect: Dictionary[Enums.Effect, Texture2D] = {
 	Enums.Effect.MORE_ENERGY: load("res://assets/temp_effect_sprite.tres"),
 	Enums.Effect.ZERO_ENERGY : load("res://assets/temp_effect_sprite.tres"),
 	Enums.Effect.TIME_STOP: load("res://assets/temp_effect_sprite.tres"),
-	Enums.Effect.FINNISH_TASK: load("res://assets/temp_effect_sprite.tres"),
+	Enums.Effect.INSTANT_FINNISH: load("res://assets/temp_effect_sprite.tres"),
 }

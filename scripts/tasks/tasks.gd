@@ -8,6 +8,7 @@ class_name Task
 @export var taskPDur:Label
 @export var taskPCost:Label
 @export var freeTex:TextureRect
+@export var complTex:TextureRect
 
 var taskDetails:Task_base
 var taskCategory:Task_base.Category
@@ -24,6 +25,13 @@ const EXIT_SLIDE := 150.0
 const FAIL_SLIDE := 30.0
 const SLIDE_TIME := 0.35
 
+@onready var is_instant_finnish_task: bool = false:
+	set(value):
+		is_instant_finnish_task = value
+		if value == true:
+			complTex.show()
+		else :
+			complTex.hide()
 @onready var is_zero_energy: bool = false:
 	set(value):
 		is_zero_energy = value
@@ -206,7 +214,7 @@ func _on_progres_pressed() -> void:
 	
 	on_do_task.emit(timeConsumed, energyConsumed)
 	
-	if taskPBar.value >= 100:
+	if taskPBar.value >= 100 or is_instant_finnish_task:
 		complete_task()
 
 func complete_task():

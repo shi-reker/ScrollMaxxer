@@ -12,7 +12,7 @@ enum Effect{
 	MORE_ENERGY,
 	ZERO_ENERGY,
 	TIME_STOP,
-	FINNISH_TASK
+	INSTANT_FINNISH
 }
 
 enum Meme {
