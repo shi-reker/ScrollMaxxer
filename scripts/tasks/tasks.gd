@@ -19,6 +19,11 @@ var currDay:int
 var startDay:int
 var enableProgress:bool = true
 
+const SPAWN_SLIDE := 60.0
+const EXIT_SLIDE := 150.0
+const FAIL_SLIDE := 30.0
+const SLIDE_TIME := 0.35
+
 @onready var is_zero_energy: bool = false:
 	set(value):
 		is_zero_energy = value
@@ -30,6 +35,47 @@ var enableProgress:bool = true
 signal req_resources()
 signal on_do_task(tc:int, ec:int)
 signal task_completed(task: Task)
+
+func _ready() -> void:
+	SpawnAnimation()
+
+func SpawnAnimation() -> void:
+	modulate.a = 0.0
+	await get_tree().process_frame
+	
+	var final_x := position.x
+	position.x = final_x - SPAWN_SLIDE
+	
+	var tween := create_tween().set_parallel(true)
+	tween.tween_property(self, "position:x", final_x, SLIDE_TIME) \
+		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "modulate:a", 1.0, SLIDE_TIME)
+
+func CompleteAnimation() -> void:
+	modulate.a = 1.0
+	await get_tree().process_frame
+	
+	var final_x := position.x + EXIT_SLIDE
+	
+	var tween := create_tween().set_parallel(true)
+	tween.tween_property(self, "position:x", final_x, SLIDE_TIME) \
+		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "modulate:a", 0.0, SLIDE_TIME)
+	
+	await tween.finished
+
+func ExpireAnimation() -> void:
+	modulate.a = 1.0
+	await get_tree().process_frame
+	
+	var final_y := position.y + FAIL_SLIDE
+	
+	var tween := create_tween().set_parallel(true)
+	tween.tween_property(self, "position:y", final_y, SLIDE_TIME) \
+		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "modulate:a", 0.0, SLIDE_TIME)
+	
+	await tween.finished
 
 func printDue(due):
 	if due < 60:
@@ -163,19 +209,16 @@ func _on_progres_pressed() -> void:
 		complete_task()
 
 func complete_task():
+	enableProgress = false
 	task_completed.emit(self)
-	complete_animation()
+	await CompleteAnimation()
 	queue_free()
 
-func complete_animation():
-	pass
-
 func DueTimerTick(hr:int):
-	#if taskDetails.Due > 1440:
 	
 	if startTime + taskDetails.Due <= hr:
-		#print_debug(taskDetails.Title+": "+str(startTime)+", "+ str(taskDetails.Due) +", "+ str(hr))
+		enableProgress = false
+		await ExpireAnimation()
 		queue_free()
 	else:
-		
 		printDue(((taskDetails.Due + startTime) - hr))
