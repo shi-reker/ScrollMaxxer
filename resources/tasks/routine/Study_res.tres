@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Task_base" format=3 uid="uid://crxo3wq0uphs0"]
+
+[ext_resource type="Script" uid="uid://beqmt15xrtaio" path="res://resources/tasks/task_base_res.gd" id="1_srmcc"]
+
+[resource]
+script = ExtResource("1_srmcc")
+Title = "Study"
+Len = 120.0
+Due = 240.0
+cat = 1
+tag = 1
+availability = 6
+metadata/_custom_type_script = "uid://beqmt15xrtaio"
