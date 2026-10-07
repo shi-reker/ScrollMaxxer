@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Task_base" format=3 uid="uid://d3bb3cyfn4ng6"]
+
+[ext_resource type="Script" uid="uid://beqmt15xrtaio" path="res://resources/tasks/task_base_res.gd" id="1_qk18u"]
+
+[resource]
+script = ExtResource("1_qk18u")
+Title = "Watch Horror Movie"
+Len = 180.0
+Due = 240.0
+cat = 1
+tag = 3
+availability = 4
+metadata/_custom_type_script = "uid://beqmt15xrtaio"
