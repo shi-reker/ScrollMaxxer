@@ -149,7 +149,7 @@ func GenerateTask():
 func _on_task_completed(completedTask: Task):
 	game.score += int(completedTask.taskDetails.Len)
 	game.combo /=2
-	detected_task_completed.emit()
+	detected_task_completed.emit(completedTask)
 
 func _on_task_expire(expiredTask:Task):
 	game.score -= int(expiredTask.taskDetails.Len)
