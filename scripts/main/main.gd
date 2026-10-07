@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 			clockCounter = 0
 		clockCounter += delta
 	else:
-		if clockCounter >= 20:
+		if clockCounter >= 3:
 			isTimeStopped = false
 			clockCounter = 0
 			to_do_list.enableGeneration = true

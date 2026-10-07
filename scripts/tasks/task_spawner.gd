@@ -123,11 +123,14 @@ func GenerateTask():
 	container.add_child(newTask)
 	tasks.append(newTask)
 	
-func _on_task_completed(completed_task: Task):
-	tasks.erase(completed_task)
+func _on_task_completed(completedTask: Task):
+	game.score += int(completedTask.taskDetails.Len)
+	game.combo /=2
 	detected_task_completed.emit()
 
-func _on_task_expire(task:Task):
+func _on_task_expire(expiredTask:Task):
+	game.score -= int(expiredTask.taskDetails.Len)
+	game.combo /=2
 	tasks.erase(task)
 
 func _on_task_exiting(exiting_task: Task):
