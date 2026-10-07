@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Task_base" format=3 uid="uid://bhmp4hjb5ogmd"]
+
+[ext_resource type="Script" uid="uid://beqmt15xrtaio" path="res://resources/tasks/task_base_res.gd" id="1_mcgb1"]
+
+[resource]
+script = ExtResource("1_mcgb1")
+Title = "Goon"
+Len = 60.0
+Due = 90.0
+tag = 1
+metadata/_custom_type_script = "uid://beqmt15xrtaio"

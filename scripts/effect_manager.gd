@@ -34,9 +34,7 @@ func add_effect(new_effect: Enums.Effect, world: Main):
 func _on_zero_energy_task_pressed(_completed_task: Task, to_do_list: ToDoList):
 	for task in to_do_list.tasks:
 		task.is_zero_energy = false
-	to_do_list.detected_task_completed.disconnect(_on_zero_energy_task_pressed)
 
 func _on_instant_finnish_task_pressed(_completed_task: Task, to_do_list: ToDoList):
 	for task in to_do_list.tasks:
 		task.is_instant_finnish_task = false
-	to_do_list.detected_task_completed.disconnect(_on_instant_finnish_task_pressed)

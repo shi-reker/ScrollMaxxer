@@ -179,6 +179,11 @@ func _on_progres_pressed() -> void:
 	if taskType == taskDetails.Tags.REST:
 		#print_debug("rest")
 		match taskCategory:
+			taskDetails.Category.SHORT:
+				timeConsumed = 60
+				energyConsumed = -10
+				taskPBar.value += 100
+			
 			taskDetails.Category.MEDIUM:
 				timeConsumed = 120
 				energyConsumed = -25
