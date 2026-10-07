@@ -35,6 +35,7 @@ const SLIDE_TIME := 0.35
 signal req_resources()
 signal on_do_task(tc:int, ec:int)
 signal task_completed(task: Task)
+signal task_expired(task:Task)
 
 func _ready() -> void:
 	SpawnAnimation()
@@ -59,7 +60,7 @@ func CompleteAnimation() -> void:
 	
 	var tween := create_tween().set_parallel(true)
 	tween.tween_property(self, "position:x", final_x, SLIDE_TIME) \
-		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	tween.tween_property(self, "modulate:a", 0.0, SLIDE_TIME)
 	
 	await tween.finished
@@ -72,7 +73,7 @@ func ExpireAnimation() -> void:
 	
 	var tween := create_tween().set_parallel(true)
 	tween.tween_property(self, "position:y", final_y, SLIDE_TIME) \
-		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	tween.tween_property(self, "modulate:a", 0.0, SLIDE_TIME)
 	
 	await tween.finished
@@ -218,6 +219,7 @@ func DueTimerTick(hr:int):
 	
 	if startTime + taskDetails.Due <= hr:
 		enableProgress = false
+		task_expired.emit(self)
 		await ExpireAnimation()
 		queue_free()
 	else:

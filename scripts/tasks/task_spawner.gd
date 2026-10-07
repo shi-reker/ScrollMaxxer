@@ -47,10 +47,10 @@ var tasksByTime:Dictionary[Task_base.GenTime, Array] = {
 		"res://resources/tasks/rest/Nap_res.tres", "res://resources/tasks/assignment/GroupP1_res.tres"
 	],
 	Task_base.GenTime.EVENING: [
-		
+		"res://resources/tasks/random event/EatOut_res.tres"
 	],
 	Task_base.GenTime.NIGHT: [
-		
+		"res://resources/tasks/random event/DrinkHangover_res.tres"
 	],
 	Task_base.GenTime.M_NO: [
 		"res://resources/tasks/random event/Funeral_res.tres", "res://resources/tasks/assignment/GroupP3_res.tres",
@@ -60,7 +60,8 @@ var tasksByTime:Dictionary[Task_base.GenTime, Array] = {
 		"res://resources/tasks/random event/FriendInv1_res.tres"
 	],
 	Task_base.GenTime.E_NI: [
-		"res://resources/tasks/rest/Sleep_res.tres"
+		"res://resources/tasks/rest/Sleep_res.tres", "res://resources/tasks/random event/CNA_res.tres",
+		"res://resources/tasks/random event/YTVidEssay_res.tres"
 	],
 	Task_base.GenTime.M_E: [
 		"res://resources/tasks/routine/Shower_res.tres"
@@ -113,6 +114,7 @@ func GenerateTask():
 	newTask.on_do_task.connect(SetTime)
 	newTask.req_resources.connect(FillRequest)
 	newTask.task_completed.connect(_on_task_completed)
+	newTask.task_expired.connect(_on_task_expire)
 	give_resources.connect(newTask.GetResources)
 	tickdown_hr.connect(newTask.DueTimerTick)
 	toggle_progress.connect(newTask.toggle_progressabilty)
@@ -123,6 +125,9 @@ func GenerateTask():
 func _on_task_completed(task: Task):
 	tasks.erase(task)
 	detected_task_completed.emit()
+
+func _on_task_expire(task:Task):
+	tasks.erase(task)
 
 func HourTick(h:int):
 	tickdown_hr.emit(h)

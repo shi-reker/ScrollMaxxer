@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Task_base" format=3 uid="uid://dfgu8xd3fwktn"]
+
+[ext_resource type="Script" uid="uid://beqmt15xrtaio" path="res://resources/tasks/task_base_res.gd" id="1_vg1qq"]
+
+[resource]
+script = ExtResource("1_vg1qq")
+Title = "Drink Till Hangover"
+Len = 180.0
+Due = 240.0
+cat = 1
+tag = 3
+availability = 4
+metadata/_custom_type_script = "uid://beqmt15xrtaio"
