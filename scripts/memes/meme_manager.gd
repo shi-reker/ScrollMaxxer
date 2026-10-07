@@ -25,7 +25,7 @@ func reload_memes(content_genre: Enums.Genre, emotion: Enums.Emo):
 	leftover_memes = Enums.Meme.values()
 	
 	print(Enums.Emo.find_key(emotion), Enums.Genre.find_key(content_genre))
-	var correct_meme: Enums.Meme = Enums.meme_of_g_and_e[content_genre][emotion].pick_random()
+	#var correct_meme: Enums.Meme = Enums.meme_of_g_and_e[content_genre][emotion].pick_random()
 	var correct_meme: Enums.Meme = Enums.meme_of_g_and_e[0][0].pick_random()
 	print("correct meme is")
 	

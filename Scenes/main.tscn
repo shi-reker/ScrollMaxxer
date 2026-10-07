@@ -34,7 +34,7 @@ subpixel_positioning = 0
 font = SubResource("SystemFont_c53bp")
 font_size = 24
 
-[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "combo_counter", "effect_manager", "pause", "to_do_list", "scoreBoard")]
+[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "effect_manager", "pause", "scoreBoard", "to_do_list")]
 script = ExtResource("1_fdnlq")
 cur_content = NodePath("BG layer/UI layer/ContentManager/ContentList/Content")
 content_manager = NodePath("BG layer/UI layer/ContentManager")

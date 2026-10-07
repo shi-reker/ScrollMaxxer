@@ -55,8 +55,7 @@ func _on_meme_manager_meme_selected(meme: Meme) -> void:
 	content_manager.next_content()
 
 func update_score():
-	#score += score_add * combo
-	score += score_add
+	score += score_add * combo
 	print("score is ", score)
 	scoreBoard.text = "score: " +str(score)
 
