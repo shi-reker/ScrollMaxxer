@@ -37,7 +37,8 @@ var tasksByTags:Dictionary[Task_base.Tags, Array] = {
 
 var tasksByTime:Dictionary[Task_base.GenTime, Array] = {
 	Task_base.GenTime.ANY: [
-		"res://resources/tasks/chore/Cleanup_res.tres", "res://resources/tasks/chore/Dishes_res.tres"
+		"res://resources/tasks/chore/Cleanup_res.tres", "res://resources/tasks/chore/Dishes_res.tres",
+		"res://resources/tasks/routine/Goon_res.tres"
 	],
 	Task_base.GenTime.MORNING: [
 		"res://resources/tasks/assignment/GroupP2_res.tres", "res://resources/tasks/routine/Breakfast_res.tres"
@@ -63,7 +64,8 @@ var tasksByTime:Dictionary[Task_base.GenTime, Array] = {
 		"res://resources/tasks/random event/YTVidEssay_res.tres"
 	],
 	Task_base.GenTime.M_E: [
-		"res://resources/tasks/routine/Shower_res.tres", "res://resources/tasks/random event/AuraFarm_res.tres"
+		"res://resources/tasks/routine/Shower_res.tres", "res://resources/tasks/random event/AuraFarm_res.tres",
+		"res://resources/tasks/chore/Groceries_res.tres"
 	],
 }
 
