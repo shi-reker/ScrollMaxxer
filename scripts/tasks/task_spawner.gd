@@ -113,6 +113,7 @@ func GenerateTask():
 	newTask.on_do_task.connect(SetTime)
 	newTask.req_resources.connect(FillRequest)
 	newTask.task_completed.connect(_on_task_completed)
+	newTask.tree_exiting.connect(_on_task_exiting.bind(newTask))
 	give_resources.connect(newTask.GetResources)
 	tickdown_hr.connect(newTask.DueTimerTick)
 	toggle_progress.connect(newTask.toggle_progressabilty)
@@ -120,9 +121,12 @@ func GenerateTask():
 	container.add_child(newTask)
 	tasks.append(newTask)
 	
-func _on_task_completed(task: Task):
-	tasks.erase(task)
+func _on_task_completed(completed_task: Task):
+	tasks.erase(completed_task)
 	detected_task_completed.emit()
+
+func _on_task_exiting(exiting_task: Task):
+	tasks.erase(exiting_task)
 
 func HourTick(h:int):
 	tickdown_hr.emit(h)
