@@ -12,7 +12,10 @@ func _on_resume_pressed() -> void:
 	queue_free()
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+	MenuChanges.prevScene = "res://Scenes/pause_menu.tscn"
+	var optionScene = load("res://Scenes/options_menu.tscn")
+	get_parent().add_child(optionScene.instantiate())
+	queue_free()
 
 func _on_save_pressed() -> void:
 	pass # Replace with function body.

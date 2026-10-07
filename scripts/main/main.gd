@@ -98,6 +98,7 @@ func _on_content_manager_scrolled(new_content: Content) -> void:
 
 func _on_pause_button_pressed() -> void:
 	var pauseLayer = CanvasLayer.new()
+	pauseLayer.process_mode = PROCESS_MODE_ALWAYS
 	var pauseScene = load("res://Scenes/pause_menu.tscn")
 	var pauseMenu = pauseScene.instantiate()
 	pauseLayer.add_child(pauseMenu)

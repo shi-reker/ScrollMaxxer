@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://batjnfqmg82l3"]
+
+[ext_resource type="Texture2D" uid="uid://cf0tnqaqmi8u0" path="res://assets/UI/setting slot bg.png" id="1_ctcku"]
+[ext_resource type="Texture2D" uid="uid://b62kcswdp80st" path="res://assets/UI/buttons/options/slider head.png" id="2_ebw5r"]
+[ext_resource type="Script" uid="uid://2dpcaq3d1t81" path="res://scripts/setting_slot.gd" id="2_jqi30"]
+[ext_resource type="Texture2D" uid="uid://43wya55q7jtl" path="res://assets/UI/buttons/options/slider highlight.png" id="3_axb4e"]
+[ext_resource type="Texture2D" uid="uid://q25k4bwoxmcf" path="res://assets/UI/buttons/options/slider head highlight.png" id="3_ebw5r"]
+[ext_resource type="Texture2D" uid="uid://cl0hqrbiwxa1u" path="res://assets/UI/buttons/options/slider idle.png" id="4_jqi30"]
+
+[sub_resource type="SystemFont" id="SystemFont_pkeh2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8knx"]
+font = SubResource("SystemFont_pkeh2")
+font_size = 20
+font_color = Color(0.92156863, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0roye"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqi30"]
+texture = ExtResource("4_jqi30")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ebw5r"]
+texture = ExtResource("3_axb4e")
+
+[node name="SettingSlot" type="TextureRect" unique_id=1015510504 node_paths=PackedStringArray("settingTitle", "settingSlider")]
+offset_right = 880.0
+offset_bottom = 40.0
+texture = ExtResource("1_ctcku")
+script = ExtResource("2_jqi30")
+settingTitle = NodePath("HBoxContainer/Label")
+settingSlider = NodePath("HBoxContainer/HSlider")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1513011112]
+custom_maximum_size = Vector2(800, 22)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -11.0
+offset_right = 400.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1581860246]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "music"
+label_settings = SubResource("LabelSettings_y8knx")
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer" unique_id=25036264]
+custom_minimum_size = Vector2(300, 10)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("2_ebw5r")
+theme_override_icons/grabber_highlight = ExtResource("3_ebw5r")
+theme_override_styles/slider = SubResource("StyleBoxFlat_0roye")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_jqi30")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_ebw5r")
+value = 50.0
+ticks_position = 3
