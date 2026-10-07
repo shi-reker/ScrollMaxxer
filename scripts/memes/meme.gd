@@ -6,7 +6,7 @@ class_name Meme
 @export var max_y: int = 160
 @export var meme_sprite: TextureRect
 @export var effect_sprite: TextureRect
-
+@export var hint: TextureRect
 
 @export var meme_stats: MemeStats:
 	set(value):

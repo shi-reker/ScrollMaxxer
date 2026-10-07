@@ -5,7 +5,10 @@ var min:int = 0
 var hr:int = 6
 var day:int = 1
 var clockCounter:float = 0
-var score: int = 0
+var score: int = 0:
+	set(value):
+		score = value
+		update_score(value)
 var energy:int = 100:
 	set(value):
 		value = clamp(value, 0, 100)
@@ -16,8 +19,14 @@ var score_add: int = 100
 @onready var emotion: Enums.Emo = Enums.Emo.values().pick_random()
 
 signal hourhand(t:int)
-var combo: int = 0
 var isTimeStopped:bool = false
+var combo: int = 0: 
+	set(value):
+		if value < combo:
+			combo_counter.increase_animation(value)
+		else:
+			combo_counter.decrease_animation(value)
+		combo = value
 
 @export var cur_content: Content
 @export var content_manager: ContentManager
@@ -49,12 +58,14 @@ func _process(delta: float) -> void:
 			to_do_list.toggle_progress.emit(true)
 		clockCounter += delta
 
-func _on_meme_manager_meme_selected(meme: Meme) -> void:
-	if meme.meme_stats.emo == emotion and meme.meme_stats.genre == cur_content.content_stats.genre:
-		score += score_add
-		print_debug("score is", score)
+func _on_meme_manager_meme_selected(meme: Meme, is_correct: bool) -> void:
+	if is_correct:
+		combo = combo + 1
+		score = score + score_add * combo
 		correct_meme_animations()
 	else:
+		combo = combo / 2
+		print_debug("wrong")
 		wrong_meme_animations()
 		
 	if meme_manager.is_effect_exist:
@@ -63,18 +74,8 @@ func _on_meme_manager_meme_selected(meme: Meme) -> void:
 		
 	content_manager.next_content()
 
-func update_score():
-	score += score_add * combo
-	#print("score is ", score)
+func update_score(score: int):
 	scoreBoard.text = "score: " +str(score)
-
-func update_combo(increase: bool):
-	if increase:
-		combo+=1
-		combo_counter.increase_animation(combo)
-	else:
-		combo/=2
-		combo_counter.decrease_animation(combo)
 
 func update_clock_and_energy():
 	while min >= 60:
@@ -103,7 +104,6 @@ func _on_content_manager_scrolled(new_content: Content) -> void:
 	var content_genre: Enums.Genre = new_content.content_stats.genre
 	print_debug("new content genre is ", content_genre)
 	meme_manager.reload_memes(content_genre, emotion)
-	update_score()
 
 func _on_pause_button_pressed() -> void:
 	MenuChanges.dateNtime = [day, hr, min]

@@ -27,14 +27,14 @@ func reload_memes(content_genre: Enums.Genre, emotion: Enums.Emo):
 	print(Enums.Emo.find_key(emotion), Enums.Genre.find_key(content_genre))
 	#var correct_meme: Enums.Meme = Enums.meme_of_g_and_e[content_genre][emotion].pick_random()
 	var correct_meme: Enums.Meme = Enums.meme_of_g_and_e[0][0].pick_random()
-	print("correct meme is")
 	
 	leftover_memes.erase(correct_meme)
 	memes_on_hand = [correct_meme]
 	correct_meme_node = meme_nodes.pick_random()
-	print("correct meme is ",correct_meme_node.name)
+
 	for meme in meme_nodes:
 		var new_meme_stats: MemeStats
+		meme.hint.visible = meme == correct_meme_node
 		if meme == correct_meme_node:
 			new_meme_stats = Enums.meme_resource[correct_meme]
 		else:
@@ -70,7 +70,7 @@ func add_random_effect():
 	
 func _on_meme_pressed(pressed_meme: Meme) -> void:
 	print_debug(pressed_meme.meme_stats.code)
-	meme_selected.emit(pressed_meme)
+	meme_selected.emit(pressed_meme, pressed_meme.name == correct_meme_node.name)
 
 var texture_of_effect: Dictionary[Enums.Effect, Texture2D] = {
 	Enums.Effect.MORE_ENERGY: load("res://assets/temp_effect_sprite.tres"),
