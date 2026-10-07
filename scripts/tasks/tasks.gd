@@ -169,7 +169,6 @@ func _on_progres_pressed() -> void:
 	var energyConsumed:int
 	
 	if taskType == taskDetails.Tags.REST:
-		#print_debug("rest")
 		match taskCategory:
 			taskDetails.Category.SHORT:
 				timeConsumed = 60
@@ -187,24 +186,18 @@ func _on_progres_pressed() -> void:
 				energyConsumed = -75
 				taskPBar.value += 100
 	else:
-		#print_debug("not rest")
 		var consumption
 		match taskCategory:
 			taskDetails.Category.SHORT:
 				consumption = ResolveTaskShort()
-				#print_debug("short")
 			
 			taskDetails.Category.MEDIUM:
 				consumption = ResolveTaskMed()
-				#print_debug("med")
 			
 			taskDetails.Category.LONG:
 				consumption = ResolveTaskLong()
-				#print_debug("long")
 		
-		#print_debug(energy)
 		if !consumption:
-			#print_debug("fuck")
 			return
 		energyConsumed = consumption[0]
 		timeConsumed = consumption[1]
@@ -226,9 +219,6 @@ func DueTimerTick(T:int):
 		enableProgress = false
 		task_expired.emit(self)
 		await ExpireAnimation()
-		print_debug(taskTitle.text)
-		print_debug(taskDetails.Due)
-		print_debug(timeElapsed)
 		queue_free()
 	else:
 		printDue(taskDetails.Due - timeElapsed)

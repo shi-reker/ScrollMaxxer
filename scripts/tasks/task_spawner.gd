@@ -102,8 +102,6 @@ func SetTime(minute, energy):
 	game.min += minute
 	game.energy -= energy
 	game.update_clock_and_energy()
-	#print_debug(game.hr)
-	tickdown_hr.emit(minute)
 
 func GenerateTask():
 	var taskType
