@@ -26,9 +26,11 @@ var combo: int = 0
 @export var combo_counter: ComboCounter
 @export var effect_manager: EffectManager
 @export var pause:TextureButton
+@export var scoreBoard:Label
 
 func _ready() -> void:
 	energy = energy
+	scoreBoard.text = "score: "+str(score)
 
 func _process(delta: float) -> void:
 	if clockCounter >= 0.5:
@@ -52,8 +54,10 @@ func _on_meme_manager_meme_selected(meme: Meme) -> void:
 	content_manager.next_content()
 
 func update_score():
-	score += score_add * combo
+	#score += score_add * combo
+	score += score_add
 	print("score is ", score)
+	scoreBoard.text = "score: " +str(score)
 
 func update_combo(increase: bool):
 	if increase:
@@ -90,6 +94,7 @@ func _on_content_manager_scrolled(new_content: Content) -> void:
 	var content_genre: Enums.Genre = new_content.content_stats.genre
 	print_debug("new content genre is ", content_genre)
 	meme_manager.reload_memes(content_genre, emotion)
+	update_score()
 
 func _on_pause_button_pressed() -> void:
 	var pauseLayer = CanvasLayer.new()

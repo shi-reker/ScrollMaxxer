@@ -34,7 +34,7 @@ subpixel_positioning = 0
 font = SubResource("SystemFont_c53bp")
 font_size = 24
 
-[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "combo_counter", "effect_manager", "pause")]
+[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "effect_manager", "pause", "scoreBoard")]
 script = ExtResource("1_fdnlq")
 cur_content = NodePath("BG layer/UI layer/ContentManager/ContentList/Content")
 content_manager = NodePath("BG layer/UI layer/ContentManager")
@@ -43,6 +43,7 @@ clock = NodePath("BG layer/UI layer/TimeCounter/Date&TimeText")
 energyBar = NodePath("BG layer/UI layer/EnergyBar")
 effect_manager = NodePath("EffectManager")
 pause = NodePath("BG layer/UI layer/PauseButton")
+scoreBoard = NodePath("BG layer/UI layer/ScoreCounter/ScoreText")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1863998892]
 anchor_mode = 0
@@ -161,11 +162,11 @@ layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="MemeManager" type="VBoxContainer" parent="BG layer/UI layer" unique_id=589829460]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 0.41
+anchor_top = 0.24
+anchor_right = 0.41
+anchor_bottom = 0.24
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -185,24 +186,35 @@ meme_stats = ExtResource("12_k12tt")
 [node name="ContentManager" type="ScrollContainer" parent="BG layer/UI layer" unique_id=1965992437 node_paths=PackedStringArray("content1", "content2")]
 custom_minimum_size = Vector2(320, 560)
 custom_maximum_size = Vector2(320, 560)
-offset_left = 120.0
-offset_top = 80.0
-offset_right = 440.0
-offset_bottom = 640.0
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.54
+anchor_right = 0.25
+anchor_bottom = 0.54
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 script = ExtResource("10_6iyac")
 content1 = NodePath("ContentList/Content")
 content2 = NodePath("ContentList/Content2")
 
 [node name="ContentList" type="VBoxContainer" parent="BG layer/UI layer/ContentManager" unique_id=1136474206]
 layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 theme_override_constants/separation = 0
 
 [node name="Content" parent="BG layer/UI layer/ContentManager/ContentList" unique_id=474919709 instance=ExtResource("11_6iyac")]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 content_stats = ExtResource("15_h1bgf")
 
 [node name="Content2" parent="BG layer/UI layer/ContentManager/ContentList" unique_id=24824554 instance=ExtResource("11_6iyac")]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="EnergyBar" type="TextureProgressBar" parent="BG layer/UI layer" unique_id=1382169033]
 anchors_preset = -1

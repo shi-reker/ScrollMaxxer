@@ -22,6 +22,7 @@ font_size = 32
 font_size = 24
 
 [node name="PauseMenu" type="TextureRect" unique_id=392182149 node_paths=PackedStringArray("dateNtime", "score", "resumeButton", "optionsButton", "saveButton", "exitButton")]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
