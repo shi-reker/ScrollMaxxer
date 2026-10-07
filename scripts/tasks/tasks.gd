@@ -17,6 +17,7 @@ var time:int
 var startTime:int
 var currDay:int
 var startDay:int
+var enableProgress:bool = true
 
 @onready var is_zero_energy: bool = false:
 	set(value):
@@ -104,9 +105,16 @@ func ResolveTaskLong():
 	
 	return [25, tc]
 
+func toggle_progressabilty(state:bool):
+	enableProgress = state
+
 func _on_progres_pressed() -> void:
+	if enableProgress == false:
+		return
+	
 	if is_zero_energy:
 		complete_task()
+		return
 	
 	req_resources.emit()
 	

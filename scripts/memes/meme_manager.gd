@@ -62,7 +62,7 @@ func add_random_effect():
 		return
 	is_effect_exist = true
 	existing_effect = Enums.Effect.values().pick_random()
-	existing_effect = Enums.Effect.ZERO_ENERGY
+	existing_effect = Enums.Effect.TIME_STOP
 	effected_meme = meme_nodes.pick_random()
 	effected_meme.prepaire_effect(texture_of_effect[existing_effect])
 	

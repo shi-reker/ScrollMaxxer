@@ -14,7 +14,10 @@ func add_effect(new_effect: Enums.Effect, world: Main):
 			to_do_list.detected_task_completed.connect(func(): _on_zero_energy_task_pressed(world, to_do_list))
 			
 		Enums.Effect.TIME_STOP:
-			pass 
+			world.isTimeStopped = true
+			world.to_do_list.enableGeneration = false
+			world.to_do_list.toggle_progress.emit(false)
+			world.clockCounter = 0
 		Enums.Effect.FINNISH_TASK:
 			pass 
 		

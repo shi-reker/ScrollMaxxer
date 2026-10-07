@@ -9,10 +9,12 @@ var tasks: Array[Task]
 
 var task = preload("res://Scenes/tasks.tscn")
 var count:float = 0
+var enableGeneration:bool = true
 
 signal give_resources(t:int, e:int)
 signal tickdown_hr(h:int)
 signal detected_task_completed(task: Task)
+signal toggle_progress(state:bool)
 
 var tasksByTags:Dictionary[Task_base.Tags, Array] = {
 	Task_base.Tags.CHORE: [
@@ -70,10 +72,11 @@ func _ready() -> void:
 	game.hourhand.connect(HourTick)
 
 func _process(delta: float) -> void:
-	count +=delta
-	if count >= 5:
-		GenerateTask()
-		count = 0
+	if enableGeneration:
+		count +=delta
+		if count >= 5:
+			GenerateTask()
+			count = 0
 
 func FillRequest():
 	give_resources.emit((game.hr*60)+game.min, game.energy, game.day)
@@ -112,6 +115,7 @@ func GenerateTask():
 	newTask.task_completed.connect(_on_task_completed)
 	give_resources.connect(newTask.GetResources)
 	tickdown_hr.connect(newTask.DueTimerTick)
+	toggle_progress.connect(newTask.toggle_progressabilty)
 	newTask.Setup(taskType)
 	container.add_child(newTask)
 	tasks.append(newTask)

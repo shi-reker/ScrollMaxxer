@@ -17,6 +17,7 @@ var score_add: int = 100
 
 signal hourhand(t:int)
 var combo: int = 0
+var isTimeStopped:bool = false
 
 @export var cur_content: Content
 @export var content_manager: ContentManager
@@ -34,11 +35,19 @@ func _ready() -> void:
 	scoreBoard.text = "score: "+str(score)
 
 func _process(delta: float) -> void:
-	if clockCounter >= 0.5:
-		min+=1
-		update_clock_and_energy()
-		clockCounter = 0
-	clockCounter += delta
+	if !isTimeStopped:
+		if clockCounter >= 0.5:
+			min+=1
+			update_clock_and_energy()
+			clockCounter = 0
+		clockCounter += delta
+	else:
+		if clockCounter >= 20:
+			isTimeStopped = false
+			clockCounter = 0
+			to_do_list.enableGeneration = true
+			to_do_list.toggle_progress.emit(true)
+		clockCounter += delta
 
 func _on_meme_manager_meme_selected(meme: Meme) -> void:
 	if meme.meme_stats.emo == emotion and meme.meme_stats.genre == cur_content.content_stats.genre:
