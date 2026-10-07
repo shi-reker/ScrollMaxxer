@@ -56,7 +56,7 @@ func _on_meme_manager_meme_selected(meme: Meme) -> void:
 
 func update_score():
 	score += score_add * combo
-	print("score is ", score)
+	#print("score is ", score)
 	scoreBoard.text = "score: " +str(score)
 
 func update_combo(increase: bool):
@@ -97,6 +97,9 @@ func _on_content_manager_scrolled(new_content: Content) -> void:
 	update_score()
 
 func _on_pause_button_pressed() -> void:
+	MenuChanges.dateNtime = [day, hr, min]
+	MenuChanges.playerScore = score
+	
 	var pauseLayer = CanvasLayer.new()
 	pauseLayer.process_mode = PROCESS_MODE_ALWAYS
 	var pauseScene = load("res://Scenes/pause_menu.tscn")
