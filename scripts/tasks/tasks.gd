@@ -15,9 +15,7 @@ var taskCategory:Task_base.Category
 var taskType:Task_base.Tags
 var energy:int
 var time:int
-var startTime:int
-var currDay:int
-var startDay:int
+var timeElapsed:int = 0
 var enableProgress:bool = true
 
 const SPAWN_SLIDE := 60.0
@@ -92,10 +90,9 @@ func printDue(due):
 	else:
 		taskDue.text = "%.1f HR" % (due/60)
 
-func GetResources(t:int, e:int, d:int):
+func GetResources(t:int, e:int):
 	time = t
 	energy = e
-	currDay = d
 
 func Setup(task:String):
 	taskDetails = load(task)
@@ -122,11 +119,6 @@ func Setup(task:String):
 	taskPBar.value = 0
 	taskPNum.text = "0"
 	req_resources.emit()
-	startTime = time
-	startDay = currDay
-	#print_debug(startTime)
-	#print_debug(taskDetails.Due)
-	#print_debug((startTime+taskDetails.Due)/60)
 
 func ResolveTaskShort():
 	if energy < 5:
@@ -210,7 +202,7 @@ func _on_progres_pressed() -> void:
 				consumption = ResolveTaskLong()
 				#print_debug("long")
 		
-		print_debug(energy)
+		#print_debug(energy)
 		if !consumption:
 			#print_debug("fuck")
 			return
@@ -228,12 +220,15 @@ func complete_task():
 	await CompleteAnimation()
 	queue_free()
 
-func DueTimerTick(hr:int):
-	
-	if startTime + taskDetails.Due <= hr:
+func DueTimerTick(T:int):
+	timeElapsed += T
+	if taskDetails.Due <= timeElapsed:
 		enableProgress = false
 		task_expired.emit(self)
 		await ExpireAnimation()
+		print_debug(taskTitle.text)
+		print_debug(taskDetails.Due)
+		print_debug(timeElapsed)
 		queue_free()
 	else:
-		printDue(((taskDetails.Due + startTime) - hr))
+		printDue(taskDetails.Due - timeElapsed)

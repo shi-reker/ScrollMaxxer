@@ -82,7 +82,7 @@ func update_clock_and_energy():
 	while min >= 60:
 		hr+=1
 		min -= 60
-		hourhand.emit(hr)
+		hourhand.emit(1)
 	while hr >= 24:
 		day +=1
 		hr -= 24

@@ -11,8 +11,8 @@ func _ready() -> void:
 	var d = MenuChanges.dateNtime[0]
 	var h = MenuChanges.dateNtime[1]
 	var m = MenuChanges.dateNtime[2]
-	var strMin
-	var strHR
+	var strMin:String = str(m)
+	var strHR:String = str(h)
 	if m < 10:
 		strMin = "0" +str(m)
 	if h < 10:

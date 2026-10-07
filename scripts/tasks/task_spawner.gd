@@ -96,14 +96,14 @@ func _process(delta: float) -> void:
 			count = 0
 
 func FillRequest():
-	give_resources.emit((game.hr*60)+game.min, game.energy, game.day)
+	give_resources.emit((game.hr*60)+game.min, game.energy)
 
 func SetTime(minute, energy):
 	game.min += minute
 	game.energy -= energy
 	game.update_clock_and_energy()
 	#print_debug(game.hr)
-	tickdown_hr.emit((game.hr*60)+game.min)
+	tickdown_hr.emit(minute)
 
 func GenerateTask():
 	var taskType
