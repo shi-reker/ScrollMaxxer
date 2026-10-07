@@ -67,8 +67,9 @@ func _on_meme_manager_meme_selected(meme: Meme, is_correct: bool) -> void:
 		combo = combo / 2
 		print_debug("wrong")
 		wrong_meme_animations()
-		
-	if meme_manager.is_effect_exist:
+	
+	if meme_manager.is_effect_exist and meme_manager.effected_meme == meme:
+		meme_manager.is_effect_exist = false
 		var effect: Enums.Effect = meme_manager.existing_effect
 		effect_manager.add_effect(effect, self)
 		
