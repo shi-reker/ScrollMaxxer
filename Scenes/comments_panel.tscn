@@ -15,10 +15,10 @@ font_size = 14
 font_size = 14
 
 [node name="MemePanel" type="Control" unique_id=321387236]
-custom_minimum_size = Vector2(230, 520)
+custom_minimum_size = Vector2(230, 535)
 layout_mode = 3
 anchors_preset = 0
-offset_bottom = 520.0
+offset_bottom = 535.0
 
 [node name="Panel" type="Panel" parent="." unique_id=1966061400]
 layout_mode = 1

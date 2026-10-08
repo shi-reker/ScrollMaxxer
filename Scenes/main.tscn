@@ -276,7 +276,7 @@ custom_minimum_size = Vector2(240, 535)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-max_y = 560
+max_y = 535
 content_stats = ExtResource("15_h1bgf")
 
 [node name="TextureRect" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content" index="1" unique_id=616836054]
@@ -286,7 +286,7 @@ texture = ExtResource("16_pdsj5")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-max_y = 560
+max_y = 535
 
 [node name="MemePanel" parent="BG layer/UI layer/DevicePanel" unique_id=321387236 instance=ExtResource("14_fevyy")]
 layout_mode = 2

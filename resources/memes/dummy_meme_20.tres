@@ -8,7 +8,7 @@ colors = PackedColorArray(0.685562, 0.2944, 0.92, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture_320"]
 gradient = SubResource("Gradient_320")
 width = 320
-height = 520
+height = 535
 
 [resource]
 script = ExtResource("1_script")
