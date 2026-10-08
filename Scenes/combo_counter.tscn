@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dmvnpuq12qrtj"]
+
+[ext_resource type="Script" uid="uid://c2bfjoyk8fehu" path="res://scripts/combo_counter.gd" id="1_nrrcp"]
+[ext_resource type="Texture2D" uid="uid://cgolkbptx6u7g" path="res://assets/Combo Counter Fill.svg" id="2_h1vbb"]
+[ext_resource type="Texture2D" uid="uid://b6ith44j1p4ru" path="res://assets/Combo Counter Line.svg" id="2_wfby5"]
+[ext_resource type="FontFile" uid="uid://dwqc75irmjte7" path="res://assets/Koulen-Regular.ttf" id="4_0rto1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ee4r6"]
+font = ExtResource("4_0rto1")
+font_color = Color(0, 0, 0, 1)
+
+[node name="ComboCounter" type="Control" unique_id=1506596158 node_paths=PackedStringArray("fill_color_node", "line_color_node", "count_label")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nrrcp")
+fill_color_node = NodePath("FillTex/ColorRect")
+line_color_node = NodePath("OutTex/ColorRect")
+count_label = NodePath("Label")
+metadata/_custom_type_script = "uid://c2bfjoyk8fehu"
+
+[node name="FillTex" type="TextureRect" parent="." unique_id=1612200867]
+clip_children = 1
+layout_mode = 1
+offset_left = -39.0
+offset_top = -30.0
+offset_right = 39.0
+offset_bottom = 33.0
+texture = ExtResource("2_h1vbb")
+
+[node name="ColorRect" type="ColorRect" parent="FillTex" unique_id=1941842934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2509804, 1, 1, 1)
+
+[node name="OutTex" type="TextureRect" parent="." unique_id=730426005]
+clip_children = 1
+layout_mode = 1
+offset_left = -39.0
+offset_top = -30.0
+offset_right = 39.0
+offset_bottom = 33.0
+texture = ExtResource("2_wfby5")
+
+[node name="ColorRect" type="ColorRect" parent="OutTex" unique_id=2041245688]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.37254903, 1, 1)
+
+[node name="Label" type="Label" parent="." unique_id=899434351]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "x100"
+label_settings = SubResource("LabelSettings_ee4r6")
+horizontal_alignment = 1
+vertical_alignment = 1
