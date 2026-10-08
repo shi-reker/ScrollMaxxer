@@ -3,7 +3,7 @@ class_name MemeManager
 
 var correct_meme_node: Meme
 
-signal meme_selected(meme: Meme)
+signal meme_selected(meme: Meme, is_correct: bool)
 
 var leftover_memes: Array = Enums.Meme.values()
 var memes_on_hand: Array[Enums.Meme] = []
@@ -21,10 +21,12 @@ func _ready() -> void:
 			meme.pressed.connect(_on_meme_pressed.bind(meme))
 
 func reload_memes(content_genre: Enums.Genre, emotion: Enums.Emo):
-	print_debug("reloading memes for genre ", content_genre, " and emotion ", emotion)	
+	if meme_nodes.is_empty():
+		push_error("MemeManager has no Meme children to reload.")
+		return
+
 	leftover_memes = Enums.Meme.values()
 	
-	print(Enums.Emo.find_key(emotion), Enums.Genre.find_key(content_genre))
 	#var correct_meme: Enums.Meme = Enums.meme_of_g_and_e[content_genre][emotion].pick_random()
 	var correct_meme: Enums.Meme = Enums.meme_of_g_and_e[0][0].pick_random()
 	
@@ -69,7 +71,6 @@ func add_random_effect():
 	
 	
 func _on_meme_pressed(pressed_meme: Meme) -> void:
-	print_debug(pressed_meme.meme_stats.code)
 	meme_selected.emit(pressed_meme, pressed_meme.name == correct_meme_node.name)
 
 var texture_of_effect: Dictionary[Enums.Effect, Texture2D] = {
