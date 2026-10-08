@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dubdbrpnkmn1l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font_size = 8
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=121594678]
+offset_right = 184.0
+offset_bottom = 28.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1871350868]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=28804648]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=763775794]
+layout_mode = 2
+text = "commenter"
+label_settings = SubResource("LabelSettings_57qmd")
+
+[node name="Label" type="Label" parent="." unique_id=192343207]
+layout_mode = 2
+text = "<3333333"
+label_settings = SubResource("LabelSettings_yf5fn")

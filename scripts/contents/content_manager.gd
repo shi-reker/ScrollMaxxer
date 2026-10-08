@@ -20,7 +20,7 @@ var is_scrolling: bool = false
 func _ready() -> void:
 	add_new_content(content1)
 	add_new_content(content2)
-	scrolled.emit(top_content)
+	call_deferred("emit_signal", "scrolled", top_content)
 
 func next_content() -> void:
 	if is_scrolling:

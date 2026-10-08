@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cf7aaju0pl2gt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font_size = 8
+
+[node name="Control" type="Control" unique_id=619125967]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1444998609]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 28.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=329004795]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer" unique_id=598547023]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1913838508]
+layout_mode = 2
+text = "commenter"
+label_settings = SubResource("LabelSettings_57qmd")
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1592502977]
+layout_mode = 2
+text = "<3333333"
+label_settings = SubResource("LabelSettings_yf5fn")

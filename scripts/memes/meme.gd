@@ -2,9 +2,8 @@
 extends TextureButton
 class_name Meme
 
-@export var max_x: int = 160
-@export var max_y: int = 160
-@export var meme_sprite: TextureRect
+@export var max_x: int
+@export var max_y: int
 @export var effect_sprite: TextureRect
 @export var hint: TextureRect
 
@@ -24,9 +23,9 @@ func _apply_stats(new_stats: MemeStats = null) -> void:
 		return
 	var tex := meme_stats.texture
 
-	if meme_sprite and meme_sprite.texture != tex:
-		meme_sprite.texture = tex
-	_resize_sprite_to_fit()
+	if texture_normal != tex:
+		texture_normal = tex
+	#_resize_sprite_to_fit()
 
 func prepaire_effect(texture: Texture2D):
 	effect_sprite.show()
@@ -38,15 +37,15 @@ func effect_ready():
 	pass
 
 func _resize_sprite_to_fit() -> void:
-	if not meme_sprite:
+	if not texture_normal:
 		return
-	var texture_size: Vector2 = meme_sprite.texture.get_size()
+	var texture_size: Vector2 = texture_normal.get_size()
 	if texture_size.x == 0 or texture_size.y == 0:
 		return
 	var scale_factor_x: float = max_x / texture_size.x
 	var scale_factor_y: float = max_y / texture_size.y
 	var final_scale: float = min(scale_factor_x, scale_factor_y)
 	if final_scale < 1.0:
-		meme_sprite.scale = Vector2(final_scale, final_scale)
+		texture_normal.scale = Vector2(final_scale, final_scale)
 	else:
-		meme_sprite.scale = Vector2.ONE # Reset to original size if it naturally fits
+		texture_normal.scale = Vector2.ONE # Reset to original size if it naturally fits
