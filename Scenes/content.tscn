@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b03rga3wdym70" path="res://scripts/contents/content.gd" id="1_fy1iq"]
 [ext_resource type="Resource" uid="uid://d1ueg12sba8bk" path="res://resources/contents/blue.tres" id="2_7skcx"]
-[ext_resource type="Texture2D" uid="uid://wkfbalmjm2a7" path="res://assets/temp_content_sprite.png" id="3_7skcx"]
+[ext_resource type="Texture2D" uid="uid://bdtxubpj2gsv0" path="res://assets/temp_content_sprite.tres" id="3_51eih"]
 [ext_resource type="Texture2D" uid="uid://cki8ckya4n6we" path="res://icon.svg" id="4_7skcx"]
+[ext_resource type="Texture2D" uid="uid://bqens146afx3e" path="res://assets/UI/buttons/like icon.png" id="5_v5ufe"]
+[ext_resource type="Texture2D" uid="uid://cowpl1m10niii" path="res://assets/UI/buttons/comments icon.png" id="6_o46yd"]
+[ext_resource type="Texture2D" uid="uid://enilw4gyk14u" path="res://assets/UI/buttons/share icon.png" id="7_hrpxa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 bg_color = Color(0.13333334, 0.13333334, 0.13333334, 0.13333334)
@@ -29,7 +32,6 @@ grow_vertical = 2
 script = ExtResource("1_fy1iq")
 sprite = NodePath("TextureRect")
 max_x = 240
-max_y = 535
 content_stats = ExtResource("2_7skcx")
 
 [node name="Panel" type="Panel" parent="." unique_id=777585480]
@@ -49,7 +51,8 @@ anchor_bottom = 1.0
 offset_right = 240.0
 offset_bottom = -5.0
 grow_vertical = 2
-texture = ExtResource("3_7skcx")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_51eih")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=426759513]
 layout_mode = 1
@@ -93,14 +96,14 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Icon1" type="ColorRect" parent="HBoxContainer/ActionIcons" unique_id=1584218836]
-custom_minimum_size = Vector2(40, 40)
+[node name="LikeIcon" type="TextureRect" parent="HBoxContainer/ActionIcons" unique_id=1196164195]
 layout_mode = 2
+texture = ExtResource("5_v5ufe")
 
-[node name="Icon2" type="ColorRect" parent="HBoxContainer/ActionIcons" unique_id=1822494534]
-custom_minimum_size = Vector2(40, 40)
+[node name="CommentsIcon" type="TextureRect" parent="HBoxContainer/ActionIcons" unique_id=13648310]
 layout_mode = 2
+texture = ExtResource("6_o46yd")
 
-[node name="Icon3" type="ColorRect" parent="HBoxContainer/ActionIcons" unique_id=2080061087]
-custom_minimum_size = Vector2(40, 40)
+[node name="ShareIcon" type="TextureRect" parent="HBoxContainer/ActionIcons" unique_id=1106012279]
 layout_mode = 2
+texture = ExtResource("7_hrpxa")

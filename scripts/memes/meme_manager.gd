@@ -74,8 +74,8 @@ func _on_meme_pressed(pressed_meme: Meme) -> void:
 	meme_selected.emit(pressed_meme, pressed_meme.name == correct_meme_node.name)
 
 var texture_of_effect: Dictionary[Enums.Effect, Texture2D] = {
-	Enums.Effect.MORE_ENERGY: load("res://assets/temp_effect_sprite.tres"),
-	Enums.Effect.ZERO_ENERGY : load("res://assets/temp_effect_sprite.tres"),
-	Enums.Effect.TIME_STOP: load("res://assets/temp_effect_sprite.tres"),
-	Enums.Effect.INSTANT_FINNISH: load("res://assets/temp_effect_sprite.tres"),
+	Enums.Effect.MORE_ENERGY: load("res://assets/meme effects/more energy.png"),
+	Enums.Effect.ZERO_ENERGY : load("res://assets/meme effects/free energy.png"),
+	Enums.Effect.TIME_STOP: load("res://assets/meme effects/time stop.png"),
+	Enums.Effect.INSTANT_FINNISH: load("res://assets/meme effects/Instant Finish.png"),
 }
