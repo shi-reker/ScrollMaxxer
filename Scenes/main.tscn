@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://drlkwkkmqxltw"]
 
 [ext_resource type="Texture2D" uid="uid://cb117cfpp711r" path="res://assets/bg.png" id="1_8gbba"]
+[ext_resource type="FontFile" uid="uid://dwqc75irmjte7" path="res://assets/Koulen-Regular.ttf" id="1_ee4r6"]
 [ext_resource type="Script" uid="uid://o0yc37veosdo" path="res://scripts/main/main.gd" id="1_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://b42bvx5casoii" path="res://assets/UI/time display.png" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://c1sb1m51vcy46" path="res://assets/UI/todo list.png" id="3_kry3j"]
@@ -18,9 +19,15 @@
 [ext_resource type="Texture2D" uid="uid://bnk3bijegpm7t" path="res://assets/UI/energy bar fill.png" id="17_h1bgf"]
 [ext_resource type="Script" uid="uid://c1o0exdrug8nc" path="res://scripts/energy_bar.gd" id="18_hibaj"]
 [ext_resource type="Script" uid="uid://bca1gqk2wtdgm" path="res://scripts/effect_manager.gd" id="19_fevyy"]
-[ext_resource type="Script" uid="uid://c2bfjoyk8fehu" path="res://scripts/combo_counter.gd" id="19_hibaj"]
+[ext_resource type="PackedScene" uid="uid://dmvnpuq12qrtj" path="res://Scenes/combo_counter.tscn" id="19_gt3je"]
 [ext_resource type="AudioStream" uid="uid://be301kt3bhg78" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.ogg" id="21_ee4r6"]
 [ext_resource type="AudioStream" uid="uid://j7dbyv2e647i" path="res://assets/audio/laserShoot1.wav" id="22_gt3je"]
+
+[sub_resource type="Theme" id="Theme_wr11q"]
+default_font = ExtResource("1_ee4r6")
+
+[sub_resource type="Theme" id="Theme_gt3je"]
+default_font = ExtResource("1_ee4r6")
 
 [sub_resource type="SystemFont" id="SystemFont_pkeh2"]
 subpixel_positioning = 0
@@ -37,6 +44,9 @@ font = SubResource("SystemFont_c53bp")
 font_size = 24
 
 [sub_resource type="FontFile" id="FontFile_53qbn"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -96,7 +106,10 @@ cache/0/24/0/scale = 1.0
 font = SubResource("FontFile_53qbn")
 font_size = 24
 
-[node name="Main" type="Node2D" unique_id=1606289912 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "combo_counter", "effect_manager", "pause", "scoreBoard", "to_do_list", "hoverSound", "pressSound")]
+[node name="Main" type="Control" unique_id=171190420 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "combo_counter", "effect_manager", "pause", "scoreBoard", "to_do_list", "hoverSound", "pressSound")]
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_wr11q")
 script = ExtResource("1_fdnlq")
 cur_content = NodePath("BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content")
 content_manager = NodePath("BG layer/UI layer/DevicePanel/ContentPanel")
@@ -136,6 +149,7 @@ offset_left = -226.5
 offset_right = 226.5
 offset_bottom = 44.0
 grow_horizontal = 2
+theme = SubResource("Theme_gt3je")
 texture = ExtResource("8_ynf5e")
 
 [node name="Date&TimeText" type="Label" parent="BG layer/UI layer/TimeCounter" unique_id=793510566]
@@ -151,6 +165,7 @@ offset_right = 79.5
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_gt3je")
 text = "d1 - 00:01"
 label_settings = SubResource("LabelSettings_y8knx")
 uppercase = true
@@ -164,6 +179,7 @@ anchor_bottom = 0.016
 offset_left = -364.0
 offset_bottom = 60.0
 grow_horizontal = 0
+theme = SubResource("Theme_gt3je")
 texture = ExtResource("2_8gbba")
 
 [node name="ScoreText" type="Label" parent="BG layer/UI layer/ScoreCounter" unique_id=113618652]
@@ -179,6 +195,7 @@ offset_right = 44.5
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_gt3je")
 text = "Score: "
 label_settings = SubResource("LabelSettings_53qbn")
 uppercase = true
@@ -192,6 +209,7 @@ anchor_bottom = 0.016
 offset_left = -78.0
 offset_bottom = 44.0
 grow_horizontal = 0
+theme = SubResource("Theme_gt3je")
 texture_normal = ExtResource("5_h1bgf")
 texture_pressed = ExtResource("6_b3802")
 texture_hover = ExtResource("7_fevyy")
@@ -205,6 +223,7 @@ anchor_bottom = 0.13
 offset_left = 470.0
 offset_bottom = 280.0
 grow_horizontal = 0
+theme = SubResource("Theme_gt3je")
 texture = ExtResource("3_kry3j")
 script = ExtResource("9_jkdf5")
 container = NodePath("ScrollContainer/VBoxContainer")
@@ -220,9 +239,11 @@ anchor_right = 0.028
 anchor_bottom = 0.06
 offset_right = 48.0
 offset_bottom = 40.0
+theme = SubResource("Theme_gt3je")
 
 [node name="Label" type="Label" parent="BG layer/UI layer/ToDoList/VBoxContainer" unique_id=1867596170]
 layout_mode = 2
+theme = SubResource("Theme_gt3je")
 text = "tasks"
 label_settings = SubResource("LabelSettings_pkeh2")
 uppercase = true
@@ -238,9 +259,11 @@ anchor_bottom = 0.97
 offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_gt3je")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BG layer/UI layer/ToDoList/ScrollContainer" unique_id=1745222188]
 layout_mode = 2
+theme = SubResource("Theme_gt3je")
 theme_override_constants/separation = 5
 
 [node name="DevicePanel" type="HBoxContainer" parent="BG layer/UI layer" unique_id=1990654489]
@@ -256,11 +279,13 @@ offset_right = 265.0
 offset_bottom = 267.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_gt3je")
 
 [node name="ContentPanel" type="ScrollContainer" parent="BG layer/UI layer/DevicePanel" unique_id=1965992437 node_paths=PackedStringArray("content1", "content2")]
 custom_minimum_size = Vector2(300, 535)
 layout_mode = 2
 size_flags_horizontal = 0
+theme = SubResource("Theme_gt3je")
 script = ExtResource("10_6iyac")
 content1 = NodePath("ContentList/Content")
 content2 = NodePath("ContentList/Content2")
@@ -269,27 +294,116 @@ content2 = NodePath("ContentList/Content2")
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 6
+theme = SubResource("Theme_gt3je")
 theme_override_constants/separation = 0
 
 [node name="Content" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList" unique_id=474919709 instance=ExtResource("11_6iyac")]
-custom_minimum_size = Vector2(240, 535)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-max_y = 535
+theme = SubResource("Theme_gt3je")
 content_stats = ExtResource("15_h1bgf")
 
+[node name="Panel" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content" index="0" unique_id=777585480]
+theme = SubResource("Theme_gt3je")
+
 [node name="TextureRect" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content" index="1" unique_id=616836054]
+theme = SubResource("Theme_gt3je")
 texture = ExtResource("16_pdsj5")
+
+[node name="HBoxContainer" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content" index="2" unique_id=426759513]
+theme = SubResource("Theme_gt3je")
+
+[node name="MarginContainer" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer" index="0" unique_id=961081987]
+theme = SubResource("Theme_gt3je")
+
+[node name="VBoxContainer" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/MarginContainer" index="0" unique_id=943347557]
+theme = SubResource("Theme_gt3je")
+
+[node name="HBoxContainer" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/MarginContainer/VBoxContainer" index="0" unique_id=1352480238]
+theme = SubResource("Theme_gt3je")
+
+[node name="TextureRect" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0" unique_id=202581353]
+theme = SubResource("Theme_gt3je")
+
+[node name="CreatorLabel" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1" unique_id=1735686028]
+theme = SubResource("Theme_gt3je")
+
+[node name="TitleLabel" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/MarginContainer/VBoxContainer" index="1" unique_id=733594014]
+theme = SubResource("Theme_gt3je")
+
+[node name="ActionIcons" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer" index="1" unique_id=1750718540]
+theme = SubResource("Theme_gt3je")
+
+[node name="Icon1" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/ActionIcons" index="0" unique_id=1584218836]
+theme = SubResource("Theme_gt3je")
+
+[node name="Icon2" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/ActionIcons" index="1" unique_id=1822494534]
+theme = SubResource("Theme_gt3je")
+
+[node name="Icon3" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/ActionIcons" index="2" unique_id=2080061087]
+theme = SubResource("Theme_gt3je")
 
 [node name="Content2" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList" unique_id=24824554 instance=ExtResource("11_6iyac")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-max_y = 535
+theme = SubResource("Theme_gt3je")
 
 [node name="MemePanel" parent="BG layer/UI layer/DevicePanel" unique_id=321387236 instance=ExtResource("14_fevyy")]
 layout_mode = 2
+theme = SubResource("Theme_gt3je")
+
+[node name="Panel" parent="BG layer/UI layer/DevicePanel/MemePanel" index="0" unique_id=1966061400]
+theme = SubResource("Theme_gt3je")
+
+[node name="MarginContainer" parent="BG layer/UI layer/DevicePanel/MemePanel" index="1" unique_id=1404274269]
+theme = SubResource("Theme_gt3je")
+
+[node name="VBoxContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer" index="0" unique_id=471871722]
+theme = SubResource("Theme_gt3je")
+
+[node name="Label" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/VBoxContainer" index="0" unique_id=438333460]
+theme = SubResource("Theme_gt3je")
+
+[node name="ColorRect" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/VBoxContainer" index="1" unique_id=1442354048]
+theme = SubResource("Theme_gt3je")
+
+[node name="VBoxContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/VBoxContainer" index="2" unique_id=121594678]
+theme = SubResource("Theme_gt3je")
+
+[node name="VBoxContainer2" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/VBoxContainer" index="3" unique_id=1243126424]
+theme = SubResource("Theme_gt3je")
+
+[node name="VBoxContainer3" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/VBoxContainer" index="4" unique_id=997104942]
+theme = SubResource("Theme_gt3je")
+
+[node name="MarginContainer2" parent="BG layer/UI layer/DevicePanel/MemePanel" index="2" unique_id=817536097]
+theme = SubResource("Theme_gt3je")
+
+[node name="VBoxContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2" index="0" unique_id=1205702676]
+theme = SubResource("Theme_gt3je")
+
+[node name="PanelContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer" index="0" unique_id=287825777]
+theme = SubResource("Theme_gt3je")
+
+[node name="MemeManager" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer/PanelContainer" index="0" unique_id=1069896293]
+theme = SubResource("Theme_gt3je")
+
+[node name="HBoxContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer" index="1" unique_id=1027565236]
+theme = SubResource("Theme_gt3je")
+
+[node name="TextureRect" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer/HBoxContainer" index="0" unique_id=897160237]
+theme = SubResource("Theme_gt3je")
+
+[node name="VBoxContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer/HBoxContainer" index="1" unique_id=2041937686]
+theme = SubResource("Theme_gt3je")
+
+[node name="Label" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer" index="0" unique_id=1269845348]
+theme = SubResource("Theme_gt3je")
+
+[node name="ColorRect" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer" index="1" unique_id=93219920]
+theme = SubResource("Theme_gt3je")
 
 [node name="EnergyBar" type="TextureProgressBar" parent="BG layer/UI layer" unique_id=1382169033]
 anchors_preset = -1
@@ -301,6 +415,7 @@ offset_top = -253.0
 offset_right = 77.0
 offset_bottom = 253.00003
 grow_vertical = 2
+theme = SubResource("Theme_gt3je")
 fill_mode = 3
 texture_under = ExtResource("16_k12tt")
 texture_progress = ExtResource("17_h1bgf")
@@ -319,13 +434,13 @@ offset_bottom = -8.0
 text = "Energy"
 uppercase = true
 
-[node name="ComboCounter" type="Control" parent="BG layer/UI layer" unique_id=1763255423]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("19_hibaj")
-metadata/_custom_type_script = "uid://c2bfjoyk8fehu"
+[node name="ComboCounter" parent="BG layer/UI layer" unique_id=1506596158 instance=ExtResource("19_gt3je")]
+visible = false
+offset_left = 289.0
+offset_top = 141.0
+offset_right = 289.0
+offset_bottom = 141.0
+theme = SubResource("Theme_gt3je")
 
 [node name="EffectManager" type="Node" parent="." unique_id=744317371]
 script = ExtResource("19_fevyy")
