@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://bo82mgaeerlfb" path="res://assets/UI/buttons/pause menu/exit button idle.png" id="12_pqvcn"]
 [ext_resource type="Texture2D" uid="uid://b6p0avrkichra" path="res://assets/UI/buttons/pause menu/exit button pressed.png" id="13_1gov1"]
 [ext_resource type="Texture2D" uid="uid://dbb1io04ktnvv" path="res://assets/UI/buttons/pause menu/exit button hover.png" id="14_uv8gj"]
+[ext_resource type="AudioStream" uid="uid://be301kt3bhg78" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.ogg" id="15_6wqnn"]
+[ext_resource type="AudioStream" uid="uid://j7dbyv2e647i" path="res://assets/audio/laserShoot1.wav" id="16_1ymcx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
 font_size = 32
@@ -21,7 +23,7 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_emv3i"]
 font_size = 24
 
-[node name="PauseMenu" type="TextureRect" unique_id=392182149 node_paths=PackedStringArray("dateNtime", "score", "resumeButton", "optionsButton", "saveButton", "exitButton")]
+[node name="PauseMenu" type="TextureRect" unique_id=392182149 node_paths=PackedStringArray("dateNtime", "score", "resumeButton", "optionsButton", "saveButton", "exitButton", "hoverSound", "pressSound")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,6 +37,8 @@ resumeButton = NodePath("VBoxContainer/VBoxContainer2/Resume")
 optionsButton = NodePath("VBoxContainer/VBoxContainer2/Options")
 saveButton = NodePath("VBoxContainer/VBoxContainer2/Save")
 exitButton = NodePath("VBoxContainer/VBoxContainer2/Exit")
+hoverSound = NodePath("HoverSound")
+pressSound = NodePath("PressedSound")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=474483957]
 layout_mode = 1
@@ -102,7 +106,17 @@ texture_normal = ExtResource("12_pqvcn")
 texture_pressed = ExtResource("13_1gov1")
 texture_hover = ExtResource("14_uv8gj")
 
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1290273384]
+stream = ExtResource("15_6wqnn")
+
+[node name="PressedSound" type="AudioStreamPlayer2D" parent="." unique_id=78477621]
+stream = ExtResource("16_1ymcx")
+
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer2/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer2/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer2/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer2/Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer2/Save" to="." method="_on_save_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer2/Save" to="." method="_on_save_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer2/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer2/Exit" to="." method="_on_exit_pressed"]

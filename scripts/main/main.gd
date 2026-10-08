@@ -38,6 +38,8 @@ var combo: int = 0:
 @export var pause:TextureButton
 @export var scoreBoard:Label
 @export var to_do_list: ToDoList
+@export var hoverSound:AudioStreamPlayer2D
+@export var pressSound:AudioStreamPlayer2D
 
 func _ready() -> void:
 	energy = energy
@@ -110,6 +112,9 @@ func _on_pause_button_pressed() -> void:
 	MenuChanges.dateNtime = [day, hr, min]
 	MenuChanges.playerScore = score
 	
+	pressSound.play()
+	await pressSound.finished
+	
 	var pauseLayer = CanvasLayer.new()
 	pauseLayer.process_mode = PROCESS_MODE_ALWAYS
 	var pauseScene = load("res://Scenes/pause_menu.tscn")
@@ -117,3 +122,6 @@ func _on_pause_button_pressed() -> void:
 	pauseLayer.add_child(pauseMenu)
 	get_tree().root.add_child(pauseLayer)
 	get_tree().paused = true
+
+func _on_pause_button_mouse_entered() -> void:
+	hoverSound.play()

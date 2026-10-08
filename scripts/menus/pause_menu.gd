@@ -6,6 +6,8 @@ extends TextureRect
 @export var optionsButton:TextureButton
 @export var saveButton:TextureButton
 @export var exitButton:TextureButton
+@export var hoverSound:AudioStreamPlayer2D
+@export var pressSound:AudioStreamPlayer2D
 
 func _ready() -> void:
 	var d = MenuChanges.dateNtime[0]
@@ -22,19 +24,38 @@ func _ready() -> void:
 	score.text = "score: " +str(MenuChanges.playerScore)
 
 func _on_resume_pressed() -> void:
+	pressSound.play()
+	await  pressSound.finished
 	get_tree().paused = false
 	queue_free()
 
 func _on_options_pressed() -> void:
+	pressSound.play()
+	await  pressSound.finished
 	MenuChanges.prevScene = "res://Scenes/pause_menu.tscn"
 	var optionScene = load("res://Scenes/options_menu.tscn")
 	get_parent().add_child(optionScene.instantiate())
 	queue_free()
 
 func _on_save_pressed() -> void:
-	pass # Replace with function body.
+	pressSound.play()
+	await  pressSound.finished
 
 func _on_exit_pressed() -> void:
+	pressSound.play()
+	await  pressSound.finished
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	queue_free()
+
+func _on_resume_mouse_entered() -> void:
+	hoverSound.play()
+
+func _on_options_mouse_entered() -> void:
+	hoverSound.play()
+
+func _on_save_mouse_entered() -> void:
+	hoverSound.play()
+
+func _on_exit_mouse_entered() -> void:
+	hoverSound.play()

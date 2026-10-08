@@ -6,13 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://43wya55q7jtl" path="res://assets/UI/buttons/options/slider highlight.png" id="3_axb4e"]
 [ext_resource type="Texture2D" uid="uid://q25k4bwoxmcf" path="res://assets/UI/buttons/options/slider head highlight.png" id="3_ebw5r"]
 [ext_resource type="Texture2D" uid="uid://cl0hqrbiwxa1u" path="res://assets/UI/buttons/options/slider idle.png" id="4_jqi30"]
+[ext_resource type="AudioStream" uid="uid://be301kt3bhg78" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.ogg" id="7_ce71l"]
 
 [sub_resource type="SystemFont" id="SystemFont_pkeh2"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_y8knx"]
 font = SubResource("SystemFont_pkeh2")
 font_size = 20
-font_color = Color(0.92156863, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0roye"]
 content_margin_left = 4.0
@@ -32,16 +33,18 @@ texture = ExtResource("4_jqi30")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ebw5r"]
 texture = ExtResource("3_axb4e")
 
-[node name="SettingSlot" type="TextureRect" unique_id=1015510504 node_paths=PackedStringArray("settingTitle", "settingSlider")]
+[node name="SettingSlot" type="TextureRect" unique_id=1015510504 node_paths=PackedStringArray("settingTitle", "settingSlider", "hoverSound")]
 offset_right = 880.0
 offset_bottom = 40.0
 texture = ExtResource("1_ctcku")
 script = ExtResource("2_jqi30")
 settingTitle = NodePath("HBoxContainer/Label")
 settingSlider = NodePath("HBoxContainer/HSlider")
+hoverSound = NodePath("HoverSound")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1513011112]
 custom_maximum_size = Vector2(800, 22)
+propagate_maximum_size = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -59,7 +62,7 @@ theme_override_constants/separation = 10
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1581860246]
 layout_mode = 2
 size_flags_horizontal = 2
-text = "music"
+text = "My balls"
 label_settings = SubResource("LabelSettings_y8knx")
 vertical_alignment = 1
 uppercase = true
@@ -76,3 +79,8 @@ theme_override_styles/grabber_area = SubResource("StyleBoxTexture_jqi30")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_ebw5r")
 value = 50.0
 ticks_position = 3
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=139601363]
+stream = ExtResource("7_ce71l")
+
+[connection signal="mouse_entered" from="HBoxContainer/HSlider" to="." method="_on_h_slider_mouse_entered"]
