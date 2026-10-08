@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dnkldi2y71cne"]
+
+[ext_resource type="Script" uid="uid://c8h8apjpiq1fh" path="res://scripts/memes/meme_manager.gd" id="1_hk0lo"]
+[ext_resource type="PackedScene" uid="uid://kgvldap8jw00" path="res://Scenes/meme.tscn" id="2_q5qnk"]
+
+[node name="MemeManager" type="GridContainer" unique_id=1299505990]
+offset_right = 200.0
+offset_bottom = 200.0
+columns = 2
+script = ExtResource("1_hk0lo")
+
+[node name="Meme" parent="." unique_id=1212883254 instance=ExtResource("2_q5qnk")]
+layout_mode = 2
+max_x = 160
+max_y = 160
+
+[node name="Meme2" parent="." unique_id=496032563 instance=ExtResource("2_q5qnk")]
+layout_mode = 2
+max_x = 160
+max_y = 160
+
+[node name="Meme3" parent="." unique_id=551657315 instance=ExtResource("2_q5qnk")]
+layout_mode = 2
+max_x = 160
+max_y = 160
+
+[node name="Meme4" parent="." unique_id=2128509923 instance=ExtResource("2_q5qnk")]
+layout_mode = 2
+max_x = 160
+max_y = 160

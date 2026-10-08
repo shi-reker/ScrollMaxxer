@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends GridContainer
 class_name MemeManager
 
 var correct_meme_node: Meme

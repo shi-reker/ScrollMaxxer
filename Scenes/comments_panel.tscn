@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://b0umvwur1iyax"]
+
+[ext_resource type="PackedScene" uid="uid://dubdbrpnkmn1l" path="res://Scenes/comments.tscn" id="1_ohe8y"]
+[ext_resource type="PackedScene" uid="uid://dnkldi2y71cne" path="res://Scenes/meme_manager.tscn" id="2_0eukc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1swy"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 0.13333334)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+
+[sub_resource type="Gradient" id="Gradient_c08ds"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g4v7s"]
+gradient = SubResource("Gradient_c08ds")
+width = 16
+height = 16
+
+[node name="MemePanel" type="Control" unique_id=321387236]
+custom_minimum_size = Vector2(200, 520)
+layout_mode = 3
+anchors_preset = 0
+offset_bottom = 520.0
+
+[node name="Panel" type="Panel" parent="." unique_id=1966061400]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f1swy")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1404274269]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=471871722]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=438333460]
+layout_mode = 2
+text = "COMMENTS"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer" unique_id=1442354048]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(1, 1, 0.99607843, 1)
+
+[node name="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=121594678 instance=ExtResource("1_ohe8y")]
+layout_mode = 2
+
+[node name="VBoxContainer2" parent="MarginContainer/VBoxContainer" unique_id=1243126424 instance=ExtResource("1_ohe8y")]
+layout_mode = 2
+
+[node name="VBoxContainer3" parent="MarginContainer/VBoxContainer" unique_id=997104942 instance=ExtResource("1_ohe8y")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=817536097]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2" unique_id=1205702676]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2/VBoxContainer" unique_id=287825777]
+layout_mode = 2
+
+[node name="MemeManager" parent="MarginContainer2/VBoxContainer/PanelContainer" unique_id=1069896293 instance=ExtResource("2_0eukc")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VBoxContainer" unique_id=1027565236]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/VBoxContainer/HBoxContainer" unique_id=897160237]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_g4v7s")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/VBoxContainer/HBoxContainer" unique_id=2041937686]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1269845348]
+layout_mode = 2
+text = "CHOOSE A MEME!"
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=93219920]
+custom_minimum_size = Vector2(-1, 1)
+layout_mode = 2
