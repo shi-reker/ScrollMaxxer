@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name Main
 
 var min:int = 0
@@ -28,6 +28,7 @@ var combo: int = 0:
 		else:
 			combo_counter.decrease_animation(value)
 		combo = value
+		combo_counter.update_counter(combo)
 
 @export var cur_content: Content
 @export var content_manager: ContentManager
