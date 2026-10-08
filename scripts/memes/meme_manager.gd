@@ -67,9 +67,7 @@ func add_random_effect():
 	existing_effect = Enums.Effect.INSTANT_FINNISH
 	effected_meme = meme_nodes.pick_random()
 	effected_meme.prepaire_effect(texture_of_effect[existing_effect])
-	
-	
-	
+
 func _on_meme_pressed(pressed_meme: Meme) -> void:
 	meme_selected.emit(pressed_meme, pressed_meme.name == correct_meme_node.name)
 

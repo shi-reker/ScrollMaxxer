@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://481edw5yr1vu"]
+
+[ext_resource type="Texture2D" uid="uid://bblukwsnk5slf" path="res://assets/pause bg.png" id="1_wl1fq"]
+[ext_resource type="Script" uid="uid://b6b8hhuoun5pe" path="res://scripts/game_end.gd" id="2_cmq3e"]
+[ext_resource type="Texture2D" uid="uid://dijnes1whhhdg" path="res://assets/UI/buttons/return button idle.png" id="3_3qf0w"]
+[ext_resource type="Texture2D" uid="uid://bdpqrkp0238ip" path="res://assets/UI/buttons/reutrn button pressed.png" id="4_83bs5"]
+[ext_resource type="Texture2D" uid="uid://bfqbrrxkvfiuq" path="res://assets/UI/buttons/reutrn button hover.png" id="5_kf68x"]
+[ext_resource type="AudioStream" uid="uid://be301kt3bhg78" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.ogg" id="6_kf68x"]
+[ext_resource type="AudioStream" uid="uid://j7dbyv2e647i" path="res://assets/audio/laserShoot1.wav" id="7_vhp0o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cmq3e"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_83bs5"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_kf68x"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_vhp0o"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_xgkyp"]
+font_size = 22
+
+[node name="GameEnd" type="TextureRect" unique_id=631348505 node_paths=PackedStringArray("cong1", "stats1", "stats2", "score", "closing", "returnToMain", "hoverSound", "pressSound")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wl1fq")
+script = ExtResource("2_cmq3e")
+cong1 = NodePath("VBoxContainer/congrats 1")
+stats1 = NodePath("VBoxContainer/VBoxContainer/# stats")
+stats2 = NodePath("VBoxContainer/VBoxContainer/# stats2")
+score = NodePath("VBoxContainer/VBoxContainer2/score")
+closing = NodePath("VBoxContainer/VBoxContainer2/closing")
+returnToMain = NodePath("VBoxContainer/Return")
+hoverSound = NodePath("HoverSound")
+pressSound = NodePath("PressedSound")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1258989166]
+custom_maximum_size = Vector2(1030, 360)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.44
+anchor_right = 0.5
+anchor_bottom = 0.44
+offset_left = -515.0
+offset_top = -180.0
+offset_right = 515.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 27
+
+[node name="congrats 1" type="Label" parent="VBoxContainer" unique_id=1274009566]
+layout_mode = 2
+text = "congratulations! you’ve just completed 2 whole weeks of being a bum
+(or at least that’s what you were supposed to do)"
+label_settings = SubResource("LabelSettings_cmq3e")
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1682899221]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="# stats" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=1063098194]
+layout_mode = 2
+text = "this month you’ve scrolled # times and done # tasks"
+label_settings = SubResource("LabelSettings_83bs5")
+vertical_alignment = 1
+uppercase = true
+
+[node name="# stats2" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=1842528833]
+layout_mode = 2
+text = "while skipping # tasks"
+label_settings = SubResource("LabelSettings_kf68x")
+vertical_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=740428059]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="score" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=251503434]
+layout_mode = 2
+text = "you racked up a grand total of # points"
+label_settings = SubResource("LabelSettings_vhp0o")
+vertical_alignment = 1
+uppercase = true
+
+[node name="closing" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=1775859072]
+layout_mode = 2
+text = "let’s hope you keep that up!"
+label_settings = SubResource("LabelSettings_xgkyp")
+vertical_alignment = 1
+uppercase = true
+
+[node name="Return" type="TextureButton" parent="VBoxContainer" unique_id=32994295]
+layout_mode = 2
+texture_normal = ExtResource("3_3qf0w")
+texture_pressed = ExtResource("4_83bs5")
+texture_hover = ExtResource("5_kf68x")
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=679918562]
+stream = ExtResource("6_kf68x")
+
+[node name="PressedSound" type="AudioStreamPlayer2D" parent="." unique_id=919662806]
+stream = ExtResource("7_vhp0o")
+
+[connection signal="mouse_entered" from="VBoxContainer/Return" to="." method="_on_return_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]

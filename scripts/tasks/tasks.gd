@@ -17,6 +17,7 @@ var energy:int
 var time:int
 var timeElapsed:int = 0
 var enableProgress:bool = true
+var expired:bool = false
 
 const SPAWN_SLIDE := 60.0
 const EXIT_SLIDE := 150.0
@@ -101,15 +102,15 @@ func Setup(task:String):
 	
 	if taskDetails.Len <= 60:
 		taskPDur.text = str(int(taskDetails.Len))+ "minutes"
-		taskPCost.text = "5e"
+		taskPCost.text = "5"
 		texture = load("res://assets/UI/task bg short.png")
 	elif taskDetails.Len <= 240:
 		taskPDur.text = "2hr"
-		taskPCost.text = "15e"
+		taskPCost.text = "15"
 		texture = load("res://assets/UI/task bg medium.png")
 	else:
 		taskPDur.text = "4hr"
-		taskPCost.text = "25e"
+		taskPCost.text = "25"
 		texture = load("res://assets/UI/tasks bg long.png")
 	
 	taskCategory = taskDetails.cat
@@ -215,7 +216,7 @@ func complete_task():
 
 func DueTimerTick(T:int):
 	timeElapsed += T
-	if taskDetails.Due <= timeElapsed:
+	if taskDetails.Due <= timeElapsed and enableProgress:
 		enableProgress = false
 		task_expired.emit(self)
 		await ExpireAnimation()

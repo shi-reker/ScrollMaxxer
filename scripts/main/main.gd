@@ -14,6 +14,7 @@ var energy:int = 100:
 		value = clamp(value, 0, 100)
 		energy = value
 		energyBar.update_energy_counter(value)
+var timesScrolled:int
 
 var score_add: int = 100
 @onready var emotion: Enums.Emo = Enums.Emo.values().pick_random()
@@ -88,6 +89,8 @@ func update_clock_and_energy():
 	while hr >= 24:
 		day +=1
 		hr -= 24
+	if day > 14:
+		EndTheGame()
 	var strMin:String = str(min)
 	var strHR:String = str(hr)
 	if min < 10:
@@ -104,6 +107,7 @@ func wrong_meme_animations():
 	pass
 
 func _on_content_manager_scrolled(new_content: Content) -> void:
+	timesScrolled += 1
 	var content_genre: Enums.Genre = new_content.content_stats.genre
 	print_debug("new content genre is ", content_genre)
 	meme_manager.reload_memes(content_genre, emotion)
@@ -125,3 +129,18 @@ func _on_pause_button_pressed() -> void:
 
 func _on_pause_button_mouse_entered() -> void:
 	hoverSound.play()
+
+func EndTheGame():
+	MenuChanges.dateNtime = [day, hr, min]
+	MenuChanges.playerScore = score
+	MenuChanges.reelsScrolled = timesScrolled
+	MenuChanges.tasksDone = to_do_list.tasksDone
+	MenuChanges.tasksIgnored = to_do_list.tasksSkipped
+	
+	var endLayer = CanvasLayer.new()
+	endLayer.process_mode = PROCESS_MODE_ALWAYS
+	var endScene = load("res://Scenes/game_end.tscn")
+	var endScreen = endScene.instantiate()
+	endLayer.add_child(endScreen)
+	get_tree().root.add_child(endLayer)
+	get_tree().paused = true

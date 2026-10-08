@@ -10,8 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://d2lyjpam4odrm" path="res://assets/UI/buttons/tasks/progress button pressed.png" id="7_0eaug"]
 [ext_resource type="Texture2D" uid="uid://qjo103v2eo7q" path="res://assets/UI/buttons/tasks/progress button hover.png" id="8_stw6w"]
 [ext_resource type="Texture2D" uid="uid://b7cfay0a7gu5v" path="res://assets/free_task_label.png" id="9_0eaug"]
+[ext_resource type="Texture2D" uid="uid://cyb6p2l4h4qs3" path="res://assets/UI/energy icon.png" id="11_u2g6x"]
 
 [sub_resource type="FontFile" id="FontFile_stw6w"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -51,7 +55,7 @@ font_size = 12
 font_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_h6juf"]
-font_size = 12
+font_size = 14
 
 [node name="Task" type="TextureRect" unique_id=500604406 node_paths=PackedStringArray("taskTitle", "taskDue", "taskPBar", "taskPNum", "taskPDur", "taskPCost", "freeTex", "complTex")]
 offset_right = 440.0
@@ -63,8 +67,8 @@ taskDue = NodePath("titles/TaskSubtitle")
 taskPBar = NodePath("HBoxContainer2/ProgressBar")
 taskPNum = NodePath("HBoxContainer2/ProgressBar/Label")
 taskPDur = NodePath("HBoxContainer2/HBoxContainer/ProgressDur")
-taskPCost = NodePath("HBoxContainer2/HBoxContainer/ProgressButton/Label")
-freeTex = NodePath("HBoxContainer2/HBoxContainer/ProgressButton/Label/FreeTex")
+taskPCost = NodePath("HBoxContainer2/HBoxContainer/ProgressButton/HBoxContainer/Label")
+freeTex = NodePath("HBoxContainer2/HBoxContainer/ProgressButton/HBoxContainer/Label/FreeTex")
 complTex = NodePath("HBoxContainer2/HBoxContainer/ProgressDur/ComplTex")
 
 [node name="titles" type="VBoxContainer" parent="." unique_id=990017564]
@@ -186,27 +190,32 @@ texture_pressed = ExtResource("7_0eaug")
 texture_hover = ExtResource("8_stw6w")
 stretch_mode = 3
 
-[node name="Label" type="Label" parent="HBoxContainer2/HBoxContainer/ProgressButton" unique_id=1816889474]
-custom_minimum_size = Vector2(55, 12)
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2/HBoxContainer/ProgressButton" unique_id=327629551]
+custom_maximum_size = Vector2(55, -1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.5
-offset_top = -8.5
-offset_right = 27.5
-offset_bottom = 8.5
+offset_left = -11.5
+offset_top = -10.0
+offset_right = 11.5
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "5e"
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2/HBoxContainer/ProgressButton/HBoxContainer" unique_id=1816889474]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "5"
 label_settings = SubResource("LabelSettings_h6juf")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="FreeTex" type="TextureRect" parent="HBoxContainer2/HBoxContainer/ProgressButton/Label" unique_id=689900754]
+[node name="FreeTex" type="TextureRect" parent="HBoxContainer2/HBoxContainer/ProgressButton/HBoxContainer/Label" unique_id=689900754]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -217,5 +226,10 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_0eaug")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/HBoxContainer/ProgressButton/HBoxContainer" unique_id=1664733079]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("11_u2g6x")
 
 [connection signal="pressed" from="HBoxContainer2/HBoxContainer/ProgressButton" to="." method="_on_progres_pressed"]

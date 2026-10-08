@@ -10,6 +10,8 @@ var task = preload("res://Scenes/tasks.tscn")
 var count:float = 0
 var enableGeneration:bool = true
 var blacklist:Array[Task_base.Tags]
+var tasksDone:int = 0
+var tasksSkipped:int = 0
 
 var tasksByTime:Dictionary[Task_base.GenTime, Array] = {
 	Task_base.GenTime.ANY: [
@@ -199,11 +201,13 @@ func TaskBlacklistCheck():
 func _on_task_completed(completedTask: Task):
 	game.score += int(completedTask.taskDetails.Len)
 	game.combo /=2
+	tasksDone += 1
 	detected_task_completed.emit(completedTask)
 
 func _on_task_expire(expiredTask:Task):
 	game.score -= int(expiredTask.taskDetails.Len)
 	game.combo /=2
+	tasksSkipped += 1
 
 func _on_task_exiting(exiting_task: Task):
 	tasks.erase(exiting_task)
