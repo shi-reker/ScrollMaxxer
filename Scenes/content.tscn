@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b03rga3wdym70" path="res://scripts/contents/content.gd" id="1_fy1iq"]
 [ext_resource type="Resource" uid="uid://d1ueg12sba8bk" path="res://resources/contents/blue.tres" id="2_7skcx"]
-[ext_resource type="Texture2D" uid="uid://bdtxubpj2gsv0" path="res://assets/temp_content_sprite.tres" id="3_51eih"]
+[ext_resource type="Texture2D" uid="uid://wkfbalmjm2a7" path="res://assets/temp_content_sprite.png" id="3_7skcx"]
 [ext_resource type="Texture2D" uid="uid://cki8ckya4n6we" path="res://icon.svg" id="4_7skcx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
@@ -16,8 +16,8 @@ corner_radius_bottom_left = 10
 font_color = Color(0, 0, 0, 1)
 
 [node name="Content" type="Control" unique_id=474919709 node_paths=PackedStringArray("sprite")]
-custom_minimum_size = Vector2(370, 520)
-custom_maximum_size = Vector2(-1, 520)
+custom_minimum_size = Vector2(240, 520)
+custom_maximum_size = Vector2(245, 540)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,6 +28,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fy1iq")
 sprite = NodePath("TextureRect")
+max_x = 240
+max_y = 535
 content_stats = ExtResource("2_7skcx")
 
 [node name="Panel" type="Panel" parent="." unique_id=777585480]
@@ -44,18 +46,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 320.0
+offset_right = 240.0
+offset_bottom = -5.0
 grow_vertical = 2
-texture = ExtResource("3_51eih")
+texture = ExtResource("3_7skcx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=426759513]
 layout_mode = 1
-offset_right = 368.0
-offset_bottom = 520.0
-theme_override_constants/separation = 10
+offset_right = 288.0
+offset_bottom = 535.0
+theme_override_constants/separation = 8
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=961081987]
-custom_minimum_size = Vector2(320, 520)
+custom_minimum_size = Vector2(240, 535)
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
@@ -86,6 +89,8 @@ label_settings = SubResource("LabelSettings_jf8d7")
 
 [node name="ActionIcons" type="VBoxContainer" parent="HBoxContainer" unique_id=1750718540]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 alignment = 1
 
 [node name="Icon1" type="ColorRect" parent="HBoxContainer/ActionIcons" unique_id=1584218836]
