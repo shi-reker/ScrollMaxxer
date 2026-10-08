@@ -6,15 +6,10 @@ class_name ToDoList
 @export var game:Main
 
 var tasks: Array[Task]
-var taskTagCounter: Array[Task_base.Tags]
 var task = preload("res://Scenes/tasks.tscn")
 var count:float = 0
 var enableGeneration:bool = true
-
-signal give_resources(t:int, e:int)
-signal tickdown_hr(h:int)
-signal detected_task_completed(task: Task)
-signal toggle_progress(state:bool)
+var blacklist:Array[Task_base.Tags]
 
 var tasksByTime:Dictionary[Task_base.GenTime, Array] = {
 	Task_base.GenTime.ANY: [
@@ -84,6 +79,19 @@ var taskTagsByTime:Dictionary[Task_base.GenTime, Array] = {
 	],
 }
 
+var taskTagCounter:Dictionary[Task_base.Tags, int] = {
+	Task_base.Tags.CHORE: 0,
+	Task_base.Tags.ROUTINE: 0,
+	Task_base.Tags.ASSIGNMENT: 0,
+	Task_base.Tags.RANDOM_EVENT: 0,
+	Task_base.Tags.REST: 0
+}
+
+signal give_resources(t:int, e:int)
+signal tickdown_hr(h:int)
+signal detected_task_completed(task: Task)
+signal toggle_progress(state:bool)
+
 func _ready() -> void:
 	scoller.clip_contents = true
 	game.hourhand.connect(HourTick)
@@ -102,8 +110,12 @@ func SetTime(minute, energy):
 	game.min += minute
 	game.energy -= energy
 	game.update_clock_and_energy()
+	TaskBlacklistCheck()
 
 func GenerateTask():
+	if blacklist.size() >= Task_base.Tags.size():
+		return
+	
 	var taskType
 	var selection
 	var a = 0
@@ -123,7 +135,7 @@ func GenerateTask():
 		if !timeFrame.is_empty():
 			taskType = timeFrame.pick_random()
 			var idx = timeFrame.find(taskType)
-			if taskTagCounter.count(taskTagsByTime[selected][idx]) < 5:
+			if !blacklist.has(taskTagsByTime[selected][idx]):
 				a = 1
 	
 	#print_debug(taskType)
@@ -142,7 +154,47 @@ func GenerateTask():
 	newTask.Setup(taskType)
 	container.add_child(newTask)
 	tasks.append(newTask)
-	taskTagCounter.append(newTask.taskType)
+	taskTagCounter[newTask.taskType] += 1
+	TaskBlacklistCheck()
+
+func TaskBlacklistCheck():
+	blacklist.clear()
+	
+	if game.energy <= 10:
+		blacklist.append(Task_base.Tags.CHORE)
+		blacklist.append(Task_base.Tags.ROUTINE)
+		blacklist.append(Task_base.Tags.ASSIGNMENT)
+		blacklist.append(Task_base.Tags.RANDOM_EVENT)
+		
+		if taskTagCounter[Task_base.Tags.REST] > 2:
+			blacklist.append(Task_base.Tags.REST)
+		
+		return
+	
+	if taskTagCounter[Task_base.Tags.REST] > 2:
+		blacklist.append(Task_base.Tags.REST)
+	else:
+		blacklist.erase(Task_base.Tags.REST)
+	
+	if taskTagCounter[Task_base.Tags.CHORE] > 3:
+		blacklist.append(Task_base.Tags.CHORE)
+	else:
+		blacklist.erase(Task_base.Tags.CHORE)
+	
+	if taskTagCounter[Task_base.Tags.ASSIGNMENT] > 5:
+		blacklist.append(Task_base.Tags.ASSIGNMENT)
+	else:
+		blacklist.erase(Task_base.Tags.ASSIGNMENT)
+	
+	if taskTagCounter[Task_base.Tags.RANDOM_EVENT] > 5:
+		blacklist.append(Task_base.Tags.RANDOM_EVENT)
+	else:
+		blacklist.erase(Task_base.Tags.RANDOM_EVENT)
+	
+	if taskTagCounter[Task_base.Tags.ROUTINE] > 3:
+		blacklist.append(Task_base.Tags.ROUTINE)
+	else:
+		blacklist.erase(Task_base.Tags.ROUTINE)
 
 func _on_task_completed(completedTask: Task):
 	game.score += int(completedTask.taskDetails.Len)
@@ -155,7 +207,7 @@ func _on_task_expire(expiredTask:Task):
 
 func _on_task_exiting(exiting_task: Task):
 	tasks.erase(exiting_task)
-	taskTagCounter.erase(exiting_task.taskType)
+	taskTagCounter[exiting_task.taskType] -= 1
 
 func HourTick(h:int):
 	tickdown_hr.emit(h)
