@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://bc1fpwucmlmhr"]
 
 [ext_resource type="Script" uid="uid://b03rga3wdym70" path="res://scripts/contents/content.gd" id="1_fy1iq"]
-[ext_resource type="Resource" uid="uid://qac03c6nd7sc" path="res://resources/contents/jjk_slander.tres" id="2_wcxcf"]
-[ext_resource type="Texture2D" uid="uid://deijkxq0btwek" path="res://assets/tai_lung_computer.jpg" id="3_7skcx"]
+[ext_resource type="Resource" uid="uid://d1ueg12sba8bk" path="res://resources/contents/blue.tres" id="2_7skcx"]
+[ext_resource type="Texture2D" uid="uid://bdtxubpj2gsv0" path="res://assets/temp_content_sprite.tres" id="3_51eih"]
+[ext_resource type="Texture2D" uid="uid://cki8ckya4n6we" path="res://icon.svg" id="4_7skcx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 0.13333334)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_jf8d7"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="Content" type="Control" unique_id=474919709 node_paths=PackedStringArray("sprite")]
 custom_minimum_size = Vector2(370, 520)
@@ -11,17 +22,80 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -832.0
+offset_right = -782.0
 offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fy1iq")
 sprite = NodePath("TextureRect")
-content_stats = ExtResource("2_wcxcf")
+content_stats = ExtResource("2_7skcx")
+
+[node name="Panel" type="Panel" parent="." unique_id=777585480]
+custom_maximum_size = Vector2(-1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=616836054]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.16666667, 0.16666667)
-texture = ExtResource("3_7skcx")
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 320.0
+grow_vertical = 2
+texture = ExtResource("3_51eih")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=426759513]
+layout_mode = 1
+offset_right = 368.0
+offset_bottom = 520.0
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=961081987]
+custom_minimum_size = Vector2(320, 520)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=943347557]
+layout_mode = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1352480238]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=202581353]
+layout_mode = 2
+texture = ExtResource("4_7skcx")
+expand_mode = 3
+
+[node name="CreatorLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1735686028]
+layout_mode = 2
+text = "wwwww"
+label_settings = SubResource("LabelSettings_jf8d7")
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=733594014]
+layout_mode = 2
+text = "video title"
+label_settings = SubResource("LabelSettings_jf8d7")
+
+[node name="ActionIcons" type="VBoxContainer" parent="HBoxContainer" unique_id=1750718540]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon1" type="ColorRect" parent="HBoxContainer/ActionIcons" unique_id=1584218836]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Icon2" type="ColorRect" parent="HBoxContainer/ActionIcons" unique_id=1822494534]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Icon3" type="ColorRect" parent="HBoxContainer/ActionIcons" unique_id=2080061087]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
