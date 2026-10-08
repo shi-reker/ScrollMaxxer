@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://deijkxq0btwek" path="res://assets/tai_lung_computer.jpg" id="3_7skcx"]
 
 [node name="Content" type="Control" unique_id=474919709 node_paths=PackedStringArray("sprite")]
-custom_minimum_size = Vector2(320, 560)
-custom_maximum_size = Vector2(320, 560)
+custom_minimum_size = Vector2(370, 520)
+custom_maximum_size = Vector2(-1, 520)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

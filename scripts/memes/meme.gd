@@ -2,9 +2,8 @@
 extends TextureButton
 class_name Meme
 
-@export var max_x: int = 160
-@export var max_y: int = 160
-@export var meme_sprite: TextureRect
+@export var max_x: int
+@export var max_y: int
 @export var effect_sprite: TextureRect
 @export var hint: TextureRect
 

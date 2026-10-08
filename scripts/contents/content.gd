@@ -4,7 +4,7 @@ class_name Content
 
 @export var sprite: TextureRect
 @export var max_x: int = 320
-@export var max_y: int = 560
+@export var max_y: int = 520
 @export var content_stats: ContentStats:
 	set(value):
 		content_stats = value
