@@ -89,9 +89,7 @@ var texture_of_effect: Dictionary[Enums.Effect, Texture2D] = {
 var emotionsTextures:Dictionary[Enums.Emo, Texture2D] = {
 	Enums.Emo.PLEASED: load("res://assets/temp emos/pleased temp.png"),
 	Enums.Emo.FUNNY: load("res://assets/temp emos/funny temp.png"),
-	Enums.Emo.AMAZED: load("res://assets/temp emos/amazed temp.png"),
 	Enums.Emo.SUS: load("res://assets/temp emos/sus temp.png"),
 	Enums.Emo.DISGUSTED: load("res://assets/temp emos/disgusted temp.png"),
-	Enums.Emo.CRINGED: load("res://assets/temp emos/cringed temp.png"),
 	Enums.Emo.BEWILDERED: load("res://assets/temp emos/bewildered temp.png")
 }

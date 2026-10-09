@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Enums="*uid://b6raoqxcr8a0u"
 MenuChanges="*uid://dyj0rpcliqbth"
+BGM="*uid://xpcob4oleays"
 
 [display]
 
