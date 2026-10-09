@@ -17,7 +17,6 @@ var energy:int = 100:
 var timesScrolled:int
 
 var score_add: int = 100
-@onready var emotion: Enums.Emo = Enums.Emo.values().pick_random()
 
 signal hourhand(t:int)
 var isTimeStopped:bool = false
@@ -113,6 +112,7 @@ func wrong_meme_animations():
 
 func _on_content_manager_scrolled(new_content: Content) -> void:
 	timesScrolled += 1
+	var emotion: Enums.Emo = Enums.Emo.values().pick_random()
 	var content_genre: Enums.Genre = new_content.content_stats.genre
 	print_debug("new content genre is ", content_genre)
 	meme_manager.reload_memes(content_genre, emotion)

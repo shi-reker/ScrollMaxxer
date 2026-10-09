@@ -14,6 +14,7 @@ var effected_meme: Meme = null
 var is_effect_exist: bool = false
 var existing_effect: Enums.Effect
 
+@export var reaction:TextureRect
 @export var correctSound:AudioStreamPlayer2D
 @export var incorrectSound:AudioStreamPlayer2D
 
@@ -22,12 +23,16 @@ func _ready() -> void:
 		if meme is Meme:
 			meme_nodes.append(meme)
 			meme.pressed.connect(_on_meme_pressed.bind(meme))
+	reaction.hide()
 
 func reload_memes(content_genre: Enums.Genre, emotion: Enums.Emo):
 	if meme_nodes.is_empty():
 		push_error("MemeManager has no Meme children to reload.")
 		return
-
+	
+	reaction.show()
+	reaction.texture = emotionsTextures[emotion]
+	
 	leftover_memes = Enums.Meme.values()
 	
 	#var correct_meme: Enums.Meme = Enums.meme_of_g_and_e[content_genre][emotion].pick_random()
@@ -79,4 +84,14 @@ var texture_of_effect: Dictionary[Enums.Effect, Texture2D] = {
 	Enums.Effect.ZERO_ENERGY : load("res://assets/meme effects/free energy.png"),
 	Enums.Effect.TIME_STOP: load("res://assets/meme effects/time stop.png"),
 	Enums.Effect.INSTANT_FINNISH: load("res://assets/meme effects/Instant Finish.png"),
+}
+
+var emotionsTextures:Dictionary[Enums.Emo, Texture2D] = {
+	Enums.Emo.PLEASED: load("res://assets/temp emos/pleased temp.png"),
+	Enums.Emo.FUNNY: load("res://assets/temp emos/funny temp.png"),
+	Enums.Emo.AMAZED: load("res://assets/temp emos/amazed temp.png"),
+	Enums.Emo.SUS: load("res://assets/temp emos/sus temp.png"),
+	Enums.Emo.DISGUSTED: load("res://assets/temp emos/disgusted temp.png"),
+	Enums.Emo.CRINGED: load("res://assets/temp emos/cringed temp.png"),
+	Enums.Emo.BEWILDERED: load("res://assets/temp emos/bewildered temp.png")
 }

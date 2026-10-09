@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://batjnfqmg82l3"]
 
 [ext_resource type="Texture2D" uid="uid://cf0tnqaqmi8u0" path="res://assets/UI/setting slot bg.png" id="1_ctcku"]
+[ext_resource type="FontFile" uid="uid://dwqc75irmjte7" path="res://assets/Koulen-Regular.ttf" id="1_lc3ka"]
 [ext_resource type="Texture2D" uid="uid://b62kcswdp80st" path="res://assets/UI/buttons/options/slider head.png" id="2_ebw5r"]
 [ext_resource type="Script" uid="uid://2dpcaq3d1t81" path="res://scripts/setting_slot.gd" id="2_jqi30"]
 [ext_resource type="Texture2D" uid="uid://43wya55q7jtl" path="res://assets/UI/buttons/options/slider highlight.png" id="3_axb4e"]
@@ -8,12 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cl0hqrbiwxa1u" path="res://assets/UI/buttons/options/slider idle.png" id="4_jqi30"]
 [ext_resource type="AudioStream" uid="uid://be301kt3bhg78" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.ogg" id="7_ce71l"]
 
-[sub_resource type="SystemFont" id="SystemFont_pkeh2"]
-subpixel_positioning = 0
+[sub_resource type="Theme" id="Theme_8dnnj"]
+default_font = ExtResource("1_lc3ka")
 
 [sub_resource type="LabelSettings" id="LabelSettings_y8knx"]
-font = SubResource("SystemFont_pkeh2")
-font_size = 20
+font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0roye"]
 content_margin_left = 4.0
@@ -36,6 +36,7 @@ texture = ExtResource("3_axb4e")
 [node name="SettingSlot" type="TextureRect" unique_id=1015510504 node_paths=PackedStringArray("settingTitle", "settingSlider", "hoverSound")]
 offset_right = 880.0
 offset_bottom = 40.0
+theme = SubResource("Theme_8dnnj")
 texture = ExtResource("1_ctcku")
 script = ExtResource("2_jqi30")
 settingTitle = NodePath("HBoxContainer/Label")
@@ -61,7 +62,6 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1581860246]
 layout_mode = 2
-size_flags_horizontal = 2
 text = "My balls"
 label_settings = SubResource("LabelSettings_y8knx")
 vertical_alignment = 1

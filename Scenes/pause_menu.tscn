@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bu5i12iejwxqw"]
 
+[ext_resource type="FontFile" uid="uid://dwqc75irmjte7" path="res://assets/Koulen-Regular.ttf" id="1_1ymcx"]
 [ext_resource type="Texture2D" uid="uid://bblukwsnk5slf" path="res://assets/pause bg.png" id="1_taale"]
 [ext_resource type="Script" uid="uid://dksc32tdyj1ai" path="res://scripts/menus/pause_menu.gd" id="2_q7fiq"]
 [ext_resource type="Texture2D" uid="uid://62l3xxsn5snd" path="res://assets/UI/buttons/pause menu/resume button idle.png" id="3_6wqnn"]
@@ -17,6 +18,9 @@
 [ext_resource type="AudioStream" uid="uid://be301kt3bhg78" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.ogg" id="15_6wqnn"]
 [ext_resource type="AudioStream" uid="uid://j7dbyv2e647i" path="res://assets/audio/laserShoot1.wav" id="16_1ymcx"]
 
+[sub_resource type="Theme" id="Theme_svk7e"]
+default_font = ExtResource("1_1ymcx")
+
 [sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
 font_size = 32
 
@@ -29,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_svk7e")
 texture = ExtResource("1_taale")
 script = ExtResource("2_q7fiq")
 dateNtime = NodePath("VBoxContainer/VBoxContainer/DatenTime")

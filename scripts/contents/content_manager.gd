@@ -4,6 +4,7 @@ class_name ContentManager
 @export var content1: Content
 @export var content2: Content
 @export var scroll_duration: float = 0.35
+@export var swipeSound:AudioStreamPlayer2D
 
 @onready var content_list: VBoxContainer = $ContentList
 @onready var top_content: Content = content1
@@ -13,7 +14,6 @@ var leftover_content: Array = Enums.Content.values()
 var content_history: Dictionary[Enums.Content, bool] = {}
 
 signal scrolled(new_content: Content)
-
 
 var is_scrolling: bool = false
 
@@ -27,6 +27,7 @@ func next_content() -> void:
 		return
 
 	is_scrolling = true
+	swipeSound.play()
 	var incoming_content := btm_content
 	var outgoing_content := top_content
 	var scroll_distance := roundi(outgoing_content.size.y)

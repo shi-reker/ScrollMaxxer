@@ -1,7 +1,7 @@
 extends Node
 
 enum Emo {
-	LIKE, DISLIKE, SUS
+	PLEASED, FUNNY, AMAZED, SUS, DISGUSTED, CRINGED, BEWILDERED 
 }
 
 enum Genre {
@@ -102,8 +102,6 @@ func load_meme_genre_emo():
 		var g = s.genre
 		meme_of_g_and_e.get_or_add(e, {}).get_or_add(g, []).append(m)
 	#print_debug("memes of emotion", Emo.find_key(0), " and ", Genre.find_key(0), ": ", meme_of_g_and_e[0][0])
-
-
 
 func _ready() -> void:
 	load_meme_genre_emo()

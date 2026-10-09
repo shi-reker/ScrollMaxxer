@@ -20,9 +20,10 @@
 [ext_resource type="Script" uid="uid://c1o0exdrug8nc" path="res://scripts/energy_bar.gd" id="18_hibaj"]
 [ext_resource type="Script" uid="uid://bca1gqk2wtdgm" path="res://scripts/effect_manager.gd" id="19_fevyy"]
 [ext_resource type="PackedScene" uid="uid://dmvnpuq12qrtj" path="res://Scenes/combo_counter.tscn" id="19_gt3je"]
+[ext_resource type="Texture2D" uid="uid://kq2ee2vs1edp" path="res://assets/image 5.png" id="20_3pmx8"]
 [ext_resource type="AudioStream" uid="uid://be301kt3bhg78" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.ogg" id="21_ee4r6"]
 [ext_resource type="AudioStream" uid="uid://j7dbyv2e647i" path="res://assets/audio/laserShoot1.wav" id="22_gt3je"]
-[ext_resource type="AudioStream" uid="uid://crxpr66bt0lpj" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Swipe - 1.ogg" id="23_gt3je"]
+[ext_resource type="AudioStream" uid="uid://cn4vecma22x6a" path="res://assets/audio/JDSherbert - Swipe.wav" id="23_gt3je"]
 
 [sub_resource type="Theme" id="Theme_wr11q"]
 default_font = ExtResource("1_ee4r6")
@@ -30,81 +31,16 @@ default_font = ExtResource("1_ee4r6")
 [sub_resource type="Theme" id="Theme_gt3je"]
 default_font = ExtResource("1_ee4r6")
 
-[sub_resource type="SystemFont" id="SystemFont_pkeh2"]
-subpixel_positioning = 0
-
 [sub_resource type="LabelSettings" id="LabelSettings_y8knx"]
-font = SubResource("SystemFont_pkeh2")
 font_size = 26
 
-[sub_resource type="SystemFont" id="SystemFont_c53bp"]
-subpixel_positioning = 0
-
 [sub_resource type="LabelSettings" id="LabelSettings_53qbn"]
-font = SubResource("SystemFont_c53bp")
 font_size = 24
 
-[sub_resource type="FontFile" id="FontFile_53qbn"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/17/0/ascent = 0.0
-cache/0/17/0/descent = 0.0
-cache/0/17/0/underline_position = 0.0
-cache/0/17/0/underline_thickness = 0.0
-cache/0/17/0/scale = 1.0
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-cache/0/19/0/ascent = 0.0
-cache/0/19/0/descent = 0.0
-cache/0/19/0/underline_position = 0.0
-cache/0/19/0/underline_thickness = 0.0
-cache/0/19/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/21/0/ascent = 0.0
-cache/0/21/0/descent = 0.0
-cache/0/21/0/underline_position = 0.0
-cache/0/21/0/underline_thickness = 0.0
-cache/0/21/0/scale = 1.0
-cache/0/22/0/ascent = 0.0
-cache/0/22/0/descent = 0.0
-cache/0/22/0/underline_position = 0.0
-cache/0/22/0/underline_thickness = 0.0
-cache/0/22/0/scale = 1.0
-cache/0/23/0/ascent = 0.0
-cache/0/23/0/descent = 0.0
-cache/0/23/0/underline_position = 0.0
-cache/0/23/0/underline_thickness = 0.0
-cache/0/23/0/scale = 1.0
-cache/0/24/0/ascent = 0.0
-cache/0/24/0/descent = 0.0
-cache/0/24/0/underline_position = 0.0
-cache/0/24/0/underline_thickness = 0.0
-cache/0/24/0/scale = 1.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_pkeh2"]
-font = SubResource("FontFile_53qbn")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_h7ojb"]
 font_size = 24
 
 [node name="Main" type="Control" unique_id=171190420 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "combo_counter", "effect_manager", "pause", "scoreBoard", "to_do_list", "hoverSound", "pressSound")]
@@ -169,6 +105,7 @@ grow_vertical = 2
 theme = SubResource("Theme_gt3je")
 text = "d1 - 00:01"
 label_settings = SubResource("LabelSettings_y8knx")
+horizontal_alignment = 1
 uppercase = true
 
 [node name="ScoreCounter" type="TextureRect" parent="BG layer/UI layer" unique_id=1091252154]
@@ -199,6 +136,7 @@ grow_vertical = 2
 theme = SubResource("Theme_gt3je")
 text = "Score: "
 label_settings = SubResource("LabelSettings_53qbn")
+horizontal_alignment = 1
 uppercase = true
 
 [node name="PauseButton" type="TextureButton" parent="BG layer/UI layer" unique_id=1887488849]
@@ -244,9 +182,11 @@ theme = SubResource("Theme_gt3je")
 
 [node name="Label" type="Label" parent="BG layer/UI layer/ToDoList/VBoxContainer" unique_id=1867596170]
 layout_mode = 2
-theme = SubResource("Theme_gt3je")
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -10)
 text = "tasks"
 label_settings = SubResource("LabelSettings_pkeh2")
+vertical_alignment = 1
 uppercase = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BG layer/UI layer/ToDoList" unique_id=1336885851]
@@ -282,7 +222,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_gt3je")
 
-[node name="ContentPanel" type="ScrollContainer" parent="BG layer/UI layer/DevicePanel" unique_id=1965992437 node_paths=PackedStringArray("content1", "content2")]
+[node name="ContentPanel" type="ScrollContainer" parent="BG layer/UI layer/DevicePanel" unique_id=1965992437 node_paths=PackedStringArray("content1", "content2", "swipeSound")]
 custom_minimum_size = Vector2(300, 535)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -290,6 +230,7 @@ theme = SubResource("Theme_gt3je")
 script = ExtResource("10_6iyac")
 content1 = NodePath("ContentList/Content")
 content2 = NodePath("ContentList/Content2")
+swipeSound = NodePath("../../../../SwipeSound")
 
 [node name="ContentList" type="VBoxContainer" parent="BG layer/UI layer/DevicePanel/ContentPanel" unique_id=1136474206]
 layout_mode = 2
@@ -348,9 +289,11 @@ layout_mode = 2
 theme = SubResource("Theme_gt3je")
 
 [node name="Panel" parent="BG layer/UI layer/DevicePanel/MemePanel" index="0" unique_id=1966061400]
+anchors_preset = -1
 theme = SubResource("Theme_gt3je")
 
 [node name="MarginContainer" parent="BG layer/UI layer/DevicePanel/MemePanel" index="1" unique_id=1404274269]
+anchors_preset = -1
 theme = SubResource("Theme_gt3je")
 
 [node name="VBoxContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer" index="0" unique_id=471871722]
@@ -380,8 +323,9 @@ theme = SubResource("Theme_gt3je")
 [node name="PanelContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer" index="0" unique_id=287825777]
 theme = SubResource("Theme_gt3je")
 
-[node name="MemeManager" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer/PanelContainer" index="0" unique_id=1069896293]
+[node name="MemeManager" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer/PanelContainer" index="0" unique_id=1069896293 node_paths=PackedStringArray("reaction")]
 theme = SubResource("Theme_gt3je")
+reaction = NodePath("../../../../../../ReactionFace")
 
 [node name="HBoxContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer2/VBoxContainer" index="1" unique_id=1027565236]
 theme = SubResource("Theme_gt3je")
@@ -424,7 +368,14 @@ offset_left = -31.0
 offset_top = -31.0
 offset_right = 31.0
 offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 16)
+offset_transform_visual_only = false
 text = "Energy"
+label_settings = SubResource("LabelSettings_h7ojb")
+horizontal_alignment = 1
 uppercase = true
 
 [node name="ComboCounter" parent="BG layer/UI layer" unique_id=1506596158 instance=ExtResource("19_gt3je")]
@@ -434,6 +385,18 @@ offset_top = 141.0
 offset_right = 289.0
 offset_bottom = 141.0
 theme = SubResource("Theme_gt3je")
+
+[node name="ReactionFace" type="TextureRect" parent="BG layer/UI layer" unique_id=2004997903]
+custom_minimum_size = Vector2(460, 220)
+custom_maximum_size = Vector2(460, 220)
+anchors_preset = -1
+anchor_left = 0.57
+anchor_top = 0.62
+anchor_right = 0.96
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_3pmx8")
 
 [node name="EffectManager" type="Node" parent="." unique_id=744317371]
 script = ExtResource("19_fevyy")

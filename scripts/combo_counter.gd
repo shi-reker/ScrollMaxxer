@@ -15,7 +15,7 @@ func decrease_animation(combo: int):
 	pass
 
 func update_counter(combo: int):
-	print_debug("updating")
+	#print_debug("updating")
 	if combo < 5:
 		visible = false
 		return

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cn4vecma22x6a"
+path="res://.godot/imported/JDSherbert - Swipe.wav-bc6ba6a53d37f27c0ac3acd7f7235746.sample"
+
+[deps]
+
+source_file="res://assets/audio/JDSherbert - Swipe.wav"
+dest_files=["res://.godot/imported/JDSherbert - Swipe.wav-bc6ba6a53d37f27c0ac3acd7f7235746.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
