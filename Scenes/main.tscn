@@ -308,6 +308,7 @@ content_stats = ExtResource("15_h1bgf")
 theme = SubResource("Theme_gt3je")
 
 [node name="TextureRect" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content" index="1" unique_id=616836054]
+scale = Vector2(1, 1)
 theme = SubResource("Theme_gt3je")
 texture = ExtResource("16_pdsj5")
 
@@ -333,15 +334,6 @@ theme = SubResource("Theme_gt3je")
 theme = SubResource("Theme_gt3je")
 
 [node name="ActionIcons" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer" index="1" unique_id=1750718540]
-theme = SubResource("Theme_gt3je")
-
-[node name="Icon1" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/ActionIcons" index="0" unique_id=1584218836]
-theme = SubResource("Theme_gt3je")
-
-[node name="Icon2" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/ActionIcons" index="1" unique_id=1822494534]
-theme = SubResource("Theme_gt3je")
-
-[node name="Icon3" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content/HBoxContainer/ActionIcons" index="2" unique_id=2080061087]
 theme = SubResource("Theme_gt3je")
 
 [node name="Content2" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList" unique_id=24824554 instance=ExtResource("11_6iyac")]

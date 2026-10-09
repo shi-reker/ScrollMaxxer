@@ -115,7 +115,7 @@ func SetTime(minute, energy):
 	TaskBlacklistCheck()
 
 func GenerateTask():
-	if blacklist.size() >= Task_base.Tags.size():
+	if blacklist.size() >= Task_base.Tags.size() or tasks.size() > 10:
 		return
 	
 	var taskType
