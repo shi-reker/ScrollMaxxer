@@ -116,6 +116,9 @@ func _on_content_manager_scrolled(new_content: Content) -> void:
 func _on_pause_button_pressed() -> void:
 	MenuChanges.dateNtime = [day, hr, min]
 	MenuChanges.playerScore = score
+	MenuChanges.reelsScrolled = timesScrolled
+	MenuChanges.tasksDone = to_do_list.tasksDone
+	MenuChanges.tasksIgnored = to_do_list.tasksSkipped
 	
 	pressSound.play()
 	await pressSound.finished

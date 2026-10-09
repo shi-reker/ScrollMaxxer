@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://d3ehkekj4h85v" path="res://assets/UI/buttons/main menu/options button idle.png" id="6_wqpeb"]
 [ext_resource type="Texture2D" uid="uid://dia14owqooalr" path="res://assets/UI/buttons/main menu/options button pressed.png" id="7_tekra"]
 [ext_resource type="Texture2D" uid="uid://bpq54wbc3n8r3" path="res://assets/UI/buttons/main menu/options button hover.png" id="8_8flw2"]
-[ext_resource type="Texture2D" uid="uid://dkvfbfy61kf5l" path="res://assets/UI/buttons/pause menu/save button idle.png" id="9_c8xnj"]
-[ext_resource type="Texture2D" uid="uid://h6mef7u7yhoc" path="res://assets/UI/buttons/pause menu/save button pressed.png" id="10_m5ant"]
-[ext_resource type="Texture2D" uid="uid://c3l1hp8nhxivy" path="res://assets/UI/buttons/pause menu/save button hover.png" id="11_kg368"]
+[ext_resource type="Texture2D" uid="uid://dm6jeucwsn6u1" path="res://assets/UI/buttons/pause menu/end game button idle.png" id="9_6wqnn"]
+[ext_resource type="Texture2D" uid="uid://bp1aghg5hecfv" path="res://assets/UI/buttons/pause menu/end game button pressed.png" id="10_1ymcx"]
+[ext_resource type="Texture2D" uid="uid://7lv77m6gicrq" path="res://assets/UI/buttons/pause menu/end game button hover.png" id="11_h7ojb"]
 [ext_resource type="Texture2D" uid="uid://bo82mgaeerlfb" path="res://assets/UI/buttons/pause menu/exit button idle.png" id="12_pqvcn"]
 [ext_resource type="Texture2D" uid="uid://b6p0avrkichra" path="res://assets/UI/buttons/pause menu/exit button pressed.png" id="13_1gov1"]
 [ext_resource type="Texture2D" uid="uid://dbb1io04ktnvv" path="res://assets/UI/buttons/pause menu/exit button hover.png" id="14_uv8gj"]
@@ -35,7 +35,7 @@ dateNtime = NodePath("VBoxContainer/VBoxContainer/DatenTime")
 score = NodePath("VBoxContainer/VBoxContainer/Score")
 resumeButton = NodePath("VBoxContainer/VBoxContainer2/Resume")
 optionsButton = NodePath("VBoxContainer/VBoxContainer2/Options")
-saveButton = NodePath("VBoxContainer/VBoxContainer2/Save")
+saveButton = NodePath("VBoxContainer/VBoxContainer2/EndTheGame")
 exitButton = NodePath("VBoxContainer/VBoxContainer2/Exit")
 hoverSound = NodePath("HoverSound")
 pressSound = NodePath("PressedSound")
@@ -93,12 +93,11 @@ texture_normal = ExtResource("6_wqpeb")
 texture_pressed = ExtResource("7_tekra")
 texture_hover = ExtResource("8_8flw2")
 
-[node name="Save" type="TextureButton" parent="VBoxContainer/VBoxContainer2" unique_id=1217911011]
-visible = false
+[node name="EndTheGame" type="TextureButton" parent="VBoxContainer/VBoxContainer2" unique_id=1217911011]
 layout_mode = 2
-texture_normal = ExtResource("9_c8xnj")
-texture_pressed = ExtResource("10_m5ant")
-texture_hover = ExtResource("11_kg368")
+texture_normal = ExtResource("9_6wqnn")
+texture_pressed = ExtResource("10_1ymcx")
+texture_hover = ExtResource("11_h7ojb")
 
 [node name="Exit" type="TextureButton" parent="VBoxContainer/VBoxContainer2" unique_id=157769380]
 layout_mode = 2
@@ -116,7 +115,7 @@ stream = ExtResource("16_1ymcx")
 [connection signal="pressed" from="VBoxContainer/VBoxContainer2/Resume" to="." method="_on_resume_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/VBoxContainer2/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer2/Options" to="." method="_on_options_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer2/Save" to="." method="_on_save_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Save" to="." method="_on_save_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer2/EndTheGame" to="." method="_on_GameEnd_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/EndTheGame" to="." method="_on_GameEnd_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/VBoxContainer2/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer2/Exit" to="." method="_on_exit_pressed"]

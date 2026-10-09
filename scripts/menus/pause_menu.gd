@@ -37,9 +37,13 @@ func _on_options_pressed() -> void:
 	get_parent().add_child(optionScene.instantiate())
 	queue_free()
 
-func _on_save_pressed() -> void:
+func _on_GameEnd_pressed() -> void:
 	pressSound.play()
 	await  pressSound.finished
+	MenuChanges.prevScene = "res://Scenes/pause_menu.tscn"
+	var endScene = load("res://Scenes/game_end.tscn")
+	get_parent().add_child(endScene.instantiate())
+	queue_free()
 
 func _on_exit_pressed() -> void:
 	pressSound.play()
@@ -54,7 +58,7 @@ func _on_resume_mouse_entered() -> void:
 func _on_options_mouse_entered() -> void:
 	hoverSound.play()
 
-func _on_save_mouse_entered() -> void:
+func _on_GameEnd_mouse_entered() -> void:
 	hoverSound.play()
 
 func _on_exit_mouse_entered() -> void:

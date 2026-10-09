@@ -58,6 +58,7 @@ theme_override_constants/separation = 27
 
 [node name="congrats 1" type="Label" parent="VBoxContainer" unique_id=1274009566]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "congratulations! you’ve just completed 2 whole weeks of being a bum
 (or at least that’s what you were supposed to do)"
 label_settings = SubResource("LabelSettings_cmq3e")
