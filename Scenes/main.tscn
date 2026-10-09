@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dmvnpuq12qrtj" path="res://Scenes/combo_counter.tscn" id="19_gt3je"]
 [ext_resource type="AudioStream" uid="uid://be301kt3bhg78" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.ogg" id="21_ee4r6"]
 [ext_resource type="AudioStream" uid="uid://j7dbyv2e647i" path="res://assets/audio/laserShoot1.wav" id="22_gt3je"]
+[ext_resource type="AudioStream" uid="uid://crxpr66bt0lpj" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Swipe - 1.ogg" id="23_gt3je"]
 
 [sub_resource type="Theme" id="Theme_wr11q"]
 default_font = ExtResource("1_ee4r6")
@@ -442,6 +443,9 @@ stream = ExtResource("21_ee4r6")
 
 [node name="PressedSound" type="AudioStreamPlayer2D" parent="." unique_id=420905416]
 stream = ExtResource("22_gt3je")
+
+[node name="SwipeSound" type="AudioStreamPlayer2D" parent="." unique_id=1782175741]
+stream = ExtResource("23_gt3je")
 
 [connection signal="mouse_entered" from="BG layer/UI layer/PauseButton" to="." method="_on_pause_button_mouse_entered"]
 [connection signal="pressed" from="BG layer/UI layer/PauseButton" to="." method="_on_pause_button_pressed"]

@@ -67,10 +67,14 @@ func _on_meme_manager_meme_selected(meme: Meme, is_correct: bool) -> void:
 		combo = combo + 1
 		score = score + score_add * combo
 		correct_meme_animations()
+		meme_manager.correctSound.play()
+		#await  meme_manager.correctSound.finished
 	else:
 		combo = combo / 2
 		print_debug("wrong")
 		wrong_meme_animations()
+		meme_manager.incorrectSound.play()
+		#await  meme_manager.incorrectSound.finished
 	
 	if meme_manager.is_effect_exist and meme_manager.effected_meme == meme:
 		meme_manager.is_effect_exist = false

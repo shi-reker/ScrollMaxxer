@@ -2,12 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c8h8apjpiq1fh" path="res://scripts/memes/meme_manager.gd" id="1_hk0lo"]
 [ext_resource type="PackedScene" uid="uid://kgvldap8jw00" path="res://Scenes/meme.tscn" id="2_q5qnk"]
+[ext_resource type="AudioStream" uid="uid://v1ioktpnpoln" path="res://assets/audio/JDSherbert - Popup.wav" id="3_q5qnk"]
+[ext_resource type="AudioStream" uid="uid://ccljopxvya6yu" path="res://assets/audio/JDSherbert - Popup (2).wav" id="4_6gobi"]
 
-[node name="MemeManager" type="GridContainer" unique_id=1299505990]
+[node name="MemeManager" type="GridContainer" unique_id=1299505990 node_paths=PackedStringArray("correctSound", "incorrectSound")]
 offset_right = 200.0
 offset_bottom = 200.0
 columns = 2
 script = ExtResource("1_hk0lo")
+correctSound = NodePath("CorrectSound")
+incorrectSound = NodePath("IncorrectSound")
 
 [node name="Meme" parent="." unique_id=1212883254 instance=ExtResource("2_q5qnk")]
 layout_mode = 2
@@ -28,3 +32,9 @@ max_y = 160
 layout_mode = 2
 max_x = 160
 max_y = 160
+
+[node name="CorrectSound" type="AudioStreamPlayer2D" parent="." unique_id=2088095769]
+stream = ExtResource("3_q5qnk")
+
+[node name="IncorrectSound" type="AudioStreamPlayer2D" parent="." unique_id=1216081981]
+stream = ExtResource("4_6gobi")

@@ -14,6 +14,9 @@ var effected_meme: Meme = null
 var is_effect_exist: bool = false
 var existing_effect: Enums.Effect
 
+@export var correctSound:AudioStreamPlayer2D
+@export var incorrectSound:AudioStreamPlayer2D
+
 func _ready() -> void:
 	for meme in get_children():
 		if meme is Meme:
