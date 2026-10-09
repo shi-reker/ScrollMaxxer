@@ -34,3 +34,12 @@ func _on_quit_pressed() -> void:
 
 func _on_quit_mouse_entered() -> void:
 	hoverSound.play()
+
+
+
+func _on_gallery_pressed() -> void:
+	pressSound.play()
+	await  pressSound.finished
+	MenuChanges.prevScene = "res://Scenes/main_menu.tscn"
+	get_tree().change_scene_to_file("res://Scenes/gallery_menu.tscn")
+	#queue_free()

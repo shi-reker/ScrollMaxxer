@@ -52,6 +52,14 @@ texture_normal = ExtResource("2_16hvj")
 texture_pressed = ExtResource("3_vr1f0")
 texture_hover = ExtResource("4_t1dhk")
 
+[node name="Gallery" type="TextureButton" parent="VBoxContainer" unique_id=148382213]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_5egv6")
+texture_pressed = ExtResource("6_vtepg")
+texture_hover = ExtResource("7_8dnnj")
+
 [node name="Options" type="TextureButton" parent="VBoxContainer" unique_id=2014574198]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -76,6 +84,8 @@ stream = ExtResource("13_5egv6")
 
 [connection signal="mouse_entered" from="VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Gallery" to="." method="_on_options_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Gallery" to="." method="_on_gallery_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]

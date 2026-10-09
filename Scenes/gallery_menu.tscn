@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://b0n6un0wgbyo3"]
+
+[ext_resource type="Texture2D" uid="uid://bblukwsnk5slf" path="res://assets/pause bg.png" id="1_70onu"]
+[ext_resource type="Script" uid="uid://b0a8hy5rswehk" path="res://scripts/gallery/gallery_menu.gd" id="2_xxon1"]
+[ext_resource type="Texture2D" uid="uid://bby0wp0tnobuv" path="res://assets/UI/buttons/back button idle.png" id="3_e36j8"]
+[ext_resource type="Texture2D" uid="uid://cfrphkin8cx7c" path="res://assets/UI/buttons/back button pressed.png" id="4_sxsnq"]
+[ext_resource type="Texture2D" uid="uid://df7pq2oqba0sn" path="res://assets/UI/buttons/back button hover.png" id="5_8cban"]
+[ext_resource type="PackedScene" uid="uid://c0fxdoy6tv0eg" path="res://Scenes/gallery_item.tscn" id="6_e36j8"]
+[ext_resource type="Resource" uid="uid://dj76hh5glt5nb" path="res://resources/memes/angry_red_face.tres" id="7_sxsnq"]
+[ext_resource type="AudioStream" uid="uid://be301kt3bhg78" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.ogg" id="7_t41tg"]
+[ext_resource type="Resource" uid="uid://cmrhqohcoj8e8" path="res://resources/memes/dummy_meme_04.tres" id="8_8cban"]
+[ext_resource type="AudioStream" uid="uid://j7dbyv2e647i" path="res://assets/audio/laserShoot1.wav" id="8_l32ou"]
+[ext_resource type="Resource" uid="uid://c4x2qf30bncaa" path="res://resources/contents/dummy_content_19.tres" id="9_8cban"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.90725297, 0.4606266, 0, 1)
+
+[node name="GallleryMenu" type="TextureRect" unique_id=2072360745 node_paths=PackedStringArray("backButton", "hoverSound", "pressSound", "gallery_item_container")]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_70onu")
+script = ExtResource("2_xxon1")
+backButton = NodePath("Back")
+hoverSound = NodePath("HoverSound")
+pressSound = NodePath("PressedSound")
+gallery_item_container = NodePath("PanelContainer/MarginContainer/ScrollContainer/HFlowContainer")
+
+[node name="Back" type="TextureButton" parent="." unique_id=558777392]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.084
+anchor_right = 0.052
+anchor_bottom = 0.084
+texture_normal = ExtResource("3_e36j8")
+texture_pressed = ExtResource("4_sxsnq")
+texture_hover = ExtResource("5_8cban")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=906376816]
+custom_minimum_size = Vector2(800, 400)
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2091233215]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer" unique_id=421744942]
+clip_contents = false
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=2073138083]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HFlowContainer" unique_id=714128930 instance=ExtResource("6_e36j8")]
+layout_mode = 2
+
+[node name="VBoxContainer2" parent="PanelContainer/MarginContainer/ScrollContainer/HFlowContainer" unique_id=1511396350 instance=ExtResource("6_e36j8")]
+layout_mode = 2
+res = ExtResource("7_sxsnq")
+
+[node name="VBoxContainer5" parent="PanelContainer/MarginContainer/ScrollContainer/HFlowContainer" unique_id=2049723440 instance=ExtResource("6_e36j8")]
+layout_mode = 2
+res = ExtResource("8_8cban")
+
+[node name="VBoxContainer6" parent="PanelContainer/MarginContainer/ScrollContainer/HFlowContainer" unique_id=1014085196 instance=ExtResource("6_e36j8")]
+layout_mode = 2
+res = ExtResource("9_8cban")
+
+[node name="VBoxContainer8" parent="PanelContainer/MarginContainer/ScrollContainer/HFlowContainer" unique_id=916533743 instance=ExtResource("6_e36j8")]
+layout_mode = 2
+res = ExtResource("8_8cban")
+
+[node name="VBoxContainer9" parent="PanelContainer/MarginContainer/ScrollContainer/HFlowContainer" unique_id=173208772 instance=ExtResource("6_e36j8")]
+layout_mode = 2
+res = ExtResource("8_8cban")
+
+[node name="VBoxContainer7" parent="PanelContainer/MarginContainer/ScrollContainer/HFlowContainer" unique_id=1836741514 instance=ExtResource("6_e36j8")]
+layout_mode = 2
+res = ExtResource("8_8cban")
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=888602219]
+stream = ExtResource("7_t41tg")
+
+[node name="PressedSound" type="AudioStreamPlayer2D" parent="." unique_id=1585724704]
+stream = ExtResource("8_l32ou")
+
+[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

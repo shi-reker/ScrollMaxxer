@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c0fxdoy6tv0eg"]
+
+[ext_resource type="Script" uid="uid://vpobbnm0rnh0" path="res://scripts/gallery/gallery_item.gd" id="1_sbgpy"]
+[ext_resource type="Resource" uid="uid://bdpo7ionnm4xe" path="res://resources/memes/normie/like/10of10.tres" id="2_thw1j"]
+[ext_resource type="Texture2D" uid="uid://cedjq3opc11d6" path="res://assets/10of10.jpg" id="3_w3lg7"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=714128930]
+custom_minimum_size = Vector2(120, 120)
+custom_maximum_size = Vector2(120, 120)
+offset_right = 120.0
+offset_bottom = 120.0
+alignment = 2
+script = ExtResource("1_sbgpy")
+res = ExtResource("2_thw1j")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=268985810]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_w3lg7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=1061972228]
+layout_mode = 2
+size_flags_vertical = 0
+text = "s"
+horizontal_alignment = 1
+vertical_alignment = 2
