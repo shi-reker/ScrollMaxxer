@@ -45,6 +45,7 @@ var combo: int = 0:
 func _ready() -> void:
 	energy = energy
 	scoreBoard.text = "score: "+str(score)
+	BGM.play_music("res://assets/audio/BGMs/gameplay BGM.mp3")
 
 func _process(delta: float) -> void:
 	if !isTimeStopped:
@@ -123,6 +124,7 @@ func _on_pause_button_pressed() -> void:
 	MenuChanges.reelsScrolled = timesScrolled
 	MenuChanges.tasksDone = to_do_list.tasksDone
 	MenuChanges.tasksIgnored = to_do_list.tasksSkipped
+	BGM.bgm_player.stream_paused = true
 	
 	pressSound.play()
 	await pressSound.finished
@@ -144,6 +146,7 @@ func EndTheGame():
 	MenuChanges.reelsScrolled = timesScrolled
 	MenuChanges.tasksDone = to_do_list.tasksDone
 	MenuChanges.tasksIgnored = to_do_list.tasksSkipped
+	BGM.bgm_player.stop()
 	
 	var endLayer = CanvasLayer.new()
 	endLayer.process_mode = PROCESS_MODE_ALWAYS

@@ -52,6 +52,7 @@ func _on_return_pressed() -> void:
 	await  pressSound.finished
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	BGM.play_music("res://assets/audio/BGMs/main menu BGM.mp3")
 	queue_free()
 
 func _on_return_mouse_entered() -> void:

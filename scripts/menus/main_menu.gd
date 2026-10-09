@@ -6,6 +6,9 @@ extends TextureRect
 @export var hoverSound:AudioStreamPlayer2D
 @export var pressSound:AudioStreamPlayer2D
 
+func _ready() -> void:
+	BGM.play_music("res://assets/audio/BGMs/main menu BGM.mp3")
+
 func _on_start_pressed() -> void:
 	pressSound.play()
 	await  pressSound.finished
