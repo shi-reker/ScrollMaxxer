@@ -26,11 +26,9 @@ enum Meme {
 }
 
 enum Content {
-	AI_CAT, 
+	SYLPHY, COOKIETY, AI_CAT, 
 	CAT_VET,
 	JJK_SLANDER,
-	COOKIENG,
-	COOKIETY,
 	MESMERIZER,
 	SYLPHHYCOOKIE,
 	HUHUSHENGWEI,
@@ -41,13 +39,12 @@ enum Content {
 }
 
 var content_resource: Dictionary[Enums.Content, ContentStats] = {
+	Content.COOKIETY: preload("res://resources/contents/cookiety.tres"),
+	Content.SYLPHY: preload("res://resources/contents/Sylphi-oatmeal.tres"),
 	Content.AI_CAT: preload("res://resources/contents/ai_cat.tres"),
 	Content.CAT_VET: preload("res://resources/contents/cat_vet.tres"),
 	Content.JJK_SLANDER: preload("res://resources/contents/jjk_slander.tres"),
-	Content.COOKIENG: preload("res://resources/contents/cookieng.tres"),
-	Content.COOKIETY: preload("res://resources/contents/cookiety.tres"),
 	Content.MESMERIZER: preload("res://resources/contents/mesmerizer.tres"),
-	Content.SYLPHHYCOOKIE: preload("res://resources/contents/sylphycookie.tres"),
 	Content.HUHUSHENGWEI: preload("res://resources/contents/hu_hu_sheng_wei.tres"),
 	Content.COMMENTTYPE_01: preload("res://resources/contents/comment-type_01.tres"),
 	Content.DUMMY_CONTENT_02: preload("res://resources/contents/dummy_content_02.tres"),

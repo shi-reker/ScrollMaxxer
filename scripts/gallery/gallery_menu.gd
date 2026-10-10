@@ -22,8 +22,10 @@ func generate_content_card(_content: Enums.Content, res: ContentStats):
 	gallery_item.res = res
 	gallery_item_container.add_child(gallery_item)
 
-func generate_meme_card(_meme: Enums.Meme, _res: MemeStats):
-	pass
+func generate_meme_card(_meme: Enums.Meme, res: MemeStats):
+	var gallery_item: GalleryItem = gallery_item_scene.instantiate() as GalleryItem
+	gallery_item.res = res
+	gallery_item_container.add_child(gallery_item)
 
 
 func _on_music_changed(val:float):
