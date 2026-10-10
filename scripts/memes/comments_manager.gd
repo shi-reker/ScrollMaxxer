@@ -1,5 +1,8 @@
 extends VBoxContainer
 class_name CommentsManager
+
+var comment_nodes: Array[Comment] = []
+
 static var comments_of_genre: Dictionary = { 
 	Enums.Genre.NORMIE: [
 		"🔥🔥", "🤮🤮🤮", "😂😂", "Who is watching in 2026? 👀", "So true!! 💯", 

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c8yono2ruowp8" path="res://assets/UI/comments bg.png" id="1_0eukc"]
 [ext_resource type="PackedScene" uid="uid://dubdbrpnkmn1l" path="res://Scenes/comments.tscn" id="1_ohe8y"]
 [ext_resource type="PackedScene" uid="uid://dnkldi2y71cne" path="res://Scenes/meme_manager.tscn" id="2_0eukc"]
+[ext_resource type="Script" uid="uid://b4xulquvgf8sf" path="res://scripts/memes/comments_manager.gd" id="2_c08ds"]
 [ext_resource type="Texture2D" uid="uid://dk6xejswwk6lt" path="res://assets/UI/emoji icon.png" id="4_f1swy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ohe8y"]
@@ -41,29 +42,30 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=471871722]
+[node name="CommentsManager" type="VBoxContainer" parent="MarginContainer" unique_id=471871722]
 layout_mode = 2
 theme_override_constants/separation = 8
+script = ExtResource("2_c08ds")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=438333460]
+[node name="Label" type="Label" parent="MarginContainer/CommentsManager" unique_id=438333460]
 layout_mode = 2
 size_flags_vertical = 8
 text = "COMMENTS"
 label_settings = SubResource("LabelSettings_g4v7s")
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer" unique_id=1442354048]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/CommentsManager" unique_id=1442354048]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 color = Color(1, 1, 0.99607843, 1)
 
-[node name="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=121594678 instance=ExtResource("1_ohe8y")]
+[node name="VBoxContainer" parent="MarginContainer/CommentsManager" unique_id=121594678 instance=ExtResource("1_ohe8y")]
 layout_mode = 2
 
-[node name="VBoxContainer2" parent="MarginContainer/VBoxContainer" unique_id=1243126424 instance=ExtResource("1_ohe8y")]
+[node name="VBoxContainer2" parent="MarginContainer/CommentsManager" unique_id=1243126424 instance=ExtResource("1_ohe8y")]
 layout_mode = 2
 
-[node name="VBoxContainer3" parent="MarginContainer/VBoxContainer" unique_id=997104942 instance=ExtResource("1_ohe8y")]
+[node name="VBoxContainer3" parent="MarginContainer/CommentsManager" unique_id=997104942 instance=ExtResource("1_ohe8y")]
 layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=817536097]

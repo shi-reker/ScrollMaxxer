@@ -1,20 +1,31 @@
 [gd_scene format=3 uid="uid://dubdbrpnkmn1l"]
 
-[node name="VBoxContainer" type="VBoxContainer" unique_id=121594678]
+[ext_resource type="Script" uid="uid://mdwo3533pxv7" path="res://scripts/memes/comment.gd" id="1_g4jp8"]
+[ext_resource type="Texture2D" uid="uid://d76jrx6w5k4" path="res://assets/temp_icon_sprite.tres" id="2_0umy0"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=121594678 node_paths=PackedStringArray("comment_label", "commenter_label", "icon_rect")]
 offset_right = 184.0
 offset_bottom = 28.0
+script = ExtResource("1_g4jp8")
+comment_label = NodePath("Label")
+commenter_label = NodePath("HBoxContainer/Label")
+icon_rect = NodePath("HBoxContainer/ColorRect")
+comment_str = "first"
+commenter_str = "anon2"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1871350868]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=28804648]
+[node name="ColorRect" type="TextureRect" parent="HBoxContainer" unique_id=837045398]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
+texture = ExtResource("2_0umy0")
+expand_mode = 3
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=763775794]
 layout_mode = 2
-text = "commenter"
+text = "anon2"
 
 [node name="Label" type="Label" parent="." unique_id=192343207]
 layout_mode = 2
-text = "<3333333"
+text = "first"
