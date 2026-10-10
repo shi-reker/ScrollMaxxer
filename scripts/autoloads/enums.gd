@@ -18,16 +18,9 @@ enum Effect{
 enum Meme {
 	TEN_OF_TEN, TAI_LUNG, ANGRY_RED_FACE,
 	SHOULDER_TOUCH, CRACKED, POINTING, IQ_CROW,
-	ANIME_LIKE1,ANIME_DISLIKE1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	LOCALBARS,
-	ABSOLUTE_CINEMA,
-	ITS_PEAK,
-=======
-=======
->>>>>>> Stashed changes
-	LOCALBARS, BLUEBLOB, DOAKES,
+	ANIME_LIKE1, ANIME_DISLIKE1,
+	LOCALBARS, ABSOLUTE_CINEMA,
+	ITS_PEAK, BLUEBLOB, DOAKES,
 	TANJIRO_PHONE, SQUINT_PAPER,
 	FORK_IN_KITCHEN, BROTHER_JUST_ME,
 	MOMOI_SCROLL, TELAVIV_IMPRESSED,
@@ -36,7 +29,6 @@ enum Meme {
 	DUMMY_MEME_06, DUMMY_MEME_07, DUMMY_MEME_08, DUMMY_MEME_09, DUMMY_MEME_10,
 	DUMMY_MEME_11, DUMMY_MEME_12, DUMMY_MEME_13, DUMMY_MEME_14, DUMMY_MEME_15,
 	DUMMY_MEME_16, DUMMY_MEME_17, DUMMY_MEME_18, DUMMY_MEME_19, DUMMY_MEME_20,
->>>>>>> Stashed changes
 }
 
 enum Content {
@@ -46,18 +38,9 @@ enum Content {
 	MESMERIZER,
 	SYLPHHYCOOKIE,
 	HUHUSHENGWEI,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 	JOB_APPLICATION,
-	COMMENTTYPE_01, 
 	COMM_ARTIST,
-	DUMMY_CONTENT_02, DUMMY_CONTENT_03, DUMMY_CONTENT_04, DUMMY_CONTENT_05,
-=======
 	COMMENTTYPE_01, COMMENTTYPE_02, COMMENTTYPE_03, COMMENTTYPE_04, DUMMY_CONTENT_05,
->>>>>>> Stashed changes
-=======
-	COMMENTTYPE_01, COMMENTTYPE_02, COMMENTTYPE_03, COMMENTTYPE_04, DUMMY_CONTENT_05,
->>>>>>> Stashed changes
 	DUMMY_CONTENT_06, DUMMY_CONTENT_07, DUMMY_CONTENT_08, DUMMY_CONTENT_09, DUMMY_CONTENT_10,
 	DUMMY_CONTENT_11, DUMMY_CONTENT_12, DUMMY_CONTENT_13, DUMMY_CONTENT_14, DUMMY_CONTENT_15,
 	DUMMY_CONTENT_16, DUMMY_CONTENT_17, DUMMY_CONTENT_18, DUMMY_CONTENT_19, DUMMY_CONTENT_20
@@ -71,24 +54,12 @@ var content_resource: Dictionary[Enums.Content, ContentStats] = {
 	Content.JJK_SLANDER: preload("res://resources/contents/jjk_slander.tres"),
 	Content.MESMERIZER: preload("res://resources/contents/mesmerizer.tres"),
 	Content.HUHUSHENGWEI: preload("res://resources/contents/hu_hu_sheng_wei.tres"),
-	Content.JOB_APPLICATION: preload("res://resources/contents/job_application.tres"),	
+	Content.JOB_APPLICATION: preload("res://resources/contents/job_application.tres"),
+	Content.COMM_ARTIST: preload("res://resources/contents/comm_artist.tres"),
 	Content.COMMENTTYPE_01: preload("res://resources/contents/comment-type_01.tres"),
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	#Content.COMM_ARTIST: preload("res://resources/contents/comm_artist.tres"),
-	Content.DUMMY_CONTENT_02: preload("res://resources/contents/dummy_content_02.tres"),
-	Content.DUMMY_CONTENT_03: preload("res://resources/contents/dummy_content_03.tres"),
-	Content.DUMMY_CONTENT_04: preload("res://resources/contents/dummy_content_04.tres"),
-=======
 	Content.COMMENTTYPE_02: preload("res://resources/contents/comment-type_02.tres"),
 	Content.COMMENTTYPE_03: preload("res://resources/contents/comment-type_03.tres"),
 	Content.COMMENTTYPE_04: preload("res://resources/contents/comment-type_04.tres"),
->>>>>>> Stashed changes
-=======
-	Content.COMMENTTYPE_02: preload("res://resources/contents/comment-type_02.tres"),
-	Content.COMMENTTYPE_03: preload("res://resources/contents/comment-type_03.tres"),
-	Content.COMMENTTYPE_04: preload("res://resources/contents/comment-type_04.tres"),
->>>>>>> Stashed changes
 	Content.DUMMY_CONTENT_05: preload("res://resources/contents/dummy_content_05.tres"),
 	Content.DUMMY_CONTENT_06: preload("res://resources/contents/dummy_content_06.tres"),
 	Content.DUMMY_CONTENT_07: preload("res://resources/contents/dummy_content_07.tres"),
@@ -118,13 +89,8 @@ var meme_resource: Dictionary[Enums.Meme, MemeStats] = {
 	Meme.ANIME_LIKE1: preload("res://resources/memes/anime_like1.tres"),
 	Meme.ANIME_DISLIKE1: preload("res://resources/memes/anime_dislike1.tres"),
 	Meme.LOCALBARS: preload("res://resources/memes/local_bars.tres"),
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	#Meme.ABSOLUTE_CINEMA: preload("res://resources/memes/absolute_cinema.tres"),
-	#Meme.ITS_PEAK: preload("res://resources/memes/its_peak.tres"),
-=======
-=======
->>>>>>> Stashed changes
+	Meme.ABSOLUTE_CINEMA: preload("res://resources/memes/absolute_cinema.tres"),
+	Meme.ITS_PEAK: preload("res://resources/memes/its_peak.tres"),
 	Meme.BLUEBLOB: preload("res://resources/memes/blue_blob.tres"),
 	Meme.DOAKES: preload("res://resources/memes/doakes.tres"),
 	Meme.TANJIRO_PHONE: preload("res://resources/memes/tanjiro_phohe.tres"),
@@ -153,7 +119,6 @@ var meme_resource: Dictionary[Enums.Meme, MemeStats] = {
 	Meme.DUMMY_MEME_18: preload("res://resources/memes/dummy_meme_18.tres"),
 	Meme.DUMMY_MEME_19: preload("res://resources/memes/dummy_meme_19.tres"),
 	Meme.DUMMY_MEME_20: preload("res://resources/memes/dummy_meme_20.tres")
->>>>>>> Stashed changes
 }
 
 var meme_of_g_and_e: Dictionary = {} # {Emo: {Genre: [MemeStats]}}
