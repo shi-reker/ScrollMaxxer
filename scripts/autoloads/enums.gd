@@ -5,7 +5,7 @@ enum Emo {
 }
 
 enum Genre {
-	NORMIE, FANDOM, VIRAL
+	FUNNY, EDUCATIONAL, ENTERTAINMENT
 }
 
 enum Effect{
@@ -17,7 +17,6 @@ enum Effect{
 
 enum Meme {
 	TEN_OF_TEN, TAI_LUNG, ANGRY_RED_FACE,
-	SHOULDER_TOUCH, CRACKED, POINTING,
 	ANIME_LIKE1,ANIME_DISLIKE1,
 	DUMMY_MEME_01, DUMMY_MEME_02, DUMMY_MEME_03, DUMMY_MEME_04, DUMMY_MEME_05,
 	DUMMY_MEME_06, DUMMY_MEME_07, DUMMY_MEME_08, DUMMY_MEME_09, DUMMY_MEME_10,
@@ -26,7 +25,6 @@ enum Meme {
 }
 
 enum Content {
-	SYLPHY, COOKIETY, AI_CAT, 
 	CAT_VET,
 	JJK_SLANDER,
 	BLUE,
@@ -40,9 +38,6 @@ enum Content {
 }
 
 var content_resource: Dictionary[Enums.Content, ContentStats] = {
-	Content.COOKIETY: preload("res://resources/contents/cookiety.tres"),
-	Content.SYLPHY: preload("res://resources/contents/Sylphi-oatmeal.tres"),
-	Content.AI_CAT: preload("res://resources/contents/ai_cat.tres"),
 	Content.CAT_VET: preload("res://resources/contents/cat_vet.tres"),
 	Content.JJK_SLANDER: preload("res://resources/contents/jjk_slander.tres"),
 	Content.BLUE: preload("res://resources/contents/blue.tres"),
@@ -72,9 +67,6 @@ var content_resource: Dictionary[Enums.Content, ContentStats] = {
 }
 
 var meme_resource: Dictionary[Enums.Meme, MemeStats] = {
-	Meme.SHOULDER_TOUCH: preload("res://resources/memes/shoulder.tres"), 
-	Meme.CRACKED: preload("res://resources/memes/cracked.tres"), 
-	Meme.POINTING: preload("res://resources/memes/pointing.tres"),
 	Meme.TEN_OF_TEN: preload("res://resources/memes/normie/like/10of10.tres"),
 	Meme.TAI_LUNG: preload("res://resources/memes/normie/dislike/tai_lung.tres"),
 	Meme.ANGRY_RED_FACE: preload("res://resources/memes/angry_red_face.tres"),
