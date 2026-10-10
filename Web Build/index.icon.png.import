@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt3etijj03qgl"
-path="res://.godot/imported/apalahkie.png-90c73bb5219e3b6f0cfdb74f40998684.ctex"
+uid="uid://mj8hasv4r2q7"
+path="res://.godot/imported/index.icon.png-82e7d282c3892a25c8b4078cf41ec42c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/memes/apalahkie.png"
-dest_files=["res://.godot/imported/apalahkie.png-90c73bb5219e3b6f0cfdb74f40998684.ctex"]
+source_file="res://Web Build/index.icon.png"
+dest_files=["res://.godot/imported/index.icon.png-82e7d282c3892a25c8b4078cf41ec42c.ctex"]
 
 [params]
 

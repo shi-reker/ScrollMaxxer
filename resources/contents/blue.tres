@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="ContentStats" format=3 uid="uid://d1ueg12sba8bk"]
 
 [ext_resource type="Script" uid="uid://ndmawvh5mick" path="res://scripts/contents/content_stats.gd" id="1_2jyxq"]
-[ext_resource type="Texture2D" uid="uid://bdtxubpj2gsv0" path="res://assets/temp_content_sprite.tres" id="2_2jyxq"]
 
 [resource]
 script = ExtResource("1_2jyxq")
 code = 2
 genre = 2
+name = null
 metadata/_custom_type_script = "uid://ndmawvh5mick"

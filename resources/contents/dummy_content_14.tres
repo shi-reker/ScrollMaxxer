@@ -17,4 +17,5 @@ fill_to = Vector2(0.5, 0)
 script = ExtResource("1_script")
 code = 19
 genre = 2
+name = null
 texture = SubResource("GradientTexture_114")

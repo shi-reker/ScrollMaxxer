@@ -26,7 +26,7 @@ enum Meme {
 }
 
 enum Content {
-	SYLPHY, COOKIETY, AI_CAT, 
+	AI_CAT, 
 	CAT_VET,
 	JJK_SLANDER,
 	COOKIENG,
@@ -41,8 +41,6 @@ enum Content {
 }
 
 var content_resource: Dictionary[Enums.Content, ContentStats] = {
-	Content.COOKIETY: preload("res://resources/contents/cookiety.tres"),
-	Content.SYLPHY: preload("res://resources/contents/Sylphi-oatmeal.tres"),
 	Content.AI_CAT: preload("res://resources/contents/ai_cat.tres"),
 	Content.CAT_VET: preload("res://resources/contents/cat_vet.tres"),
 	Content.JJK_SLANDER: preload("res://resources/contents/jjk_slander.tres"),
