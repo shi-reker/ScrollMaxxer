@@ -25,7 +25,7 @@ func _apply_stats(new_stats: ContentStats = null) -> void:
 
 	if sprite and sprite.texture != tex:
 		sprite.texture = tex
-	_resize_sprite_to_fit()
+	#_resize_sprite_to_fit()
 
 func _resize_sprite_to_fit() -> void:
 	if not sprite:

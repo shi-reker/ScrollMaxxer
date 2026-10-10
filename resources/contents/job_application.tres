@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ContentStats" format=3 uid="uid://dwdko27v363f3"]
+
+[ext_resource type="Script" uid="uid://ndmawvh5mick" path="res://scripts/contents/content_stats.gd" id="1_ac8gw"]
+[ext_resource type="Texture2D" uid="uid://0dm2sydvfxw1" path="res://assets/contents/job application.jpg" id="2_ac8gw"]
+
+[resource]
+script = ExtResource("1_ac8gw")
+code = 8
+name = "Job App"
+creator = "0neand0nlyken"
+texture = ExtResource("2_ac8gw")
+metadata/_custom_type_script = "uid://ndmawvh5mick"

@@ -5,6 +5,9 @@
 
 [resource]
 script = ExtResource("1_cr2qg")
-code = 4
+code = 5
+genre = 2
+name = "Mesmerizer"
+creator = "oslra"
 texture = ExtResource("2_cr2qg")
 metadata/_custom_type_script = "uid://ndmawvh5mick"

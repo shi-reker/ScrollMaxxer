@@ -17,7 +17,7 @@ enum Effect{
 
 enum Meme {
 	TEN_OF_TEN, TAI_LUNG, ANGRY_RED_FACE,
-	SHOULDER_TOUCH, CRACKED, POINTING,
+	SHOULDER_TOUCH, CRACKED, POINTING, IQ_CROW,
 	ANIME_LIKE1,ANIME_DISLIKE1,
 	LOCALBARS, DUMMY_MEME_02, DUMMY_MEME_03, DUMMY_MEME_04, DUMMY_MEME_05,
 	DUMMY_MEME_06, DUMMY_MEME_07, DUMMY_MEME_08, DUMMY_MEME_09, DUMMY_MEME_10,
@@ -32,6 +32,7 @@ enum Content {
 	MESMERIZER,
 	SYLPHHYCOOKIE,
 	HUHUSHENGWEI,
+	JOB_APPLICATION,
 	COMMENTTYPE_01, DUMMY_CONTENT_02, DUMMY_CONTENT_03, DUMMY_CONTENT_04, DUMMY_CONTENT_05,
 	DUMMY_CONTENT_06, DUMMY_CONTENT_07, DUMMY_CONTENT_08, DUMMY_CONTENT_09, DUMMY_CONTENT_10,
 	DUMMY_CONTENT_11, DUMMY_CONTENT_12, DUMMY_CONTENT_13, DUMMY_CONTENT_14, DUMMY_CONTENT_15,
@@ -46,6 +47,7 @@ var content_resource: Dictionary[Enums.Content, ContentStats] = {
 	Content.JJK_SLANDER: preload("res://resources/contents/jjk_slander.tres"),
 	Content.MESMERIZER: preload("res://resources/contents/mesmerizer.tres"),
 	Content.HUHUSHENGWEI: preload("res://resources/contents/hu_hu_sheng_wei.tres"),
+	Content.JOB_APPLICATION: preload("res://resources/contents/job_application.tres"),	
 	Content.COMMENTTYPE_01: preload("res://resources/contents/comment-type_01.tres"),
 	Content.DUMMY_CONTENT_02: preload("res://resources/contents/dummy_content_02.tres"),
 	Content.DUMMY_CONTENT_03: preload("res://resources/contents/dummy_content_03.tres"),
@@ -75,6 +77,7 @@ var meme_resource: Dictionary[Enums.Meme, MemeStats] = {
 	Meme.TEN_OF_TEN: preload("res://resources/memes/normie/like/10of10.tres"),
 	Meme.TAI_LUNG: preload("res://resources/memes/normie/dislike/tai_lung.tres"),
 	Meme.ANGRY_RED_FACE: preload("res://resources/memes/angry_red_face.tres"),
+	Meme.IQ_CROW: preload("res://resources/memes/iq_crow.tres"),
 	Meme.ANIME_LIKE1: preload("res://resources/memes/anime_like1.tres"),
 	Meme.ANIME_DISLIKE1: preload("res://resources/memes/anime_dislike1.tres"),
 	Meme.LOCALBARS: preload("res://resources/memes/local_bars.tres"),
@@ -106,7 +109,6 @@ func load_meme_genre_emo():
 		var e = s.emo
 		var g = s.genre
 		meme_of_g_and_e.get_or_add(e, {}).get_or_add(g, []).append(m)
-	#print_debug("memes of emotion", Emo.find_key(0), " and ", Genre.find_key(0), ": ", meme_of_g_and_e[0][0])
 
 func _ready() -> void:
 	load_meme_genre_emo()
