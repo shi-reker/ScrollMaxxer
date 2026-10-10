@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ContentStats" format=3 uid="uid://cwtiup0hj2vw6"]
+
+[ext_resource type="Script" uid="uid://ndmawvh5mick" path="res://scripts/contents/content_stats.gd" id="1_bjd08"]
+[ext_resource type="Texture2D" uid="uid://djyum3few8en5" path="res://assets/contents/sylphycookie.png" id="2_bjd08"]
+
+[resource]
+script = ExtResource("1_bjd08")
+code = 5
+genre = 2
+texture = ExtResource("2_bjd08")
+metadata/_custom_type_script = "uid://ndmawvh5mick"
