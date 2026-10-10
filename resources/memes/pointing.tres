@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MemeStats" format=3 uid="uid://do4mdpap3o7nj"]
+
+[ext_resource type="Script" uid="uid://c4ihs3gryf5a1" path="res://scripts/memes/meme_stats.gd" id="1_r4neg"]
+[ext_resource type="Texture2D" uid="uid://d1nmo4kvojro6" path="res://assets/memes/pointing.png" id="2_3kulm"]
+
+[resource]
+script = ExtResource("1_r4neg")
+code = 5
+name = "Pointing"
+texture = ExtResource("2_3kulm")
+metadata/_custom_type_script = "uid://c4ihs3gryf5a1"
