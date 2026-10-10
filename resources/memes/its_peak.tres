@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MemeStats" format=3 uid="uid://be2cv4cfi8gcl"]
+
+[ext_resource type="Script" uid="uid://c4ihs3gryf5a1" path="res://scripts/memes/meme_stats.gd" id="1_uplv8"]
+[ext_resource type="Texture2D" uid="uid://chwko7oqcwepx" path="res://assets/memes/its peak.jpg" id="2_vcfj3"]
+
+[resource]
+script = ExtResource("1_uplv8")
+genre = 1
+name = "IT'S PEAK"
+texture = ExtResource("2_vcfj3")
+metadata/_custom_type_script = "uid://c4ihs3gryf5a1"

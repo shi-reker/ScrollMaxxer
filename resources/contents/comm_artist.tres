@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ContentStats" format=3 uid="uid://2iyr83sor2wm"]
+
+[ext_resource type="Script" uid="uid://ndmawvh5mick" path="res://scripts/contents/content_stats.gd" id="1_ql0xp"]
+[ext_resource type="Texture2D" uid="uid://cb3l44r8wlx5f" path="res://assets/contents/comm artist.jpg" id="2_ql0xp"]
+
+[resource]
+script = ExtResource("1_ql0xp")
+name = "Comm Artist"
+creator = "0neand0nlyken"
+texture = ExtResource("2_ql0xp")
+metadata/_custom_type_script = "uid://ndmawvh5mick"
