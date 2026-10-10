@@ -20,10 +20,13 @@ enum Meme {
 	SHOULDER_TOUCH, CRACKED, POINTING, IQ_CROW,
 	ANIME_LIKE1,ANIME_DISLIKE1,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	LOCALBARS,
 	ABSOLUTE_CINEMA,
 	ITS_PEAK,
 =======
+=======
+>>>>>>> Stashed changes
 	LOCALBARS, BLUEBLOB, DOAKES,
 	TANJIRO_PHONE, SQUINT_PAPER,
 	FORK_IN_KITCHEN, BROTHER_JUST_ME,
@@ -44,10 +47,14 @@ enum Content {
 	SYLPHHYCOOKIE,
 	HUHUSHENGWEI,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	JOB_APPLICATION,
 	COMMENTTYPE_01, 
 	COMM_ARTIST,
 	DUMMY_CONTENT_02, DUMMY_CONTENT_03, DUMMY_CONTENT_04, DUMMY_CONTENT_05,
+=======
+	COMMENTTYPE_01, COMMENTTYPE_02, COMMENTTYPE_03, COMMENTTYPE_04, DUMMY_CONTENT_05,
+>>>>>>> Stashed changes
 =======
 	COMMENTTYPE_01, COMMENTTYPE_02, COMMENTTYPE_03, COMMENTTYPE_04, DUMMY_CONTENT_05,
 >>>>>>> Stashed changes
@@ -67,10 +74,16 @@ var content_resource: Dictionary[Enums.Content, ContentStats] = {
 	Content.JOB_APPLICATION: preload("res://resources/contents/job_application.tres"),	
 	Content.COMMENTTYPE_01: preload("res://resources/contents/comment-type_01.tres"),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	#Content.COMM_ARTIST: preload("res://resources/contents/comm_artist.tres"),
 	Content.DUMMY_CONTENT_02: preload("res://resources/contents/dummy_content_02.tres"),
 	Content.DUMMY_CONTENT_03: preload("res://resources/contents/dummy_content_03.tres"),
 	Content.DUMMY_CONTENT_04: preload("res://resources/contents/dummy_content_04.tres"),
+=======
+	Content.COMMENTTYPE_02: preload("res://resources/contents/comment-type_02.tres"),
+	Content.COMMENTTYPE_03: preload("res://resources/contents/comment-type_03.tres"),
+	Content.COMMENTTYPE_04: preload("res://resources/contents/comment-type_04.tres"),
+>>>>>>> Stashed changes
 =======
 	Content.COMMENTTYPE_02: preload("res://resources/contents/comment-type_02.tres"),
 	Content.COMMENTTYPE_03: preload("res://resources/contents/comment-type_03.tres"),
@@ -106,9 +119,12 @@ var meme_resource: Dictionary[Enums.Meme, MemeStats] = {
 	Meme.ANIME_DISLIKE1: preload("res://resources/memes/anime_dislike1.tres"),
 	Meme.LOCALBARS: preload("res://resources/memes/local_bars.tres"),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	#Meme.ABSOLUTE_CINEMA: preload("res://resources/memes/absolute_cinema.tres"),
 	#Meme.ITS_PEAK: preload("res://resources/memes/its_peak.tres"),
 =======
+=======
+>>>>>>> Stashed changes
 	Meme.BLUEBLOB: preload("res://resources/memes/blue_blob.tres"),
 	Meme.DOAKES: preload("res://resources/memes/doakes.tres"),
 	Meme.TANJIRO_PHONE: preload("res://resources/memes/tanjiro_phohe.tres"),

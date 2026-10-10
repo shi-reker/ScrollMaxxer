@@ -7,9 +7,15 @@
 script = ExtResource("1_1bn2f")
 code = 7
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 genre = 2
 name = "Huhushengwei"
 creator = "oslra"
+=======
+genre = 1
+name = "hu hu sheng wei"
+creator = "ryh"
+>>>>>>> Stashed changes
 =======
 genre = 1
 name = "hu hu sheng wei"
