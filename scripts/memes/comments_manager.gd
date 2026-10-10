@@ -3,6 +3,24 @@ class_name CommentsManager
 
 var comment_nodes: Array[Comment] = []
 
+func _ready() -> void:
+	if comment_nodes == []:
+		check_child_comments()
+
+func check_child_comments() -> void:
+	comment_nodes.clear()
+	for child in get_children():
+		if child is Comment:
+			comment_nodes.append(child)
+
+func make_genre_comments(genre: Enums.Genre):
+	if comment_nodes == []:
+		check_child_comments()
+	var genre_comments: Array = comments_of_genre[genre] as Array[String]
+	for comment in comment_nodes:
+		comment.commenter_str = usernames.pick_random()
+		comment.comment_str = genre_comments.pick_random()
+
 static var comments_of_genre: Dictionary = { 
 	Enums.Genre.NORMIE: [
 		"🔥🔥", "🤮🤮🤮", "😂😂", "Who is watching in 2026? 👀", "So true!! 💯", 

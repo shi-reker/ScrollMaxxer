@@ -1,11 +1,9 @@
 [gd_resource type="GradientTexture2D" format=3 uid="uid://dxpydi4ure1vc"]
 
-[sub_resource type="Gradient" id="Gradient_lgyhx"]
-offsets = PackedFloat32Array(0.9961832, 1)
-colors = PackedColorArray(0.51953214, 0, 0.078373976, 1, 1, 1, 1, 1)
+[ext_resource type="Gradient" uid="uid://d76jrx6w5k4" path="res://assets/temp_icon_sprite.tres" id="1_kv538"]
 
 [resource]
-gradient = SubResource("Gradient_lgyhx")
+gradient = ExtResource("1_kv538")
 width = 40
 height = 40
 fill = 1

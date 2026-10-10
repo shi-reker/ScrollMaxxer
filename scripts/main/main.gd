@@ -41,6 +41,7 @@ var combo: int = 0:
 @export var to_do_list: ToDoList
 @export var hoverSound:AudioStreamPlayer2D
 @export var pressSound:AudioStreamPlayer2D
+@export var comments_manager: CommentsManager
 
 func _ready() -> void:
 	energy = energy
@@ -117,6 +118,7 @@ func _on_content_manager_scrolled(new_content: Content) -> void:
 	var content_genre: Enums.Genre = new_content.content_stats.genre
 	print_debug("new content genre is ", content_genre)
 	meme_manager.reload_memes(content_genre, emotion)
+	comments_manager.make_genre_comments(content_genre)
 
 func _on_pause_button_pressed() -> void:
 	MenuChanges.dateNtime = [day, hr, min]

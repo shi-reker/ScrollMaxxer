@@ -43,7 +43,7 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_h7ojb"]
 font_size = 24
 
-[node name="Main" type="Control" unique_id=171190420 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "combo_counter", "effect_manager", "pause", "scoreBoard", "to_do_list", "hoverSound", "pressSound")]
+[node name="Main" type="Control" unique_id=171190420 node_paths=PackedStringArray("cur_content", "content_manager", "meme_manager", "clock", "energyBar", "combo_counter", "effect_manager", "pause", "scoreBoard", "to_do_list", "hoverSound", "pressSound", "comments_manager")]
 layout_mode = 3
 anchors_preset = 0
 theme = SubResource("Theme_wr11q")
@@ -60,6 +60,7 @@ scoreBoard = NodePath("BG layer/UI layer/ScoreCounter/ScoreText")
 to_do_list = NodePath("BG layer/UI layer/ToDoList")
 hoverSound = NodePath("HoverSound")
 pressSound = NodePath("PressedSound")
+comments_manager = NodePath("BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/CommentsManager")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1863998892]
 anchor_mode = 0
@@ -296,22 +297,22 @@ theme = SubResource("Theme_gt3je")
 anchors_preset = -1
 theme = SubResource("Theme_gt3je")
 
-[node name="VBoxContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer" index="0" unique_id=471871722]
+[node name="CommentsManager" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer" index="0" unique_id=471871722]
 theme = SubResource("Theme_gt3je")
 
-[node name="Label" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/VBoxContainer" index="0" unique_id=438333460]
+[node name="Label" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/CommentsManager" index="0" unique_id=438333460]
 theme = SubResource("Theme_gt3je")
 
-[node name="ColorRect" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/VBoxContainer" index="1" unique_id=1442354048]
+[node name="ColorRect" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/CommentsManager" index="1" unique_id=1442354048]
 theme = SubResource("Theme_gt3je")
 
-[node name="VBoxContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/VBoxContainer" index="2" unique_id=121594678]
+[node name="VBoxContainer" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/CommentsManager" index="2" unique_id=121594678]
 theme = SubResource("Theme_gt3je")
 
-[node name="VBoxContainer2" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/VBoxContainer" index="3" unique_id=1243126424]
+[node name="VBoxContainer2" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/CommentsManager" index="3" unique_id=1243126424]
 theme = SubResource("Theme_gt3je")
 
-[node name="VBoxContainer3" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/VBoxContainer" index="4" unique_id=997104942]
+[node name="VBoxContainer3" parent="BG layer/UI layer/DevicePanel/MemePanel/MarginContainer/CommentsManager" index="4" unique_id=997104942]
 theme = SubResource("Theme_gt3je")
 
 [node name="MarginContainer2" parent="BG layer/UI layer/DevicePanel/MemePanel" index="2" unique_id=817536097]
