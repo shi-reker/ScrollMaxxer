@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_nffjc")
-code = 15
+code = 18
 emo = 4
 genre = 1
 name = "momoi scroll"

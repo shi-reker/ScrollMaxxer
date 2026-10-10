@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_cn4r7")
-code = 14
+code = 17
 genre = 1
 name = "my bro just another me"
 texture = ExtResource("2_ingil")

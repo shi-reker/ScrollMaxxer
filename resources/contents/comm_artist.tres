@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_ql0xp")
+code = 8
 name = "Comm Artist"
 creator = "0neand0nlyken"
 texture = ExtResource("2_ql0xp")

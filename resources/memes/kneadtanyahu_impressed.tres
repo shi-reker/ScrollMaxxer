@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MemeStats" format=3 uid="uid://sry2ob5tay6x"]
+
+[ext_resource type="Script" uid="uid://c4ihs3gryf5a1" path="res://scripts/memes/meme_stats.gd" id="1_ale78"]
+[ext_resource type="Texture2D" uid="uid://qtkg3dfdj2lg" path="res://assets/memes/kneadtanyahu_approves.jpg" id="2_lpb6a"]
+
+[resource]
+script = ExtResource("1_ale78")
+code = 8
+emo = 1
+genre = 2
+name = "Kneadtanyahu Impressed"
+texture = ExtResource("2_lpb6a")
+metadata/_custom_type_script = "uid://c4ihs3gryf5a1"

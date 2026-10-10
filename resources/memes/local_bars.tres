@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_ss1i5")
-code = 8
+code = 9
 emo = 1
 genre = 1
 name = "local bars"

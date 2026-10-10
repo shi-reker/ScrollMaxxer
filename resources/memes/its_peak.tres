@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_uplv8")
+code = 11
 genre = 1
 name = "IT'S PEAK"
 texture = ExtResource("2_vcfj3")

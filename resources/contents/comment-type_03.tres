@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_1ca11")
-code = 10
+code = 11
 genre = 1
 name = "C3"
 creator = "ryh"

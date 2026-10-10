@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_3afxn")
-code = 12
+code = 15
 emo = 3
 name = "squint paper"
 texture = ExtResource("2_vxe2b")

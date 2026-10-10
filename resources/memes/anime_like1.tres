@@ -1,17 +1,11 @@
 [gd_resource type="Resource" script_class="MemeStats" format=3 uid="uid://deoootohseuq7"]
 
 [ext_resource type="Script" uid="uid://c4ihs3gryf5a1" path="res://scripts/memes/meme_stats.gd" id="1_script"]
-
-[sub_resource type="Gradient" id="Gradient_203"]
-colors = PackedColorArray(0.2944, 0.92, 0.773233, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture_203"]
-gradient = SubResource("Gradient_203")
-width = 320
-height = 535
+[ext_resource type="Texture2D" uid="uid://c00xjh5ghkif4" path="res://assets/memes/pixiv_elephant.png" id="2_8sqjf"]
 
 [resource]
 script = ExtResource("1_script")
-code = 3
+code = 7
 genre = 1
-texture = SubResource("GradientTexture_203")
+name = "Chipixiv Like"
+texture = ExtResource("2_8sqjf")

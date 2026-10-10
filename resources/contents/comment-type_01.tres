@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_uva75")
-code = 8
+code = 9
 name = "C1"
 creator = "ryh"
 texture = ExtResource("2_uva75")

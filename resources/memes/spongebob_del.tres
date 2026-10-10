@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_bo7lu")
-code = 17
+code = 20
 emo = 3
 genre = 2
 name = "spongebob delete this"

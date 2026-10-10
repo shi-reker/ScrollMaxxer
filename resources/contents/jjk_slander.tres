@@ -1,9 +1,12 @@
 [gd_resource type="Resource" script_class="ContentStats" format=3 uid="uid://qac03c6nd7sc"]
 
 [ext_resource type="Script" uid="uid://ndmawvh5mick" path="res://scripts/contents/content_stats.gd" id="1_en1rp"]
-[ext_resource type="Texture2D" uid="uid://deijkxq0btwek" path="res://assets/tai_lung_computer.jpg" id="2_r2jd0"]
+[ext_resource type="Texture2D" uid="uid://dgg651nnyro86" path="res://assets/contents/jjk slander.png" id="2_r2jd0"]
 
 [resource]
 script = ExtResource("1_en1rp")
-code = 1
+code = 4
+genre = 1
+name = "Naoya Glaze"
+creator = "ryh"
 texture = ExtResource("2_r2jd0")

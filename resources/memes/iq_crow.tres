@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_jnwwm")
-code = 7
+code = 6
 emo = 4
 name = "IQ Crow"
 texture = ExtResource("2_u5112")

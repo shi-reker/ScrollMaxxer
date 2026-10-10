@@ -5,5 +5,7 @@
 
 [resource]
 script = ExtResource("1_gl43k")
+code = 3
+name = "Cat Vet"
 texture = ExtResource("2_v144c")
 metadata/_custom_type_script = "uid://ndmawvh5mick"
