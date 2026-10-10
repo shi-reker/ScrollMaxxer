@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbnm5smyq7g4a"
-path="res://.godot/imported/comment-type content.png-3830d8db9145ccd49d704afa56a03ae3.ctex"
+uid="uid://djyum3few8en5"
+path="res://.godot/imported/sylphycookie.png-31719eea705e69d5a363244b5c46aec2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/comment-type content.png"
-dest_files=["res://.godot/imported/comment-type content.png-3830d8db9145ccd49d704afa56a03ae3.ctex"]
+source_file="res://assets/contents/sylphycookie.png"
+dest_files=["res://.godot/imported/sylphycookie.png-31719eea705e69d5a363244b5c46aec2.ctex"]
 
 [params]
 
