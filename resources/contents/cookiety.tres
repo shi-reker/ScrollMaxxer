@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ContentStats" format=3 uid="uid://bgxq2kfshxkfj"]
+
+[ext_resource type="Script" uid="uid://ndmawvh5mick" path="res://scripts/contents/content_stats.gd" id="1_42ni1"]
+[ext_resource type="Texture2D" uid="uid://56qfdjh4iktl" path="res://assets/contents/cookiety.png" id="2_42ni1"]
+
+[resource]
+script = ExtResource("1_42ni1")
+code = 1
+genre = 2
+name = "Cookiety"
+creator = "JustAbdi"
+texture = ExtResource("2_42ni1")
+metadata/_custom_type_script = "uid://ndmawvh5mick"

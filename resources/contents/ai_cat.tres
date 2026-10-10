@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ContentStats" format=3 uid="uid://c3ftw5vfwrek5"]
+
+[ext_resource type="Script" uid="uid://ndmawvh5mick" path="res://scripts/contents/content_stats.gd" id="1_0jurx"]
+[ext_resource type="Texture2D" uid="uid://b3t4lx4rqx3a" path="res://assets/contents/cookieng.png" id="2_0jurx"]
+
+[resource]
+script = ExtResource("1_0jurx")
+code = 2
+genre = 2
+name = "Clapping Cat"
+creator = "JustAbdi"
+texture = ExtResource("2_0jurx")
+metadata/_custom_type_script = "uid://ndmawvh5mick"
