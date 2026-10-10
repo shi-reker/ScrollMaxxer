@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://bc1fpwucmlmhr"]
 
 [ext_resource type="Script" uid="uid://b03rga3wdym70" path="res://scripts/contents/content.gd" id="1_fy1iq"]
+[ext_resource type="FontFile" uid="uid://dwqc75irmjte7" path="res://assets/Koulen-Regular.ttf" id="1_o46yd"]
 [ext_resource type="Resource" uid="uid://d1ueg12sba8bk" path="res://resources/contents/blue.tres" id="2_7skcx"]
 [ext_resource type="Texture2D" uid="uid://bdtxubpj2gsv0" path="res://assets/temp_content_sprite.tres" id="3_51eih"]
 [ext_resource type="Texture2D" uid="uid://cki8ckya4n6we" path="res://icon.svg" id="4_7skcx"]
 [ext_resource type="Texture2D" uid="uid://bqens146afx3e" path="res://assets/UI/buttons/like icon.png" id="5_v5ufe"]
 [ext_resource type="Texture2D" uid="uid://cowpl1m10niii" path="res://assets/UI/buttons/comments icon.png" id="6_o46yd"]
 [ext_resource type="Texture2D" uid="uid://enilw4gyk14u" path="res://assets/UI/buttons/share icon.png" id="7_hrpxa"]
+
+[sub_resource type="Theme" id="Theme_v5ufe"]
+default_font = ExtResource("1_o46yd")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 bg_color = Color(0.13333334, 0.13333334, 0.13333334, 0.13333334)
@@ -16,9 +20,9 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_jf8d7"]
-font_color = Color(0, 0, 0, 1)
+font = ExtResource("1_o46yd")
 
-[node name="Content" type="Control" unique_id=474919709 node_paths=PackedStringArray("sprite")]
+[node name="Content" type="Control" unique_id=474919709 node_paths=PackedStringArray("sprite", "creator_label", "title_label")]
 custom_minimum_size = Vector2(240, 535)
 custom_maximum_size = Vector2(245, 540)
 layout_mode = 3
@@ -29,8 +33,11 @@ offset_right = -782.0
 offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_v5ufe")
 script = ExtResource("1_fy1iq")
 sprite = NodePath("TextureRect")
+creator_label = NodePath("HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/CreatorLabel")
+title_label = NodePath("HBoxContainer/MarginContainer/VBoxContainer/TitleLabel")
 max_x = 240
 content_stats = ExtResource("2_7skcx")
 
@@ -45,14 +52,15 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=616836054]
+custom_maximum_size = Vector2(240, 535)
 layout_mode = 1
-anchors_preset = 9
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 240.0
-offset_bottom = -5.0
+grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_51eih")
+stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=426759513]
 layout_mode = 1

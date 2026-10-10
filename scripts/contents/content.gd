@@ -3,6 +3,9 @@ extends Node
 class_name Content
 
 @export var sprite: TextureRect
+@export var creator_label: Label
+@export var title_label: Label
+
 @export var max_x: int = 320
 @export var max_y: int = 535
 @export var content_stats: ContentStats:
@@ -25,6 +28,14 @@ func _apply_stats(new_stats: ContentStats = null) -> void:
 
 	if sprite and sprite.texture != tex:
 		sprite.texture = tex
+	
+	var creator_str := content_stats.creator
+	if creator_label and creator_str:
+		creator_label.text = creator_str
+	
+	var title_str := content_stats.name
+	if title_label and title_str:
+		title_label.text = title_str
 	#_resize_sprite_to_fit()
 
 func _resize_sprite_to_fit() -> void:
