@@ -112,9 +112,11 @@ texture_hover = ExtResource("14_uv8gj")
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1290273384]
 stream = ExtResource("15_6wqnn")
+bus = &"SFX"
 
 [node name="PressedSound" type="AudioStreamPlayer2D" parent="." unique_id=78477621]
 stream = ExtResource("16_1ymcx")
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="VBoxContainer/VBoxContainer2/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer2/Resume" to="." method="_on_resume_pressed"]

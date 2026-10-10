@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ContentStats" format=3 uid="uid://d006r8fxrjj8y"]
+
+[ext_resource type="Script" uid="uid://ndmawvh5mick" path="res://scripts/contents/content_stats.gd" id="1_uva75"]
+[ext_resource type="Texture2D" uid="uid://bbnm5smyq7g4a" path="res://assets/contents/comment-type_01.png" id="2_uva75"]
+
+[resource]
+script = ExtResource("1_uva75")
+code = 6
+texture = ExtResource("2_uva75")
+metadata/_custom_type_script = "uid://ndmawvh5mick"
