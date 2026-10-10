@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://d3ehkekj4h85v" path="res://assets/UI/buttons/main menu/options button idle.png" id="5_5egv6"]
 [ext_resource type="Texture2D" uid="uid://dia14owqooalr" path="res://assets/UI/buttons/main menu/options button pressed.png" id="6_vtepg"]
 [ext_resource type="Texture2D" uid="uid://bpq54wbc3n8r3" path="res://assets/UI/buttons/main menu/options button hover.png" id="7_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://c7jff23a43seb" path="res://assets/UI/buttons/main menu/gallery button idle.png" id="7_wyh8j"]
 [ext_resource type="Texture2D" uid="uid://dhkk2hysc0ygb" path="res://assets/UI/buttons/main menu/quit button idle.png" id="8_m3bi6"]
+[ext_resource type="Texture2D" uid="uid://bd7u0p1nqcy13" path="res://assets/UI/buttons/main menu/gallery button pressed.png" id="8_ujyyl"]
+[ext_resource type="Texture2D" uid="uid://mkgoo8pcevcv" path="res://assets/UI/buttons/main menu/gallery button hover.png" id="9_mkpwh"]
 [ext_resource type="Texture2D" uid="uid://nqwxpjcl4jkm" path="res://assets/UI/buttons/main menu/quit button pressed.png" id="9_wyh8j"]
 [ext_resource type="Texture2D" uid="uid://nf7ppjpjl03x" path="res://assets/UI/buttons/main menu/quit button hover.png" id="10_ujyyl"]
 [ext_resource type="AudioStream" uid="uid://be301kt3bhg78" path="res://assets/audio/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.ogg" id="12_5egv6"]
@@ -56,9 +59,9 @@ texture_hover = ExtResource("4_t1dhk")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("5_5egv6")
-texture_pressed = ExtResource("6_vtepg")
-texture_hover = ExtResource("7_8dnnj")
+texture_normal = ExtResource("7_wyh8j")
+texture_pressed = ExtResource("8_ujyyl")
+texture_hover = ExtResource("9_mkpwh")
 
 [node name="Options" type="TextureButton" parent="VBoxContainer" unique_id=2014574198]
 layout_mode = 2

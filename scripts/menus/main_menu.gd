@@ -12,7 +12,7 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	pressSound.play()
 	await  pressSound.finished
-	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/tutorial.tscn")
 
 func _on_start_mouse_entered() -> void:
 	hoverSound.play()
