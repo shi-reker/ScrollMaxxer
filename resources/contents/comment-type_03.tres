@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ContentStats" format=3 uid="uid://duhjptvgitndi"]
+
+[ext_resource type="Script" uid="uid://ndmawvh5mick" path="res://scripts/contents/content_stats.gd" id="1_1ca11"]
+[ext_resource type="Texture2D" uid="uid://byj6siswo5elo" path="res://assets/contents/comment-type_03.png" id="2_1ca11"]
+
+[resource]
+script = ExtResource("1_1ca11")
+code = 10
+genre = 1
+name = "C3"
+creator = "ryh"
+texture = ExtResource("2_1ca11")
+metadata/_custom_type_script = "uid://ndmawvh5mick"

@@ -6,8 +6,14 @@
 [resource]
 script = ExtResource("1_1bn2f")
 code = 7
+<<<<<<< Updated upstream
 genre = 2
 name = "Huhushengwei"
 creator = "oslra"
+=======
+genre = 1
+name = "hu hu sheng wei"
+creator = "ryh"
+>>>>>>> Stashed changes
 texture = ExtResource("2_1bn2f")
 metadata/_custom_type_script = "uid://ndmawvh5mick"

@@ -12,10 +12,10 @@
 [ext_resource type="Script" uid="uid://bw55cdb4lj6vm" path="res://scripts/tasks/task_spawner.gd" id="9_jkdf5"]
 [ext_resource type="Script" uid="uid://dkuffagidpvdc" path="res://scripts/contents/content_manager.gd" id="10_6iyac"]
 [ext_resource type="PackedScene" uid="uid://bc1fpwucmlmhr" path="res://Scenes/content.tscn" id="11_6iyac"]
+[ext_resource type="Texture2D" uid="uid://cki8ckya4n6we" path="res://icon.svg" id="14_3pmx8"]
 [ext_resource type="PackedScene" uid="uid://b0umvwur1iyax" path="res://Scenes/comments_panel.tscn" id="14_fevyy"]
 [ext_resource type="Resource" uid="uid://b8pnb3p3bgk35" path="res://resources/contents/cat_vet.tres" id="15_h1bgf"]
 [ext_resource type="Texture2D" uid="uid://cio0vle2etfd2" path="res://assets/UI/energy bar empty.png" id="16_k12tt"]
-[ext_resource type="Texture2D" uid="uid://cki8ckya4n6we" path="res://icon.svg" id="16_pdsj5"]
 [ext_resource type="Texture2D" uid="uid://bnk3bijegpm7t" path="res://assets/UI/energy bar fill.png" id="17_h1bgf"]
 [ext_resource type="Script" uid="uid://c1o0exdrug8nc" path="res://scripts/energy_bar.gd" id="18_hibaj"]
 [ext_resource type="Script" uid="uid://bca1gqk2wtdgm" path="res://scripts/effect_manager.gd" id="19_fevyy"]
@@ -253,7 +253,7 @@ theme = SubResource("Theme_gt3je")
 [node name="TextureRect" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content" index="1" unique_id=616836054]
 scale = Vector2(1, 1)
 theme = SubResource("Theme_gt3je")
-texture = ExtResource("16_pdsj5")
+texture = ExtResource("14_3pmx8")
 
 [node name="HBoxContainer" parent="BG layer/UI layer/DevicePanel/ContentPanel/ContentList/Content" index="2" unique_id=426759513]
 theme = SubResource("Theme_gt3je")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MemeStats" format=3 uid="uid://driujbg31j5ol"]
+
+[ext_resource type="Script" uid="uid://c4ihs3gryf5a1" path="res://scripts/memes/meme_stats.gd" id="1_cn4r7"]
+[ext_resource type="Texture2D" uid="uid://cuovd7i76825e" path="res://assets/memes/brother me.png" id="2_ingil"]
+
+[resource]
+script = ExtResource("1_cn4r7")
+code = 14
+genre = 1
+name = "my bro just another me"
+texture = ExtResource("2_ingil")
+metadata/_custom_type_script = "uid://c4ihs3gryf5a1"

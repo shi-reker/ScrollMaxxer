@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MemeStats" format=3 uid="uid://81oo63isw01k"]
+
+[ext_resource type="Script" uid="uid://c4ihs3gryf5a1" path="res://scripts/memes/meme_stats.gd" id="1_nbkn0"]
+[ext_resource type="Texture2D" uid="uid://c104dffhdqqm4" path="res://assets/memes/blue blob.png" id="2_r5fyc"]
+
+[resource]
+script = ExtResource("1_nbkn0")
+code = 9
+emo = 4
+genre = 2
+name = "blue blob"
+texture = ExtResource("2_r5fyc")
+metadata/_custom_type_script = "uid://c4ihs3gryf5a1"

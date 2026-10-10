@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MemeStats" format=3 uid="uid://cnph746ruaju3"]
+
+[ext_resource type="Script" uid="uid://c4ihs3gryf5a1" path="res://scripts/memes/meme_stats.gd" id="1_nffjc"]
+[ext_resource type="Texture2D" uid="uid://dn1mbuv00548s" path="res://assets/memes/momoi scroll.png" id="2_gruit"]
+
+[resource]
+script = ExtResource("1_nffjc")
+code = 15
+emo = 4
+genre = 1
+name = "momoi scroll"
+texture = ExtResource("2_gruit")
+metadata/_custom_type_script = "uid://c4ihs3gryf5a1"

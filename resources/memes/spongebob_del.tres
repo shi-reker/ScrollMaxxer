@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MemeStats" format=3 uid="uid://cqwgnn4ym2o5g"]
+
+[ext_resource type="Script" uid="uid://c4ihs3gryf5a1" path="res://scripts/memes/meme_stats.gd" id="1_bo7lu"]
+[ext_resource type="Texture2D" uid="uid://b7xpftb41n1av" path="res://assets/memes/spongebob delete.png" id="2_yyu2w"]
+
+[resource]
+script = ExtResource("1_bo7lu")
+code = 17
+emo = 3
+genre = 2
+name = "spongebob delete this"
+texture = ExtResource("2_yyu2w")
+metadata/_custom_type_script = "uid://c4ihs3gryf5a1"

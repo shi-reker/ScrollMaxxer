@@ -7,7 +7,12 @@
 script = ExtResource("1_cr2qg")
 code = 5
 genre = 2
+<<<<<<< Updated upstream
 name = "Mesmerizer"
 creator = "oslra"
+=======
+name = "miku teto cursed"
+creator = "ryh"
+>>>>>>> Stashed changes
 texture = ExtResource("2_cr2qg")
 metadata/_custom_type_script = "uid://ndmawvh5mick"
