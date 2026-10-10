@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbnm5smyq7g4a"
-path="res://.godot/imported/comment-type_01.png-1bfeb85092bb1aba90ec4938a9d20d6c.ctex"
+uid="uid://cm36py4iqyhhu"
+path="res://.godot/imported/mesmerizer meme.png-49b4cc9ab61358a9f417435e1d5e1cf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/contents/comment-type_01.png"
-dest_files=["res://.godot/imported/comment-type_01.png-1bfeb85092bb1aba90ec4938a9d20d6c.ctex"]
+source_file="res://assets/mesmerizer meme.png"
+dest_files=["res://.godot/imported/mesmerizer meme.png-49b4cc9ab61358a9f417435e1d5e1cf9.ctex"]
 
 [params]
 

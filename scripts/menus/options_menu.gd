@@ -9,11 +9,10 @@ extends TextureRect
 func _ready() -> void:
 	musicSlider.settingTitle.text = "music"
 	sfxSlider.settingTitle.text = "sfx"
-	musicSlider.busType = "Music"
-	sfxSlider.busType = "SFX"
 	
-	musicSlider.setup()
-	sfxSlider.setup()
+	musicSlider.settingSlider.value = 50
+	sfxSlider.settingSlider.value = 50
+	
 	musicSlider.settingSlider.value_changed.connect(_on_music_changed)
 	sfxSlider.settingSlider.value_changed.connect(_on_sfx_changed)
 

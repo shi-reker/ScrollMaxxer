@@ -4,7 +4,6 @@ var bgm_player: AudioStreamPlayer
 
 func _ready():
 	bgm_player = AudioStreamPlayer.new()
-	bgm_player.bus = "Music"
 	add_child(bgm_player)
 		
 

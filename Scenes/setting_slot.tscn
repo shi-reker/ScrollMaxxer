@@ -77,14 +77,10 @@ theme_override_icons/grabber_highlight = ExtResource("3_ebw5r")
 theme_override_styles/slider = SubResource("StyleBoxFlat_0roye")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_jqi30")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_ebw5r")
-max_value = 1.0
-step = 0.01
-value = 1.0
+value = 50.0
 ticks_position = 3
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=139601363]
 stream = ExtResource("7_ce71l")
-bus = &"SFX"
 
 [connection signal="mouse_entered" from="HBoxContainer/HSlider" to="." method="_on_h_slider_mouse_entered"]
-[connection signal="value_changed" from="HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

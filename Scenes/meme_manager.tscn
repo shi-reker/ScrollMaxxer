@@ -35,8 +35,6 @@ max_y = 160
 
 [node name="CorrectSound" type="AudioStreamPlayer2D" parent="." unique_id=2088095769]
 stream = ExtResource("3_q5qnk")
-bus = &"SFX"
 
 [node name="IncorrectSound" type="AudioStreamPlayer2D" parent="." unique_id=1216081981]
 stream = ExtResource("4_6gobi")
-bus = &"SFX"

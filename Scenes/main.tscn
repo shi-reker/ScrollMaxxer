@@ -403,15 +403,12 @@ script = ExtResource("19_fevyy")
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1025975606]
 stream = ExtResource("21_ee4r6")
-bus = &"SFX"
 
 [node name="PressedSound" type="AudioStreamPlayer2D" parent="." unique_id=420905416]
 stream = ExtResource("22_gt3je")
-bus = &"SFX"
 
 [node name="SwipeSound" type="AudioStreamPlayer2D" parent="." unique_id=1782175741]
 stream = ExtResource("23_gt3je")
-bus = &"SFX"
 
 [connection signal="mouse_entered" from="BG layer/UI layer/PauseButton" to="." method="_on_pause_button_mouse_entered"]
 [connection signal="pressed" from="BG layer/UI layer/PauseButton" to="." method="_on_pause_button_pressed"]
